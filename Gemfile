@@ -28,24 +28,16 @@ gem 'bootstrap_form',           '~> 2.2.0'
 gem 'bcrypt',                   '~> 3.1.7'
 gem 'unicorn',                  '~> 4.8.3'
 gem 'skylight',                 '~> 0.6.0'
+gem "therubyracer",             '~> 0.12.1'
+gem "less-rails",               '~> 2.6.0'
 
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'simplecov',              '~> 0.9.1',
+  gem 'simplecov',              '~> 0.9.1'
   gem 'byebug'
   gem 'pry',                    '~> 0.10.1'
   gem "factory_girl_rails",     '~> 4.0'
   gem 'web-console',            '~> 2.0'
-  gem 'spring'
   gem 'spring',                 '~> 1.2.0'
   gem 'capybara',               '~> 2.4.4'
   gem 'mocha',                  '~> 1.1.0'

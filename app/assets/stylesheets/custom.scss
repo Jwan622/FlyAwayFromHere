@@ -1,6 +1,59 @@
+body {
+  color: #093D5E;
+  background-color: #b6e2f9;
+  background-image: url(/assets/clouds2.jpeg);
+}
+
+.main-body {
+  margin-top: 60px;
+  margin-bottom: 100px;
+  min-height: 70vh;
+}
+
+// welcome page
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.button-row {
+  position: relative;
+  display: inline;
+}
+
+.btn-primary {
+  font-size: 4em;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+
+// navbar
+.nav-row {
+  margin-right: -5%;
+  margin-left: -5%;
+  margin-top: 5px;
+}
+
+.navbar-form {
+  margin-top: 2px;
+}
+
 .nav-link {
   color: white;
-  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.navbar {
+  background-color: #093d5e;
+  color: white;
+  font-size: 1.3em;
+}
+
+.brand {
+  margin: -14px;
 }
 
 // footer
@@ -39,7 +92,7 @@ footer {
   }
 }
 
-// about page
+/*about page*/
 .about {
   background-color: #e3e3e3;
   border: 2px solid #6699ff;
@@ -50,4 +103,52 @@ footer {
   min-height: 20px;
   padding: 50px;
   width: 600px;
+}
+
+/*plan */
+
+.plan-underline {
+  text-decoration: underline;
+}
+
+.complete-plan {
+  background-color: #faddd1;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+}
+
+ /* flash messages */
+
+.flash-error {
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.flash-alert {
+  color: #ff0000;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 1em;
+}
+
+.flash-notice {
+  color: #008000;
+  font-size: 18px;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.flash-success {
+  text-align: center;
+  color: #008000;
+  font-size: 18px;
+  margin-top: 1em;
 }

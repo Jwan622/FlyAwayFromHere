@@ -1,0 +1,11 @@
+<div class="welcome-question">
+  <h1> What kind of traveler are YOU? </h1>
+</div>
+
+<div class="row">
+  <div class="button-row">
+    <% @categories.each do |category| %>
+      <%= link_to("#{category.name}", trips_path(category: category.name), class: "btn btn-primary co") %>
+    <% end %>
+  </div>
+</div>
