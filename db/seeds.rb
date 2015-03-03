@@ -38,3 +38,10 @@ parks = Category.create(name: "Parks")
 beaches = Category.create(name: "Beaches")
 sightseeing = Category.create(name: "Sightseeing")
 festivals = Category.create(name: "Festivals")
+
+
+# trips
+iceland = Trip.create!(title: "Iceland", price: 80000, description: 'The Land of Ice, Fire, and Mountains', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 5 )
+hawaii = Trip.create!(title: "Hawaii", price: 70000, description: 'Island Nation of Coconuts', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 3)
+greece = Trip.create!(title: "Greece", price: 90000, description: 'The birthplace of democracy and rioting', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 3)
+maine = Trip.create!(title: "Maine", price: 40000, description: 'Want Lobsters?', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 2)

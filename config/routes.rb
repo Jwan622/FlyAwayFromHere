@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "/bargains", to: "bargainer#create", as: "bargainer"
   get "/bargains", to: "bargainer#index", as: "bargains"
 
+  get '/auth/:provider/callback', to: 'sessions#create'
+
   root "categories#index"
   get "/about", to: "static_pages#about", as: "about"
   post "/login", to: "sessions#create", as: "login"

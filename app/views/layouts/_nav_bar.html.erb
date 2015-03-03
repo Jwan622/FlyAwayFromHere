@@ -18,6 +18,7 @@
             <%= f.submit 'Login' %>
           <% end %>
         <% end %>
+        <%= menu_item "Login With Twitter", "/auth/twitter", class: "nav-link"  %>
       <% else %>
         <%= menu_item "Itinerary", itinerary_path, class: "nav-link" %>
         <%= menu_item "Past Trips", user_orders_path(user_id: current_user.id), class: "nav-link" %>
