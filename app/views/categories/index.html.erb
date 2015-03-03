@@ -1,0 +1,24 @@
+<div class="welcome-question">
+  <h1> Fly Me Away to... </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <% @categories.each do |category| %>
+      <%= link_to("#{category.name}", new_planner_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+    <% end %>
+  </div>
+</div>
+
+</br>
+<div class="row">
+  <div class="col-mid-4 text_center">
+    <h1> Or Just... </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-mid-3 text-center tell-button">
+    <%= button_to('Find Me Some Great Bargains', bargainer_path, :class => 'btn btn-large btn-primary traveler-type')  %>
+  </div>
+</div>

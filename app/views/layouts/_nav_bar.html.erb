@@ -1,16 +1,16 @@
 <%= nav_bar fixed: :top, responsive: true do %>
-  <div id="nav-row">
-    <%= menu_group inline: true do %>
-      <%= menu_item image_tag('logo5.png', size: "45x45", id: "brand"), root_path  %></a>
-      <%= menu_item "Keevahh", root_path, id: "store-name" %>
-      <%= menu_item "Lend", projects_path, id: "lend-link" if !(current_user && current_user.admin?) %>
-      <%= menu_item "Admin Dashboard", admin_dashboard_path, id: "admin-dashboard" if current_user && current_user.admin? %>
-      <%= menu_item "All Borrowers", admin_tenants_path, id: "borrowers" if current_user && current_user.admin? %>
+  <div class="nav-row">
+    <%= menu_group pull: :left, inline: true do %>
+      <%= menu_item image_tag('logo3.png', size: "55x55", class: "brand"), root_path  %>
+      <%= menu_item "Planner", new_planner_path, class: "nav-link" %>
+      <%= menu_item "Explore", trips_path, class: "nav-link" %>
+      <%= menu_item "Admin Dashboard", admin_dashboard_path, class: "nav-link" %>
     <% end %>
 
     <%= menu_group pull: :right do %>
       <% if current_user.nil? %>
-        <%= menu_item "Signup", new_user_path, id: "menu-signup" %>
+        <%= menu_item "Signup", new_user_path, class: "nav-link" %>
+        <li class="divider-vertical"></li>
         <%= menu_item do %>
           <%= form_for :session, url: login_path, :html => {class: 'navbar-form pull-right'} do |f| %>
             <%= f.text_field :username, :placeholder => 'username' %>
@@ -19,11 +19,13 @@
           <% end %>
         <% end %>
       <% else %>
-        <%= menu_item "Loans", user_orders_path(user_id: current_user.id), id: "loans" %>
-        <%= menu_item "Logout", logout_path, id: "logout" %>
+        <%= menu_item "Itinerary", itinerary_path, class: "nav-link" %>
+        <%= menu_item "Past Trips", user_orders_path(user_id: current_user.id), class: "nav-link" %>
         <% unless current_user.admin? %>
-          <%= menu_item "Profile", user_path(current_user), id: "profile" %>
+          <%= menu_item "Profile", user_path(current_user), class: "nav-link" %>
         <% end %>
+        <li class="divider-vertical"></li>
+        <%= menu_item "Logout", logout_path, class: "nav-link" %>
       <% end %>
     <% end %>
   </div>
