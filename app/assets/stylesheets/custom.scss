@@ -1,14 +1,51 @@
+// body
 body {
-  font-family: 'Titillium Web', sans-serif;
-  color: #093D5E;
   background-color: #b6e2f9;
   background-image: url(/assets/clouds2.jpeg);
+  color: #093D5E;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .main-body {
   margin-top: 60px;
   margin-bottom: 100px;
   min-height: 71vh;
+}
+
+// footer
+footer {
+  background: rgba(50, 140, 220, .5);
+  border-top: 1px solid #eaeaea;
+  bottom: 0;
+  height: 60px;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+
+  a {
+    color: #894355;
+    font-size: 1.3em;
+    margin-right: 15px;
+    }
+
+  &:hover {
+    color: #222;
+  }
+
+  small {
+    float: left;
+    font-size: 0.9em;
+  }
+
+  ul {
+    float: right;
+    text-decoration: underline;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
 
 // trips
@@ -100,43 +137,6 @@ h1 {
 .plan-lines {
   margin: 3% 2%;
 }
-
-// footer
-footer {
-  background: rgba(50, 140, 220, .5);
-  border-top: 1px solid #eaeaea;
-  bottom: 0;
-  height: 60px;
-  padding: 15px;
-  position: relative;
-  width: 100%;
-
-  a {
-    color: #894355;
-    font-size: 1.3em;
-    margin-right: 15px;
-    }
-
-  &:hover {
-    color: #222;
-  }
-
-  small {
-    float: left;
-    font-size: 0.9em;
-  }
-
-  ul {
-    float: right;
-    text-decoration: underline;
-
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
-
 // Itinerary-bar
 .itinerary-underline {
   text-decoration: underline;
