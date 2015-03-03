@@ -2,7 +2,7 @@
   <div class="nav-row">
     <%= menu_group pull: :left, inline: true do %>
       <%= menu_item image_tag('logo3.png', size: "55x55", class: "brand"), root_path  %>
-      <%= menu_item "Plan", plan_path, class: "nav-link" %>
+      <%= menu_item "Planner", new_planner_path, class: "nav-link" %>
       <%= menu_item "Explore", trips_path, class: "nav-link" %>
       <%= menu_item "Admin Dashboard", admin_dashboard_path, class: "nav-link" %>
     <% end %>
@@ -10,7 +10,7 @@
     <%= menu_group pull: :right do %>
       <% if current_user.nil? %>
         <%= menu_item "Signup", new_user_path, class: "nav-link" %>
-        <!-- <li class="divider-vertical"></li> -->
+        <li class="divider-vertical"></li>
         <%= menu_item do %>
           <%= form_for :session, url: login_path, :html => {class: 'navbar-form pull-right'} do |f| %>
             <%= f.text_field :username, :placeholder => 'username' %>
@@ -19,11 +19,13 @@
           <% end %>
         <% end %>
       <% else %>
-        <%= menu_item "Plans", user_orders_path(user_id: current_user.id), class: "nav-bar" %>
-        <%= menu_item "Logout", logout_path, class: "nav-bar" %>
+        <%= menu_item "Itinerary", itinerary_path, class: "nav-link" %>
+        <%= menu_item "Past Trips", user_orders_path(user_id: current_user.id), class: "nav-link" %>
         <% unless current_user.admin? %>
-          <%= menu_item "Profile", user_path(current_user), id: "profile" %>
+          <%= menu_item "Profile", user_path(current_user), class: "nav-link" %>
         <% end %>
+        <li class="divider-vertical"></li>
+        <%= menu_item "Logout", logout_path, class: "nav-link" %>
       <% end %>
     <% end %>
   </div>

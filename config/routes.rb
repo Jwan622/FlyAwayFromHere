@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'base/dashboard'
 
   root "categories#index"
@@ -10,9 +14,10 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  resource :plan, only: [:new, :show]
   resources :categories, only: [:index]
-  resources :trips, only: [:index]
+  resources :trips, only: [:index, :new, :create, :destroy]
+  resource :planner, only: [:new, :create]
+  resource :itinerary, only: [:new, :create]
 
   namespace :admin do
     get "/dashboard", to: "base#dashboard"

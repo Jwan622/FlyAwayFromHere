@@ -1,0 +1,2 @@
+class BargainerController < ApplicationController
+end

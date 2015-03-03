@@ -1,0 +1,45 @@
+<div class="message">
+  <h1> Let's plan a trip... </h1></br>
+</div>
+
+<div class="row">
+  <div class="planner">
+    <%= form_for(:planner, url: planner_path) do |f| %>
+      <span class="plan-lines"> I am looking for trips that are </span>
+      <div class="btn-group plan-lines">
+        <button type="button" class="btn btn-primary btn-lg">Type</button>
+        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Bargains</a></li>
+            <li><a href="#">Popular</a></li>
+        </ul>
+      </div>
+
+    </br>
+
+      <span class="plan-lines"> and I am looking to fly </span>
+      <div class="btn-group plan-lines">
+        <button type="button" class="btn btn-primary btn-lg "> Proximity </button>
+        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#"> International </a></li>
+            <li><a href="#"> Domestic </a></li>
+        </ul>
+      </div>
+
+    </br>
+
+      <span class="plan-lines"> and I plan on </span>
+      <div class="btn-group plan-lines">
+        <button type="button" class="btn btn-primary btn-lg"> Activity </button>
+        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#"> Sitting on the Beach</a></li>
+            <li><a href="#"> Sightseeing and Exploring </a></li>
+            <li><a href="#"> Enjoying Nature </a></li>
+            <li><a href="#"> Partying All Night </a></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

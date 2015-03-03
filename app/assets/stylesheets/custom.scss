@@ -1,4 +1,5 @@
 body {
+  font-family: 'Titillium Web', sans-serif;
   color: #093D5E;
   background-color: #b6e2f9;
   background-image: url(/assets/clouds2.jpeg);
@@ -7,7 +8,7 @@ body {
 .main-body {
   margin-top: 60px;
   margin-bottom: 100px;
-  min-height: 70vh;
+  min-height: 71vh;
 }
 
 // welcome page
@@ -23,12 +24,23 @@ h1 {
   display: inline;
 }
 
-.btn-primary {
-  font-size: 4em;
-  padding: 20px;
-  border-radius: 20px;
+.traveler-type {
+  border-radius: 15px;
+  font-size: 3em;
+  margin: 3%;
+  padding: 1% 2%;
 }
 
+.divider-vertical {
+  height: 65px;
+  margin: -5px 2px;
+  border-left: 1px solid #F2F2F2;
+  border-right: 1px solid #FFF;
+}
+
+.tell-button {
+  margin-top: 2%;
+}
 
 // navbar
 .nav-row {
@@ -42,12 +54,16 @@ h1 {
 }
 
 .nav-link {
-  color: white;
   margin-bottom: 12px;
+  margin-right: 5px;
+  &:hover {
+    color: white !important;
+  }
 }
 
 .navbar {
   background-color: #093d5e;
+  opacity: 0.8;
   color: white;
   font-size: 1.3em;
 }
@@ -56,9 +72,31 @@ h1 {
   margin: -14px;
 }
 
+// plan
+
+.planner {
+  background: rgba(50, 140, 220, .5);
+  border-radius: 20px;
+  font-size: 2.3em;
+  font-weight: 300;
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 3 0px;
+  text-align: left;
+}
+
+.message {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.plan-lines {
+  margin: 3% 2%;
+}
+
 // footer
 footer {
-  background-color: #6bc5f2;
+  background: rgba(50, 140, 220, .5);
   border-top: 1px solid #eaeaea;
   bottom: 0;
   height: 60px;
@@ -92,26 +130,12 @@ footer {
   }
 }
 
-/*about page*/
-.about {
-  background-color: #e3e3e3;
-  border: 2px solid #6699ff;
-  border-radius: 20px;
-  margin-bottom: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 20px;
-  padding: 50px;
-  width: 600px;
-}
-
-/*plan */
-
-.plan-underline {
+// Itinerary-bar
+.itinerary-underline {
   text-decoration: underline;
 }
 
-.complete-plan {
+.complete-itinerary {
   background-color: #faddd1;
   font-size: 18px;
   margin-left: auto;
@@ -122,7 +146,7 @@ footer {
   width: 100%;
 }
 
- /* flash messages */
+// flash messages
 
 .flash-error {
   color: #ff0000;
@@ -151,4 +175,17 @@ footer {
   color: #008000;
   font-size: 18px;
   margin-top: 1em;
+}
+
+// about
+.about-page {
+  background: rgba(50, 140, 220, .5);
+  border: 2px solid #6699ff;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 2%;
+  min-height: 20px;
+  padding: 3%;
+  text-align: center;
+  width: 23%;
 }

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>FlyAwayFromHere</title>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,10 +10,10 @@
 <body>
   <div class="main-body container">
     <%= render "layouts/nav_bar" %>
-    <% if plans.present? %>
-      <div class="complete-plan">
+    <% if itinerary.present? %>
+      <div class="complete-itinerary">
         Finish Planning and
-          <%= link_to "Fly Away.", plan_path, class: "plan-underline" %>
+          <%= link_to "Fly Away.", itinerary_path, class: "itinerary-underline" %>
       </div>
     <% end %>
     <% flash.each do |name, msg| %>

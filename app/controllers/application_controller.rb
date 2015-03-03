@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include RedirectHelper
   protect_from_forgery with: :exception
+
+  private
 
   def current_user
     if session[:admin]
@@ -16,8 +17,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_path if current_user.nil?
   end
 
-  def plans
-    Plan.new(session[:plan])
+  def itinerary
+    Itinerary.new(session[:itinerary])
   end
-  helper_method :plans
+  helper_method :itinerary
 end
