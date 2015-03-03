@@ -1,16 +1,15 @@
 <table class="table table-hover trips-table">
   <thead>
     <tr class="warning">
-      <th data-field='ranking'>Ranking </th>
+      <th data-field='ranking'>Ranking</th>
       <th data-field='airline'>Airline</th>
       <th data-field='trip_details'>Trip Details</th>
       <th data-field='date'>Date</th>
-      <th data-field='cost'>Cost</th>
+      <th data-field='price'>Price</th>
       <th data-field='decision'>Purchase?</th>
     </tr>
   </thead>
   <% @trips.each do |trip| %>
-    <tr>
     <tr>
       <td><%= trip.ranking %></td>
       <td><%= trip.airline %></td>
@@ -18,6 +17,6 @@
       <td><%= trip.flight_date.strftime("%b %d, %Y, %I:%M") %></td>
       <td><%= number_to_currency trip.price/100 %></td>
       <td><%= link_to "Select", trip_path(trip.id) %></td>
-  <% end %>
     </tr>
+  <% end %>
 </table>
