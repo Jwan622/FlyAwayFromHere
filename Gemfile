@@ -3,7 +3,6 @@ gem 'rails',                    '4.2.0'
 gem 'pg',                       '~>0.18.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails',               '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,6 +29,7 @@ gem 'unicorn',                  '~> 4.8.3'
 gem 'skylight',                 '~> 0.6.0'
 gem "therubyracer",             '~> 0.12.1'
 gem "less-rails",               '~> 2.6.0'
+gem "rails_12factor",           '~> 0.0.3'
 
 
 group :development, :test do
