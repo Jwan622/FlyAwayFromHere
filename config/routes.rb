@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'past_trips/index'
+
+  get 'past_trips/create'
+
   get 'sessions/create'
   get 'sessions/destroy'
   get 'base/dashboard'

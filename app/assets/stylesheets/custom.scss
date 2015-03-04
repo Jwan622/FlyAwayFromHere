@@ -2,6 +2,8 @@
 body {
   background-color: #b6e2f9;
   background-image: url(/assets/clouds2.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
   color: #093D5E;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -9,7 +11,7 @@ body {
 .main-body {
   margin-top: 60px;
   margin-bottom: 100px;
-  min-height: 71vh;
+  min-height: 100vh;
 }
 
 // footer
@@ -56,11 +58,15 @@ footer {
 }
 
 // welcome page
-h1 {
-  font-size: 4em;
-  font-weight: bold;
+h2 {
+  background: rgba(170,180,220, 0.7);
+  border-radius: 20px;
+  font-size: 3.5em;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
+  margin: 40px auto;
+  width: 460px;
+
 }
 
 .button-row {
@@ -69,10 +75,10 @@ h1 {
 }
 
 .traveler-type {
-  border-radius: 15px;
-  font-size: 3em;
-  margin: 3%;
-  padding: 1% 2%;
+  border-radius: 18px;
+  font-size: 2.4em;
+  margin: 2%;
+  padding: 5px 18px;
 }
 
 .divider-vertical {
@@ -86,19 +92,74 @@ h1 {
   margin-top: 2%;
 }
 
+// planner mid row
+
+.praise-row {
+  background: rgba(220,220,235,0.9);
+  width: 101%;
+  min-height: 110px;
+  padding: 17px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.praise-text {
+  font-size: 18px;
+  line-height: 23px;
+  min-height: 89px;
+  vertical-align: middle;
+}
+
+.praise-quote {
+  color: #667;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 260px;
+  height: 135px;
+  margin: 0 143px;
+  padding: 0 25px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+}
+
+.praise-time-logo {
+  background-image: url(/assets/time.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  margin-top: 11px;
+  margin-left: 45px;
+  width: 130px;
+  height: 38px;
+}
+
+.praise-forbes-logo {
+  background-image: url(/assets/cosmo-logo.jpg);
+  background-size: 150px;
+  background-repeat: no-repeat;
+  margin-top:11px;
+  margin-left: 35px;
+  width: 160px;
+  height: 38px;
+}
+
+.front-page-divider {
+  margin: 20px 30px 40px 20px;
+  max-width: 1275px;
+  border-bottom: 1px solid rgb(140,40,40);
+}
+
 // navbar
 .nav-row {
-  margin-right: -5%;
-  margin-left: -5%;
+  margin-right: -4%;
+  margin-left: -1%;
   margin-top: 5px;
 }
 
-.navbar-form {
-  margin-top: 2px;
-}
-
 .nav-link {
-  margin-bottom: 12px;
+  font-size: 16px;
+  margin-bottom: 8px;
   margin-right: 5px;
   &:hover {
     color: white !important;
@@ -119,12 +180,14 @@ h1 {
 // plan
 
 .planner {
-  background: rgba(50, 140, 220, .5);
+  background: rgba(50, 140, 220, .6);
   border-radius: 20px;
   font-size: 2.3em;
   font-weight: 300;
-  width: 55%;
+  width: 650px;
   margin: 0 auto;
+  margin-bottom: 210px;
+  padding: 2% 3%;
   margin-top: 3 0px;
   text-align: left;
 }
@@ -135,7 +198,23 @@ h1 {
 }
 
 .plan-lines {
-  margin: 3% 2%;
+  margin: 0% 2%;
+  margin-left: 40px;
+}
+
+.plan-label {
+  font-size: 24px;
+  width: 390px;
+}
+
+.plan-button {
+  background: rgb(30,140,180);
+  color: rgb(30,20,70);
+  margin-top: 20px;
+  margin-left: 400px;
+  padding: 4px;
+  font-size: 20px;
+
 }
 // Itinerary-bar
 .itinerary-underline {

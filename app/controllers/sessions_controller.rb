@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
   def create
     if auth_hash
-      @user = User.find_or_create_from_auth_hash(auth_hash)
-      self.current_user = @user
-      redirect_to "/"
+      @user             = User.find_or_create_from_auth_hash(auth_hash)
+      session[:user_id] = @user.id
+      flash[:notice]    = "Welcome back to the skies#{@user.username}"
+      redirect_lender_or_borrower(@user)
     else
       store_location
       authenticate_user(User.find_by(session_username))
