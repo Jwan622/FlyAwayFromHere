@@ -1,4 +1,4 @@
-class BaseController < ApplicationController
+class Admin::BaseController < ApplicationController
   def dashboard
   end
 end

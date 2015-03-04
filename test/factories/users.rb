@@ -1,14 +1,14 @@
 FactoryGirl.define do
   factory :user do
-    username "MyString"
-first_name "MyString"
-last_name "MyString"
-street "MyString"
-city "MyString"
-state "MyString"
-country "MyString"
-role 1
-email "MyString"
+    sequence(:username) { |n| "Flyer#{n}" }
+    first_name "Jeffrey"
+    last_name "Wan"
+    street "E13th St Apt 3A"
+    password "password"
+    city "New York"
+    state "NY"
+    country "USA"
+    role 0
+    email "Jwan622@yahoo.com"
   end
-
 end
