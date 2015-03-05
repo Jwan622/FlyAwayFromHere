@@ -32,33 +32,31 @@
           <%= f.collection_select :activity_category, Category.activity_categories, :id, :name, { include_blank: "Activity" }, { class: "btn-lg plan-lines" } %>
         </td>
       </tr>
-      <tr>
-        <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
-      </tr>
     </table>
+      <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
   <% end %>
 </div>
 
+<div class="row praise-row">
+    <div class="col-sm-3 col-sm-offset-2">
+      <div class="praise-text">
+      "Jeff Wan has certainly outdone himself in the design world again. How does he do it??"
+      </div>
 
-<div class="praise-row">
-  <i class="fa fa-heart-o fa-3x"></i>
-  <div class="praise-quote">
-    <div class="praise-text">
-    "Jeff Wan has certainly outdone himself in the design world again. How does he do it??"
-    </div>
-    <div class="praise-time-logo">
-
-    </div>
-  </div>
-
-  <div class="praise-quote">
-    <div class="praise-text">
-      "One has to ask... is Jeff Wan for real?"
-    </div>
-    <div class="praise-forbes-logo">
+      <div class="praise-time-logo"></div>
 
     </div>
-  </div>
+
+    <i class="col-sm-1 fa fa-heart-o fa-3x"></i>
+
+    <div class="col-sm-3">
+      <div class="praise-text">
+        "One has to ask... is Jeff Wan for real?"
+      </div>
+
+      <div class="praise-cosmo-logo"></div>
+
+    </div>
 </div>
 
 <div class="front-page-divider">
