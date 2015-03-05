@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     if auth_hash
       @user             = User.find_or_create_from_auth_hash(auth_hash)
       session[:user_id] = @user.id
-      flash[:notice]    = "Welcome back to the skies#{@user.username}"
+      flash[:notice]    = "Welcome back to the skies #{@user.username}"
       redirect_lender_or_borrower(@user)
     else
       store_location

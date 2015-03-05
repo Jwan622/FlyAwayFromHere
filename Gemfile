@@ -20,6 +20,7 @@ gem 'skylight',                 '~> 0.6.0'
 gem "therubyracer",             '~> 0.12.1'
 gem "less-rails",               '~> 2.6.0'
 gem "rails_12factor",           '~> 0.0.3'
+gem 'aws-sdk',                  '~> 1.5.7'
 gem 'omniauth-twitter'
 gem 'figaro'
 

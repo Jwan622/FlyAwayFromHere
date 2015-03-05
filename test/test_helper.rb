@@ -18,7 +18,6 @@ require "date"
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
-  fixtures :all
 
   DatabaseCleaner.strategy = :transaction
 
@@ -38,6 +37,7 @@ class ActionDispatch::IntegrationTest
 
   def setup
     DatabaseCleaner.start
+    FactoryGirl.reload
   end
 
   def teardown

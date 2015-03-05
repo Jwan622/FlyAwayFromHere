@@ -57,44 +57,21 @@ footer {
   padding: 5%;
 }
 
-// welcome page
-h2 {
-  background: rgba(170,180,220, 0.7);
-  border-radius: 20px;
-  font-size: 3.5em;
-  font-weight: 700;
-  text-align: center;
-  margin: 40px auto;
-  width: 460px;
+//
+// .button-row {
+//   position: relative;
+//   display: inline;
+// }
+//
+// .tell-button {
+//   margin-top: 2%;
+// }
 
-}
-
-.button-row {
-  position: relative;
-  display: inline;
-}
-
-.traveler-type {
-  border-radius: 18px;
-  font-size: 2.4em;
-  margin: 2%;
-  padding: 5px 18px;
-}
-
-.divider-vertical {
-  height: 65px;
-  margin: -5px 2px;
-  border-left: 1px solid #F2F2F2;
-  border-right: 1px solid #FFF;
-}
-
-.tell-button {
-  margin-top: 2%;
-}
 
 // planner mid row
 .praise-row {
   background: rgba(220,220,235,0.9);
+  border-radius: 10px;
   width: 109%;
   min-height: 102px;
   padding: 14px;
@@ -106,7 +83,7 @@ h2 {
 .praise-text {
   font-size: 18px;
   line-height: 23px;
-  min-height: 89px;
+  min-height: 96px;
   vertical-align: middle;
 }
 
@@ -159,16 +136,32 @@ h2 {
 // welcome bottom
 
 .welcome-bottom {
-  margin-top: 55px;
+  margin-top: 80px;
 }
 
-
+.welcome-question {
+  margin-top: 100px;
+  background: rgba(170,180,220, 0.7);
+  border-radius: 20px;
+  font-size: 3.3em;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px auto;
+  width: 460px;
+}
 
 // navbar
 .nav-row {
   margin-right: -4%;
   margin-left: -1%;
   margin-top: 5px;
+}
+
+.divider-vertical {
+  height: 65px;
+  margin: -5px 2px;
+  border-left: 1px solid #F2F2F2;
+  border-right: 1px solid #FFF;
 }
 
 .nav-link {
@@ -191,8 +184,7 @@ h2 {
   margin: -14px;
 }
 
-// plan
-
+// planner new
 .planner {
   background: rgba(50, 140, 220, .6);
   border-radius: 20px;
@@ -216,6 +208,13 @@ h2 {
   margin-left: 40px;
 }
 
+.traveler-type {
+  border-radius: 18px;
+  font-size: 2.4em;
+  margin: 2%;
+  padding: 5px 18px;
+}
+
 .plan-label {
   font-size: 24px;
   width: 390px;
@@ -223,6 +222,7 @@ h2 {
 
 .plan-button {
   background: rgb(30,140,180);
+  border-radius: 10px;
   color: rgb(30,20,70);
   margin-top: 20px;
   margin-left: 400px;
@@ -244,6 +244,12 @@ h2 {
   padding: 6px;
   text-align: center;
   width: 100%;
+}
+
+// form
+
+.form-title {
+  text-align: center;
 }
 
 // flash messages
