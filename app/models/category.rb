@@ -15,4 +15,8 @@ class Category < ActiveRecord::Base
   def self.activity_categories
     where(type: "Activity")
   end
+
+  def self.location_categories
+    where(type: "Location")
+  end
 end
