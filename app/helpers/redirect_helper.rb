@@ -8,7 +8,7 @@ module RedirectHelper
   # Stores the URL trying to be accessed.
   def store_location
     if logged_in_from_signup_page
-      session[:forwarding_url] = pending_loan_path
+      session[:forwarding_url] = root_path
     else
       session[:forwarding_url] = request.referer
     end
@@ -17,6 +17,6 @@ module RedirectHelper
   private
 
   def logged_in_from_signup_page
-    request.post? && request.referer == new_user_url(message: "You Must Signup or Login to Lend Money")
+    request.post? && request.referer == new_user_url
   end
 end

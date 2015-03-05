@@ -34,10 +34,37 @@ User.create!(
 
 # categories-activity
 
-parks = Category.create!(name: "Parks", type: "Activity")
-beaches = Category.create!(name: "Beaches", type: "Activity")
-sightseeing = Category.create!(name: "Sightseeing", type: "Activity")
-festivals = Category.create(name: "Festivals", type: "Activity")
+parks = Category.create!(
+  name: "Parks",
+  type: "Activity")
+
+parks.photos << Photo.create!(
+  image: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+)
+
+beaches = Category.create!(
+  name: "Beaches",
+  type: "Activity")
+
+beaches.photos << Photo.create!(
+  image: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+)
+
+sightseeing = Category.create!(
+  name: "Sightseeing",
+  type: "Activity")
+
+sightseeing.photos << Photo.create!(
+  image: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+)
+
+festivals = Category.create!(
+  name: "Festivals",
+  type: "Activity")
+
+festivals.photos << Photo.create!(
+image: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+)
 
 # categories-quality
 super_cheap = Category.create(name: "Super Cheap", type: "Quality")
