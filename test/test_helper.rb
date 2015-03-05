@@ -18,7 +18,6 @@ require "date"
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
   DatabaseCleaner.strategy = :transaction
@@ -31,4 +30,19 @@ class ActiveSupport::TestCase
   def teardown
     DatabaseCleaner.clean
   end
+end
+
+class ActionDispatch::IntegrationTest
+  include FactoryGirl::Syntax::Methods
+  include Capybara::DSL
+
+  def setup
+    DatabaseCleaner.start
+  end
+
+  def teardown
+    reset_session!
+    DatabaseCleaner.clean
+  end
+
 end

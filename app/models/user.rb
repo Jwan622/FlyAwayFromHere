@@ -1,13 +1,13 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-
   validates :username, presence: true,
                        uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, uniqueness: true,
-                    allow_nil: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    if: :not_through_oauth?
 
   validate :valid_email?
 
@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     unless self.email =~ /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$/
       errors.add(:email, "Your email isn't valid")
     end
+  end
+
+  def not_through_oauth?
+    !token.present?
   end
 
 end

@@ -93,14 +93,14 @@ h2 {
 }
 
 // planner mid row
-
 .praise-row {
   background: rgba(220,220,235,0.9);
-  width: 101%;
-  min-height: 110px;
-  padding: 17px;
+  width: 109%;
+  min-height: 102px;
+  padding: 14px;
   position: relative;
   margin-right: 20px;
+  margin-left: -4%;
 }
 
 .praise-text {
@@ -114,9 +114,9 @@ h2 {
   color: #667;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  width: 260px;
+  width: 270px;
   height: 135px;
-  margin: 0 143px;
+  margin: 0 161px;
   padding: 0 25px;
   display: inline-block;
   vertical-align: middle;
@@ -145,10 +145,24 @@ h2 {
 }
 
 .front-page-divider {
-  margin: 20px 30px 40px 20px;
+  margin: 40px 30px 40px 20px;
   max-width: 1275px;
   border-bottom: 1px solid rgb(140,40,40);
 }
+
+.fa-heart-o {
+  position: absolute;
+  margin-left: 46%;
+  margin-bottom: 9%;
+}
+
+// welcome bottom
+
+.welcome-bottom {
+  margin-top: 55px;
+}
+
+
 
 // navbar
 .nav-row {
@@ -186,7 +200,7 @@ h2 {
   font-weight: 300;
   width: 650px;
   margin: 0 auto;
-  margin-bottom: 210px;
+  margin-bottom: 221px;
   padding: 2% 3%;
   margin-top: 3 0px;
   text-align: left;
