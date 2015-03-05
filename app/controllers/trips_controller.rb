@@ -9,4 +9,8 @@ class TripsController < ApplicationController
   def create
     redirect_to trips_path
   end
+
+  def show
+    @trip = Trip.find(params[:id])
+  end
 end

@@ -2,22 +2,24 @@
   <thead>
     <tr class="warning">
       <th data-field='ranking'>Ranking</th>
+      <th data-field='ranking'>Title</th>
       <th data-field='airline'>Airline</th>
       <th data-field='trip_details'>Trip Details</th>
-      <th data-field='date'>Date</th>
+      <th data-field='date'>Departure Date</th>
+      <th data-field='date'>Return Date</th>
       <th data-field='price'>Price</th>
-      <th data-field='decision'>Purchase?</th>
     </tr>
   </thead>
   <tbody>
     <% @trips.each do |trip| %>
     <tr>
       <td><%= trip.ranking %></td>
+      <td><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
       <td><%= trip.airline %></td>
-      <td><%= trip.description %></td>
-      <td><%= trip.flight_date.strftime("%b %d, %Y, %I:%M") %></td>
+      <td><%= trip.short_description %></td>
+      <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
+      <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
       <td><%= number_to_currency trip.price/100 %></td>
-      <td><%= link_to "Select", trip_path(trip.id) %></td>
     </tr>
     <% end %>
   </tbody>
@@ -25,7 +27,7 @@
 
 <div class="trips-space"></div>
 
-<div class="play-again-text">
+<div class="plan-again-text">
   Didn't find the perfect trip? Let's plan again.
 </div>
 

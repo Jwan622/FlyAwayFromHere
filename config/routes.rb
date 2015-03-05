@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories, only: [:index]
-  resources :trips, only: [:index, :new, :create, :destroy]
+  resources :trips, only: [:index, :new, :show, :create, :destroy]
   resource :planner, only: [:new, :create]
   resource :itinerary, only: [:new, :create, :show]
 
