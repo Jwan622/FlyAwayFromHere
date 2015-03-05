@@ -3,12 +3,10 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   belongs_to :trip
 
-  has_attached_file :avatar, :styles => { :medium => "300x400>",
-    :thumb => "100x100>" },
-    :default_url => "/images/:style/logo3.png"
+  has_attached_file :avatar,
+                    :styles => { :medium => "300x400>",
+                    :thumb => "100x100>" },
+                    :default_url => "/images/:style/logo3.png"
 
-  validates_attachment :avatar, :presence => true,
-    :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
-
-  validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/]
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end

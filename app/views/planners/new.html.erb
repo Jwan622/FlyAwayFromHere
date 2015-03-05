@@ -5,17 +5,37 @@
 
 <div class="planner">
   <%= form_for :plan, url: trips_path do |f| %>
+    <table>
+      <tr>
+        <td>
+          <%= f.label :quality, "I am looking for trips that are", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.collection_select :quality_category, Category.quality_categories, :id, :name, { include_blank: "Quality" }, { class: "btn-lg plan-lines" } %>
+        </td>
+      </tr>
 
-    <%= f.label :quality, "I am looking for trips that are", class: "plan-label" %>
-    <%= f.collection_select :quality_category, Category.quality_categories, :id, :name, { include_blank: "Quality" }, { class: "plan-lines" } %>
+      <tr>
+        <td>
+          <%= f.label :location, "and I am looking to fly", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.collection_select :location_category, Category.proximity_categories, :id, :name, { include_blank: "Proximity" }, { class: "btn-lg plan-lines" } %>
+        </td>
+      </tr>
 
-    <%= f.label :location, "and I am looking to fly", class: "plan-label" %>
-    <%= f.collection_select :location_category, Category.proximity_categories, :id, :name, { include_blank: "Proximity" }, { class: "plan-lines" } %>
-
-    <%= f.label :activity, "and I plan on", class: "plan-label" %>
-    <%= f.collection_select :activity_category, Category.activity_categories, :id, :name, { include_blank: "Activity" }, { class: "plan-lines" } %>
-
-    <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
+      <tr>
+        <td>
+          <%= f.label :activity, "and I plan on", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.collection_select :activity_category, Category.activity_categories, :id, :name, { include_blank: "Activity" }, { class: "btn-lg plan-lines" } %>
+        </td>
+      </tr>
+      <tr>
+        <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
+      </tr>
+    </table>
   <% end %>
 </div>
 
@@ -54,6 +74,7 @@
     <div class="col-md-12 text-center">
       <% @categories.each do |category| %>
         <%= link_to("#{category.name}", new_planner_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+
       <% end %>
     </div>
   </div>
