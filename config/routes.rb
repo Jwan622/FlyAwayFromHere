@@ -13,10 +13,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create", as: "login"
   get "/logout", to: "sessions#destroy", as: "logout"
 
-  resources :users do
-    resources :orders
-  end
-
+  resources :users
   resources :categories, only: [:index]
   resources :trips, only: [:index, :new, :create, :destroy]
   resource :planner, only: [:new, :create]

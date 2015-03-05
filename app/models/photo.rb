@@ -1,4 +1,8 @@
 class Photo < ActiveRecord::Base
+  belongs_to :category
+  belongs_to :user
+  belongs_to :trip
+
   has_attached_file :avatar, :styles => { :medium => "300x400>",
     :thumb => "100x100>" },
     :default_url => "/images/:style/logo3.png"

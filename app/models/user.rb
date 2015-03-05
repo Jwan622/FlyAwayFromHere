@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :photos
   before_save { self.email = email.downcase }
 
   validates :username, presence: true,

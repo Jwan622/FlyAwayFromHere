@@ -1,4 +1,6 @@
 class Category < ActiveRecord::Base
+  has_many :photos
+  
   self.inheritance_column = nil
 
   # scope :quality_categories, -> { where(type: "Quality") }
