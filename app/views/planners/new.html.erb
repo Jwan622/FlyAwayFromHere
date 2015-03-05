@@ -74,7 +74,7 @@
     <div class="text-center">
       <% @activity_categories.each do |activity| %>
         <div class="col-sm-4 trip-item">
-          <%= link_to("#{activity.name}", new_planner_path(activity: activity.name.parameterize), class: "btn btn-primary traveler-type") %>
+          <%= link_to("#{activity.name}", trips_path(activity: activity.name.parameterize), class: "btn btn-primary traveler-type") %>
           <%= image_tag activity.photos.first.avatar.url(:medium) %>
         </div>
       <% end %>

@@ -54,7 +54,6 @@ footer {
 .trips-table {
   background: rgba(50, 120, 200, .4);
   margin-top: 4%;
-  padding: 5%;
 }
 
 .trips-space {
@@ -62,16 +61,17 @@ footer {
 }
 
 .plan-again {
-  background-color: rgba(40,30,200,0.4);
-  background-radius: 40px;
-  font-size: 3.5em;
   float:right;
-  text-decoration: underline;
-  width: 380px;
-
+  margin-right: 30px;
   a {
-    color: #861B08
+    color: #861a08
   }
+}
+
+.plan-again-text {
+  font-family: 'IM Fell Great Primer', serif;
+  font-size: 4em;
+  float: right;
 }
 
 .trip-item {
