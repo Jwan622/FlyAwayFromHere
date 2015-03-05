@@ -1,5 +1,4 @@
 # users
-
 10.times do |n|
   User.create!(
     username:              "flyer#{n + 1}",
@@ -94,8 +93,73 @@ international = Category.create(name: "International", type: "Proximity")
 domestic = Category.create(name: "Domestic", type: "Proximity")
 
 # trips
-iceland = Trip.create!(title: "Iceland", price: 80000, description: 'The Land of Ice, Fire, and Mountains', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 5 )
-hawaii = Trip.create!(title: "Hawaii", price: 70000, description: 'Island Nation of Coconuts', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 3)
-greece = Trip.create!(title: "Greece", price: 90000, description: 'The birthplace of democracy and rioting', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 3)
-maine = Trip.create!(title: "Maine", price: 40000, description: 'Want Lobsters?', airline: "Delta", flight_date: Date.new(2010,2,3), ranking: 2)
-costa_rica = Trip.create!(title: "Costa Rica", price: 30000, description: "Checkout the rain forests", airline: "AA", flight_date: Date.new(2011,4,3), ranking: 4)
+iceland = Trip.create!(
+  title: "Iceland",
+  price: 80000,
+  short_description: 'The Land of Ice, Fire, and Mountains',
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "Delta",
+  departure_date: Date.new(2010,2,3),
+  return_date: Date.new(2010,2,3),
+  ranking: 5)
+
+iceland.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/ice.jpg")
+)
+
+hawaii = Trip.create!(
+  title: "Hawaii",
+  price: 70000,
+  short_description: 'Island Nation of Coconuts',
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "Delta",
+  departure_date: Date.new(2010,2,3),
+  return_date: Date.new(2010,2,3),
+  ranking: 3)
+
+hawaii.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg")
+)
+
+greece = Trip.create!(
+  title: "Greece",
+  price: 90000,
+  short_description: 'The birthplace of democracy and rioting',
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "Delta",
+  departure_date: Date.new(2010,2,3),
+  return_date: Date.new(2010,2,3),
+  ranking: 3)
+
+greece.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/trip-greece.jpg")
+)
+
+maine = Trip.create!(
+  title: "Maine",
+  price: 40000,
+  short_description: 'Want Lobsters?',
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "Delta",
+  departure_date: Date.new(2010,2,3),
+  return_date: Date.new(2010,2,3),
+  ranking: 2)
+
+maine.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/trip-maine.jpg")
+)
+
+costa_rica = Trip.create!(
+  title: "Costa Rica",
+  price: 30000,
+  short_description: "Checkout the rain forests",
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "AA",
+  departure_date: Date.new(2011,4,3),
+  return_date: Date.new(2010,2,3),
+  ranking: 4)
