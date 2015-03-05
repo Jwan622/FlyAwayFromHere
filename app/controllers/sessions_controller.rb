@@ -1,7 +1,14 @@
 class SessionsController < ApplicationController
   def create
-    store_location
-    authenticate_user(User.find_by(session_username))
+    if auth_hash
+      @user             = User.find_or_create_from_auth_hash(auth_hash)
+      session[:user_id] = @user.id
+      flash[:notice]    = "Welcome back to the skies#{@user.username}"
+      redirect_lender_or_borrower(@user)
+    else
+      store_location
+      authenticate_user(User.find_by(session_username))
+    end
   end
 
   def destroy
@@ -28,6 +35,10 @@ class SessionsController < ApplicationController
     else
       invalid_login
     end
+  end
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 
   def invalid_login

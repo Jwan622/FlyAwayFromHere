@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails',                    '4.2.0'
 gem 'pg',                       '~>0.18.1'
-
+gem 'sqlite3'
 gem 'sass-rails',               '~> 5.0'
 gem 'uglifier',                 '>= 1.3.0'
 gem 'coffee-rails',             '~> 4.1.0'
@@ -20,7 +20,8 @@ gem 'skylight',                 '~> 0.6.0'
 gem "therubyracer",             '~> 0.12.1'
 gem "less-rails",               '~> 2.6.0'
 gem "rails_12factor",           '~> 0.0.3'
-
+gem 'omniauth-twitter'
+gem 'figaro'
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'

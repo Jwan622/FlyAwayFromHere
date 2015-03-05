@@ -2,44 +2,71 @@
   <h1> Let's plan a trip... </h1></br>
 </div>
 
-<div class="row">
-  <div class="planner">
-    <%= form_for(:planner, url: planner_path) do |f| %>
-      <span class="plan-lines"> I am looking for trips that are </span>
-      <div class="btn-group plan-lines">
-        <button type="button" class="btn btn-primary btn-lg">Type</button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Bargains</a></li>
-            <li><a href="#">Popular</a></li>
-        </ul>
-      </div>
+<div class="planner">
+  <%= form_for :plan, url: trips_path do |f| %>
 
-    </br>
+    <%= f.label :quality, "I am looking for trips that are", class: "plan-label" %>
+    <%= f.collection_select :quality_category, Category.quality_categories, :id, :name, { include_blank: "Quality" }, { class: "plan-lines" } %>
 
-      <span class="plan-lines"> and I am looking to fly </span>
-      <div class="btn-group plan-lines">
-        <button type="button" class="btn btn-primary btn-lg "> Proximity </button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#"> International </a></li>
-            <li><a href="#"> Domestic </a></li>
-        </ul>
-      </div>
+    <%= f.label :location, "and I am looking to fly", class: "plan-label" %>
+    <%= f.collection_select :location_category, Category.proximity_categories, :id, :name, { include_blank: "Proximity" }, { class: "plan-lines" } %>
 
-    </br>
+    <%= f.label :activity, "and I plan on", class: "plan-label" %>
+    <%= f.collection_select :activity_category, Category.activity_categories, :id, :name, { include_blank: "Activity" }, { class: "plan-lines" } %>
 
-      <span class="plan-lines"> and I plan on </span>
-      <div class="btn-group plan-lines">
-        <button type="button" class="btn btn-primary btn-lg"> Activity </button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default btn-lg dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#"> Sitting on the Beach</a></li>
-            <li><a href="#"> Sightseeing and Exploring </a></li>
-            <li><a href="#"> Enjoying Nature </a></li>
-            <li><a href="#"> Partying All Night </a></li>
-        </ul>
-      </div>
-    <% end %>
+    <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
+  <% end %>
+</div>
+
+
+<div class="praise-row">
+  <i class="fa fa-heart-o fa-3x"></i>
+  <div class="praise-quote">
+    <div class="praise-text">
+    "Jeff Wan has certainly outdone himself in the design world again. How does he do it??"
+    </div>
+    <div class="praise-time-logo">
+
+    </div>
+  </div>
+
+  <div class="praise-quote">
+    <div class="praise-text">
+      "One has to ask... is Jeff Wan for real?"
+    </div>
+    <div class="praise-forbes-logo">
+
+    </div>
+  </div>
+</div>
+
+<div class="front-page-divider">
+
+</div>
+
+<div class="welcome-bottom">
+  <div class="welcome-question">
+    <h2> Fly Me Away to... </h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <% @categories.each do |category| %>
+        <%= link_to("#{category.name}", new_planner_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+      <% end %>
+    </div>
+  </div>
+
+  </br>
+  <div class="row">
+    <div class="col-mid-4 text_center">
+      <h2> Or Just... </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-mid-3 text-center tell-button">
+      <%= button_to('Bargain Hunt for Me', bargainer_path, :class => 'btn btn-large btn-primary traveler-type') %>
+    </div>
   </div>
 </div>

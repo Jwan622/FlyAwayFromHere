@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :plan do
+  factory :photo do
     
   end
 
