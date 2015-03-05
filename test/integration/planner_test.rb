@@ -8,7 +8,7 @@ class PlannerTest < ActionDispatch::IntegrationTest
 
     visit root_path
 
-    assert page.has_select?("", with_options: ["Super Cheap", "Valuable"])
+    assert page.has_select?("plan[quality_category]")
   end
 
   test "proximity select down box has options that say international and

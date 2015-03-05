@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       @user             = User.find_or_create_from_auth_hash(auth_hash)
       session[:user_id] = @user.id
       flash[:notice]    = "Welcome back to the skies #{@user.username}"
-      redirect_lender_or_borrower(@user)
+      redirect_flyer_or_admin(@user)
     else
       store_location
       authenticate_user(User.find_by(session_username))
@@ -30,8 +30,8 @@ class SessionsController < ApplicationController
   def authenticate_user(user)
     if user && user.authenticate(session_password)
       session[:user_id] = user.id
-      flash[:notice] = "Welcome back to the skies#{user.username}"
-      redirect_lender_or_borrower(user)
+      flash[:notice] = "Welcome back to the skies #{user.username}"
+      redirect_flyer_or_admin(user)
     else
       invalid_login
     end
@@ -47,11 +47,11 @@ class SessionsController < ApplicationController
   end
 
 
-  def redirect_lender_or_borrower(user)
+  def redirect_flyer_or_admin(user)
     if user.flyer?
       redirect_back_or(root_path)
     # else
-      # redirect_to tenant_dashboard_path(slug: user.tenant.slug)
+      # redirect_to admin_dashboard_path
     end
   end
 end

@@ -7,5 +7,6 @@ class TripsController < ApplicationController
   end
 
   def create
+    redirect_to trips_path
   end
 end

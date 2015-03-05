@@ -1,3 +1,6 @@
 class Trip < ActiveRecord::Base
-  belongs_to :category
+  has_many :photos
+
+  has_many :categories_trips
+  has_many :categories, through: :categories_trips
 end

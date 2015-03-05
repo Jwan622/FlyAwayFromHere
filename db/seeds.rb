@@ -34,10 +34,56 @@ User.create!(
 
 # categories-activity
 
-parks = Category.create!(name: "Parks", type: "Activity")
-beaches = Category.create!(name: "Beaches", type: "Activity")
-sightseeing = Category.create!(name: "Sightseeing", type: "Activity")
-festivals = Category.create(name: "Festivals", type: "Activity")
+parks = Category.create!(
+  name: "Parks",
+  type: "Activity")
+
+parks.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+)
+
+beaches = Category.create!(
+  name: "Beaches",
+  type: "Activity")
+
+beaches.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-beaches.jpg")
+)
+
+sightseeing = Category.create!(
+  name: "Sightseeing",
+  type: "Activity")
+
+sightseeing.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-sightseeing.jpg")
+)
+
+festivals = Category.create!(
+  name: "Festivals",
+  type: "Activity")
+
+festivals.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-festivals.jpg")
+)
+
+cities = Category.create!(
+  name: "Cities",
+  type: "Activity"
+)
+
+cities.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-cities.jpg")
+)
+
+ice = Category.create!(
+  name: "Icy exploration",
+  type: "Activity"
+)
+
+ice.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/ice.jpg")
+)
+
 
 # categories-quality
 super_cheap = Category.create(name: "Super Cheap", type: "Quality")
