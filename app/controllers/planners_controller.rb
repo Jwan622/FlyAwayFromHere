@@ -1,5 +1,5 @@
 class PlannersController < ApplicationController
   def new
-    @categories = Category.all
+    @activity_categories = Category.activity_categories
   end
 end

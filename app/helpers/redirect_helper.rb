@@ -17,6 +17,6 @@ module RedirectHelper
   private
 
   def logged_in_from_signup_page
-    request.post? && request.referer == new_user_url
+    request.post? && ((request.referer == new_user_url) || (request.referer == users_url))
   end
 end

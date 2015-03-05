@@ -57,15 +57,27 @@ footer {
   padding: 5%;
 }
 
-//
-// .button-row {
-//   position: relative;
-//   display: inline;
-// }
-//
-// .tell-button {
-//   margin-top: 2%;
-// }
+.trips-space {
+  margin-bottom: 90px;
+}
+
+.plan-again {
+  background-color: rgba(40,30,200,0.4);
+  background-radius: 40px;
+  font-size: 3.5em;
+  float:right;
+  text-decoration: underline;
+  width: 380px;
+
+  a {
+    color: #861B08
+  }
+}
+
+.trip-item {
+  margin-bottom: 50px;
+  height: 300px;
+}
 
 // planner mid row
 .praise-row {
@@ -73,7 +85,7 @@ footer {
   border-radius: 10px;
   width: 109%;
   min-height: 102px;
-  padding: 14px;
+  padding: 20px 14px;
   position: relative;
   margin-right: 20px;
   margin-left: -4%;
@@ -88,6 +100,9 @@ footer {
 }
 
 .praise-quote {
+  // background-image: url(/assets/white-cloud.jpeg);
+  // background-size: 300px;
+  // background-repeat: no-repeat;
   color: #667;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -103,12 +118,12 @@ footer {
 
 .praise-time-logo {
   background-image: url(/assets/time.png);
-  background-size: 100px;
+  background-size: 130px;
   background-repeat: no-repeat;
-  margin-top: 6px;
+  margin-top: 2px;
   margin-left: 45px;
   width: 130px;
-  height: 38px;
+  height: 78px;
 }
 
 .praise-forbes-logo {
@@ -193,13 +208,15 @@ footer {
   min-width: 280px;
   max-width: 650px;
   margin: 0 auto;
-  margin-bottom: 220px;
+  margin-bottom: 200px;
   padding: 2% 3%;
   text-align: left;
 }
 
 .message {
-  font-size: 1.2em;
+  font-size: 3.3em;
+  margin-bottom: 28px;
+  margin-top: 15px;
   text-align: center;
 }
 

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :photos
-  before_save { self.email = email.downcase }
+  before_save :email_downcase
 
   validates :username, presence: true,
                        uniqueness: true
@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
 
   def not_through_oauth?
     !token.present?
+  end
+
+  def email_downcase
+    self.email = email.downcase if not_through_oauth?
   end
 
 end

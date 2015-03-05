@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 <div class="message">
-  <h1> Let's plan a trip... </h1></br>
+  Let's plan a trip...
 </div>
 
 <div class="planner">
@@ -71,10 +71,12 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 text-center">
-      <% @categories.each do |category| %>
-        <%= link_to("#{category.name}", new_planner_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
-
+    <div class="text-center">
+      <% @activity_categories.each do |activity| %>
+        <div class="col-sm-4 trip-item">
+          <%= link_to("#{activity.name}", new_planner_path(activity: activity.name.parameterize), class: "btn btn-primary traveler-type") %>
+          <%= image_tag activity.photos.first.avatar.url(:medium) %>
+        </div>
       <% end %>
     </div>
   </div>
