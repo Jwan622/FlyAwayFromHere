@@ -9,6 +9,7 @@
       <th data-field='decision'>Purchase?</th>
     </tr>
   </thead>
+  <tbody>
     <% @trips.each do |trip| %>
     <tr>
       <td><%= trip.ranking %></td>
@@ -19,10 +20,15 @@
       <td><%= link_to "Select", trip_path(trip.id) %></td>
     </tr>
     <% end %>
+  </tbody>
 </table>
 
 <div class="trips-space"></div>
 
+<div class="play-again-text">
+  Didn't find the perfect trip? Let's plan again.
+</div>
+
 <div class="plan-again">
-  <%= link_to "Let's Plan Again.", new_planner_path %>
+  <%= link_to "Let's Plan Again.", new_planner_path, class: "btn btn-primary" %>
 </div>
