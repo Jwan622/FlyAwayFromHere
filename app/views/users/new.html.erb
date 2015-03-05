@@ -1,2 +1,45 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, "Signup") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:user, url: users_path, :html => { :multipart => true }) do |f| %>
+      <h2 class="form-title"> Signup and Fly </h2>
+
+      <%= f.label :username %>
+      <%= f.text_field :username, placeholder: "username", class: 'form-control' %></br>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, placeholder: "first name", class: 'form-control' %></br>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "last name", class: 'form-control' %></br>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "email address", class: 'form-control' %></br>
+
+
+      <%= f.label :street %>
+      <%= f.text_field :street, placeholder: "street", class: 'form-control' %></br>
+
+      <%= f.label :city %>
+      <%= f.text_field :city, placeholder: "city", class: 'form-control' %></br>
+
+      <%= f.label :state %>
+      <%= f.text_field :state, placeholder: "state", class: 'form-control' %></br>
+
+      <%= f.label :country %>
+      <%= f.text_field :country, placeholder: "country", class: 'form-control' %></br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "password", class: 'form-control' %></br>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "password confirmation", class: 'form-control' %></br>
+
+      <%= f.label :Personal_photo_upload %>
+      <%= f.file_field :avatar %>
+      <br>
+      <%= f.submit "Finish Signup", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -7,7 +7,6 @@ class PlannerTest < ActionDispatch::IntegrationTest
     user = build(:user)
 
     visit root_path
-    save_and_open_page
 
     assert page.has_select?("", with_options: ["Super Cheap", "Valuable"])
   end
