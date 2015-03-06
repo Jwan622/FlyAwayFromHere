@@ -65,7 +65,7 @@
 
 <div class="welcome-bottom">
   <div class="welcome-question">
-    Your ideal trip involves...
+    Plan a Trip Around Your Favorite Activity...
   </div>
 
   <div class="row">
@@ -80,15 +80,15 @@
   </div>
 
   <div class="welcome-question">
-    You've always wanted to go...
+    Or fly to your favorite city...
   </div>
 
   <div class="row">
     <div class="text-center">
       <% @location_categories.each do |location| %>
-        <div class="col-sm-4 trip-item">
+        <div class="col-sm-3 trip-item">
           <%= link_to("#{location.name}", trips_path(location: location.name.parameterize), class: "btn btn-primary traveler-type") %>
-          <%= image_tag location.photos.first.avatar.url(:medium) %>
+          <%= image_tag location.photos.first.avatar.url(:city) %>
         </div>
       <% end %>
     </div>

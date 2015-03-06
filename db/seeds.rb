@@ -70,6 +70,10 @@ hiking = Category.create!(
   type: "Activity"
 )
 
+hiking.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-cities.jpg")
+)
+
 eating = Category.create!(
   name: "Food Trip!",
   type: "Activity"
@@ -77,10 +81,6 @@ eating = Category.create!(
 
 eating.photos << Photo.create!(
   avatar: File.new("#{Rails.root}/app/assets/images/cat-food.jpg")
-)
-
-hiking.photos << Photo.create!(
-  avatar: File.new("#{Rails.root}/app/assets/images/cat-cities.jpg")
 )
 
 ice = Category.create!(
@@ -136,7 +136,7 @@ barcalona = Category.create!(
 )
 
 barcalona.photos << Photo.create!(
-  avatar: File.new("#{Rails.root}/app/assets/images/location-kyoto.jpg")
+  avatar: File.new("#{Rails.root}/app/assets/images/location-barca.jpg")
 )
 
 shanghai = Category.create!(
@@ -146,6 +146,24 @@ shanghai = Category.create!(
 
 shanghai.photos << Photo.create!(
   avatar: File.new("#{Rails.root}/app/assets/images/location-shanghai.jpg")
+)
+
+aruba = Category.create!(
+  name: "Aruba",
+  type: "Location"
+)
+
+aruba.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/location-aruba.jpg")
+)
+
+sydney = Category.create!(
+  name: "Sydney",
+  type: "Location"
+)
+
+sydney.photos << Photo.create!(
+  avatar: File.new("#{Rails.root}/app/assets/images/location-sydney.jpeg")
 )
 
 # categories-quality
@@ -227,3 +245,19 @@ costa_rica = Trip.create!(
   departure_date: Date.new(2011,4,3),
   return_date: Date.new(2010,2,3),
   ranking: 4)
+
+20.times do |number|
+  Trip.create!(
+  title: "Octoberfest#{n+1}",
+  price: 25678,
+  short_description: "This is the best place on earth. Come visit. Yay beer.",
+  airline: "AA",
+  departure: Date.new(2015,2,2),
+  return_date: Date.new(2015,3,number+1)
+  full_description: "Lorem Ipsum, this is nonsense. I hate Lorem Ipsum." +
+                    "Lorem Ipsum, this is nonsense. I hate Lorem Ipsum".
+  upvote: 120 + number + 5
+  downvotes: 120 + number
+  )
+end
+trip_rank_20 = Trip.find_by(ranking: 20)
