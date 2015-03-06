@@ -14,6 +14,10 @@ body {
   min-height: 100vh;
 }
 
+.btn-lg {
+  max-width: 140px;
+}
+
 // footer
 footer {
   background: rgba(50, 140, 220, .5);
@@ -62,6 +66,7 @@ footer {
 
 .plan-again {
   float:right;
+  clear:both;
   margin-right: 30px;
   a {
     color: #861a08
@@ -69,9 +74,9 @@ footer {
 }
 
 .plan-again-text {
+  float:right;
   font-family: 'IM Fell Great Primer', serif;
   font-size: 2em;
-  float:right;
 }
 
 .trip-item {
@@ -83,37 +88,16 @@ footer {
 .praise-row {
   background: rgba(220,220,235,0.9);
   border-radius: 10px;
-  width: 109%;
-  min-height: 102px;
-  padding: 20px 14px;
-  position: relative;
-  margin-right: 20px;
-  margin-left: -4%;
-  margin-top: 108px;
+  width: 102%;
+  min-height: 70px;
+  padding-top: 20px;
+  padding: 20px 14px -10px;
 }
 
 .praise-text {
   font-size: 18px;
-  line-height: 23px;
   min-height: 96px;
-  vertical-align: middle;
-}
-
-.praise-quote {
-  // background-image: url(/assets/white-cloud.jpeg);
-  // background-size: 300px;
-  // background-repeat: no-repeat;
-  color: #667;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  width: 270px;
-  height: 135px;
-  margin: 0 161px;
-  padding: 0 25px;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
+  // vertical-align: middle;
 }
 
 .praise-time-logo {
@@ -122,17 +106,15 @@ footer {
   background-repeat: no-repeat;
   margin-top: 2px;
   margin-left: 45px;
-  width: 130px;
-  height: 78px;
+  height: 68px;
 }
 
-.praise-forbes-logo {
+.praise-cosmo-logo {
   background-image: url(/assets/cosmo-logo.jpg);
   background-size: 150px;
   background-repeat: no-repeat;
   margin-top:11px;
   margin-left: 35px;
-  width: 160px;
   height: 38px;
 }
 
@@ -143,9 +125,9 @@ footer {
 }
 
 .fa-heart-o {
-  position: absolute;
-  margin-left: 46%;
-  margin-bottom: 9%;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: -25px;
 }
 
 // welcome bottom
@@ -207,6 +189,7 @@ footer {
   font-weight: 300;
   min-width: 280px;
   max-width: 650px;
+  min-height: 253px;
   margin: 0 auto;
   margin-bottom: 200px;
   padding: 2% 3%;
