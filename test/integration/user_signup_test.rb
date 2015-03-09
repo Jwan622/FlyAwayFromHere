@@ -29,8 +29,4 @@ class UserSignupTest < ActionDispatch::IntegrationTest
     refute flash.empty?
     assert page.has_content?("Signup Successful")
   end
-
-  test "a user can attach a photo during signup and see it in his profile" do
-
-  end
 end

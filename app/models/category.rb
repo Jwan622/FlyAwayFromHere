@@ -1,22 +1,34 @@
 class Category < ActiveRecord::Base
-  has_many :photos
   self.inheritance_column = nil
+  before_save :downcase_type
+  before_save :create_slug
 
-  # scope :quality_categories, -> { where(type: "Quality") }
+  has_many :categories_trips
+  has_many :trips, through: :categories_trips
+
+  has_many :photos
+
+  def create_slug
+    self.slug = name.parameterize
+  end
+
+  def downcase_type
+    self.type = type.downcase
+  end
 
   def self.quality_categories
-    where(type: "Quality")
+    where(type: "quality")
   end
 
   def self.proximity_categories
-    where(type: "Proximity")
+    where(type: "proximity")
   end
 
   def self.activity_categories
-    where(type: "Activity")
+    where(type: "activity")
   end
 
   def self.location_categories
-    where(type: "Location")
+    where(type: "location")
   end
 end
