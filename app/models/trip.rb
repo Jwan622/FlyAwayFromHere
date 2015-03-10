@@ -21,7 +21,7 @@ class Trip < ActiveRecord::Base
   end
 
   def self.by_category(type)
-    joins(:categories).where("categories.slug = ?", type).order(ranking: :desc)
+    includes(:categories).where("categories.slug = ?", type).order(ranking: :desc).references(:categories)
   end
 
   def self.by_price(type)
