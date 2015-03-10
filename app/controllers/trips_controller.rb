@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
   def index
-    if params[:activity]
-      @trips = Trip.joins(:categories).where("categories.slug = ?", params[:activity])
+    if params[:category]
+      @trips = Trip.joins(:categories).where("categories.slug = ?", params[:category])
     else
       @trips = Trip.includes(:categories).all
     end
@@ -20,7 +20,7 @@ class TripsController < ApplicationController
 
   private
 
-  def trip_categories_params
-    params.require(:activity).permit(:activity)
+  def trips_params
+    params.require()
   end
 end

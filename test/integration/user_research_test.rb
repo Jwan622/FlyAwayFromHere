@@ -47,8 +47,18 @@ class UserResearchTest < ActionDispatch::IntegrationTest
 
   test "a user visits home and clicks on the New York category adn sees trips
     on the next page to New York from the user's location." do
-    skip
+    trip = create(:trip,
+                   title: "New York City Trip")
+    trip.categories = [Category.create(name: "New York City",
+                                type: "Activity",
+                                photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/default.jpg"))])]
 
+    visit root_path
+    within(".welcome-bottom") do
+      first(:link, "New York City").click
+    end
+
+    assert page.has_content?("New York City Trip")
   end
 
   test "a user visits home and clicks on the beaches cateogory and sees trips

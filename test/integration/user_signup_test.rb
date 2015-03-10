@@ -12,21 +12,22 @@ class UserSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "a user can signup and return back to root url" do
-    visit new_user_path
+    get new_user_path
 
-    fill_in "user[username]", with: "flyers1"
-    fill_in "user[first_name]", with: "user"
-    fill_in "user[last_name]", with: "name"
-    fill_in "user[email]", with: "username@gmail.com"
-    fill_in "user[street]", with: "street"
-    fill_in "user[city]", with: "city"
-    fill_in "user[state]", with: "state"
-    fill_in "user[country]", with: "country"
-    fill_in "user[password]", with: "password"
-    fill_in "user[password_confirmation]", with: "password"
-    click_button "Finish Signup"
+    post users_path, user: { username: "jwan6222",
+                                first_name: "user",
+                                last_name: "name",
+                                email: "username@gmail.com",
+                                street: "street",
+                                city: "city",
+                                state: "state",
+                                country: "country",
+                                password: "password",
+                                password_confirmation: "password" }
 
     refute flash.empty?
-    assert page.has_content?("Signup Successful")
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_select "a[href=?]", users_path, count: 0
   end
 end

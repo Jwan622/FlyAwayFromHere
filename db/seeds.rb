@@ -186,7 +186,7 @@ iceland = Trip.create!(
   return_date: Date.new(2010,2,3),
   downvotes: 10,
   upvotes: 15,
-  categories: [ice],
+  categories: [ice, hiking],
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/ice.jpg"))])
 
 hawaii = Trip.create!(
@@ -200,7 +200,7 @@ hawaii = Trip.create!(
   return_date: Date.new(2010,2,3),
   downvotes: 10,
   upvotes: 15,
-  categories: [beaches],
+  categories: [beaches, party],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 greece = Trip.create!(
@@ -214,7 +214,7 @@ greece = Trip.create!(
   return_date: Date.new(2010,2,3),
   downvotes: 10,
   upvotes: 15,
-  categories: [beaches],
+  categories: [beaches, party],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 maine = Trip.create!(
@@ -245,30 +245,84 @@ costa_rica = Trip.create!(
   categories: [beaches, hiking],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
-costa_rica.categories << beaches
+new_york = Trip.create!(
+  title: "New York",
+  price: 20000,
+  short_description: "New York City Trip with new york category",
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "AA",
+  departure_date: Date.new(2011,4,3),
+  return_date: Date.new(2010,2,3),
+  downvotes: 10,
+  upvotes: 1,
+  categories: [new_york],
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-nyc.png"))])
+
+santa_monica = Trip.create!(
+  title: "Santa Monica",
+  price: 10000,
+  short_description: "Santa Monica Trip with Santa Monica category",
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "AA",
+  departure_date: Date.new(2011,4,3),
+  return_date: Date.new(2010,2,3),
+  downvotes: 10,
+  upvotes: 1,
+  categories: [santa_monica],
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-santa.jpg"))])
+
+london = Trip.create!(
+  title: "London",
+  price: 50000,
+  short_description: "London Trip with London category",
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "AA",
+  departure_date: Date.new(2015,4,3),
+  return_date: Date.new(2015,7,3),
+  downvotes: 10,
+  upvotes: 1,
+  categories: [london],
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-london.jpg"))])
+
+kyoto = Trip.create!(
+  title: "Kyoto",
+  price: 50000,
+  short_description: "Kyoto Trip with Kyoto category",
+  full_description: "Why do people use Lorem Ipsum and not just blah blah" +
+                    "Why do people use Lorem Ipsum and not just blah blah.",
+  airline: "AA",
+  departure_date: Date.new(2015,4,3),
+  return_date: Date.new(2015,8,3),
+  downvotes: 10,
+  upvotes: 1,
+  categories: [kyoto],
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-kyoto.jpg"))])
 
 10.times do |number|
   Trip.create!(
   title: "Octoberfest#{number+1}",
-  price: 25678,
-  short_description: "These are trips in the Ice and Snow Category",
+  price: 11000,
+  short_description: "These are trips in the Ice and Snow, Festivals, and super_cheap Categories",
   airline: "AA",
   departure_date: Date.new(2015,2,2),
   return_date: Date.new(2015,3,number+1),
-  full_description: "These are trips in the Ice and Snow Category" + "These are
-                    trips in the Ice and Snow Category Lorem Ipsum, this is" +
+  full_description: "These are trips in the Ice, festivals, super_cheap Category" +
+                    "These are trips in the Ice and Snow Category Lorem Ipsum, this is" +
                     "nonsense. I hate Lorem Ipsum",
   upvotes: 120 + number - 5,
   downvotes: 120 + number - 2,
-  categories: [ice],
-  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/default.jpg"))])
+  categories: [ice, festivals, super_cheap],
+  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/cat-festivals.jpg"))])
 end
 
 10.times do |number|
   Trip.create!(
   title: "Aruba#{number+1}",
-  price: 25678,
-  short_description: "These are trips in the Beaches Category",
+  price: 55678,
+  short_description: "These are trips in the Beaches, Quality, Party Category",
   airline: "AA",
   departure_date: Date.new(2015,2,2),
   return_date: Date.new(2015,3,number+1),
@@ -276,6 +330,22 @@ end
                     trips in the Beaches Category Lorem Ipsum",
   upvotes: 120 + number - 5,
   downvotes: 120 + number - 2,
-  categories: [beaches],
-  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/default.jpg"))])
+  categories: [beaches, valuable, party],
+  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/location-aruba.jpg"))])
+end
+
+10.times do |number|
+  Trip.create!(
+  title: "Shanghai#{number+1}",
+  price: 55678,
+  short_description: "These are trips in the Great Cities and Party Category",
+  airline: "AA",
+  departure_date: Date.new(2015,2,2),
+  return_date: Date.new(2015,3,number+1),
+  full_description: "These are trips in the Great Cities and party Category" +
+                    "These are trips in the Great Cities Category Lorem Ipsum",
+  upvotes: 120 + number - 5,
+  downvotes: 120 + number - 2,
+  categories: [great_cities, party],
+  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/location-shanghai.jpg"))])
 end

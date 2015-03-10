@@ -11,6 +11,7 @@
       <th data-field="select"> Select </th>
     </tr>
   </thead>
+
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
@@ -25,7 +26,12 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
+
+<% if !@trips.present? %>
+  <p class="no-trip"> There are currently no available trips from this category. Please make other plans.</p>
+<% end %>
 
 <div class="trips-space"></div>
 

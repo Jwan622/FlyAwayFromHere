@@ -84,6 +84,10 @@ footer {
   height: 300px;
 }
 
+.no-trip {
+  font-size: 18px;
+}
+
 // planner mid row
 .praise-row {
   background: rgba(220,220,235,0.9);
@@ -293,4 +297,20 @@ footer {
   padding: 3%;
   text-align: center;
   width: 23%;
+}
+
+//trip show page
+
+.trip-information {
+  margin-top: 25px;
+}
+
+.table-color {
+  border: 2px solid #346;
+}
+
+.book-now {
+  float: right;
+  margin-right: 45px;
+  margin-bottom: 20px;
 }
