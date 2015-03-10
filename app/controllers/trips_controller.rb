@@ -1,26 +1,20 @@
 class TripsController < ApplicationController
   def index
     if params[:category]
-      @trips = Trip.joins(:categories).where("categories.slug = ?", params[:category]).order(:ranking)
+      @trips = Trip.sort_by_category(params[:category])
+      # @trips = Trip.includes(:categories).where("categories.slug = ?", search).order(:ranking).references(:categories)
+    elsif params[:price_level]
+      @trips = Trip.bargain_for_user(params[:price_level])
     else
-      @trips = Trip.includes(:categories).all.order(:ranking)
+      @trips = Trip.all_trips_by_ranking
+      require 'pry' ; binding.pry
     end
   end
 
   def new
   end
 
-  def create
-    redirect_to trips_path
-  end
-
   def show
     @trip = Trip.find(params[:id])
-  end
-
-  private
-
-  def trips_params
-    params.require()
   end
 end

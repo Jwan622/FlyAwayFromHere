@@ -1,2 +1,0 @@
-module BargainerHelper
-end
