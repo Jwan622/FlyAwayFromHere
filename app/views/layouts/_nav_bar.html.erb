@@ -3,7 +3,7 @@
     <%= menu_group pull: :left, inline: true do %>
       <%= menu_item image_tag('logo3.png', size: "55x55", class: "brand"), root_path  %>
       <%= menu_item "Plan a Trip", new_planner_path, class: "nav-link" %>
-      <%= menu_item "Explore", trips_path, class: "nav-link" %>
+      <%= menu_item "Explore", trips_path(search_type: "all_projects", search_value: "all"), class: "nav-link" %>
       <%= menu_item "Admin Dashboard", admin_dashboard_path, class: "nav-link" %>
     <% end %>
 
