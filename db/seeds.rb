@@ -38,7 +38,7 @@ party = Category.create!(
   type: "Activity")
 
 party.photos << Photo.create!(
-  avatar: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-international.jpg")
 )
 
 beaches = Category.create!(
@@ -54,7 +54,7 @@ great_cities = Category.create!(
   type: "Activity")
 
 great_cities.photos << Photo.create!(
-  avatar: File.new("#{Rails.root}/app/assets/images/cat-sightseeing.jpg")
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-cities.jpg")
 )
 
 festivals = Category.create!(
@@ -71,7 +71,7 @@ hiking = Category.create!(
 )
 
 hiking.photos << Photo.create!(
-  avatar: File.new("#{Rails.root}/app/assets/images/cat-cities.jpg")
+  avatar: File.new("#{Rails.root}/app/assets/images/cat-parks-yosemite.jpg")
 )
 
 eating = Category.create!(
@@ -256,7 +256,7 @@ new_york = Trip.create!(
   return_date: Date.new(2010,2,3),
   downvotes: 10,
   upvotes: 1,
-  categories: [new_york],
+  categories: [new_york, great_cities],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-nyc.png"))])
 
 santa_monica = Trip.create!(
@@ -298,13 +298,13 @@ kyoto = Trip.create!(
   return_date: Date.new(2015,8,3),
   downvotes: 10,
   upvotes: 1,
-  categories: [kyoto],
+  categories: [kyoto, great_cities],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-kyoto.jpg"))])
 
 10.times do |number|
   Trip.create!(
   title: "Octoberfest#{number+1}",
-  price: 11000,
+  price: 11000 + number,
   short_description: "These are trips in the Ice and Snow, Festivals, and super_cheap Categories",
   airline: "AA",
   departure_date: Date.new(2015,2,2),

@@ -61,6 +61,27 @@ class UserResearchTest < ActionDispatch::IntegrationTest
     assert page.has_content?("New York City Trip")
   end
 
+  test "the trips are in rank order in the trips index page" do
+    trip = create(:trip)
+    trip2 = create(:trip)
+
+    visit trips_path
+    save_and_open_page
+
+    assert page.has_content?("1")
+    assert page.has_content?("2")
+
+  end
+
+  test "a user visits trips index and sees the trips in rank order" do
+    trip = create(:trip, upvotes: 20, downvotes: 10)
+    trip1 = create(:trip, upvotes: 19, downvotes: 10)
+    trip2 = create(:trip, upvotes: 21, downvotes: 10)
+
+    visit trips_path
+
+
+  end
   test "a user visits home and clicks on the beaches cateogory and sees trips
     on the next page associated with beaches in rank order" do
     skip
