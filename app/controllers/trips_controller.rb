@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
+
   def index
-    @trips = Trip.trip_displayer(params)
-    # @trips = TripPresenter.new(params).trips
+    @trips = TripsPresenter.new(params).trips
   end
 
   def new
@@ -10,4 +10,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
   end
+
+  private
+
 end
