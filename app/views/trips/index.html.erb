@@ -8,22 +8,30 @@
       <th data-field='date'>Departure Date</th>
       <th data-field='date'>Return Date</th>
       <th data-field='price'>Price</th>
+      <th data-field="select"> Select </th>
     </tr>
   </thead>
+
   <tbody>
     <% @trips.each do |trip| %>
-    <tr>
-      <td><%= trip.ranking %></td>
-      <td><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
-      <td><%= trip.airline %></td>
-      <td><%= trip.short_description %></td>
-      <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
-      <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
-      <td><%= number_to_currency trip.price/100 %></td>
-    </tr>
+      <tr>
+        <td><%= trip.upvotes%></td>
+        <td><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
+        <td><%= trip.airline %></td>
+        <td><%= trip.short_description %></td>
+        <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
+        <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
+        <td><%= number_to_currency trip.price/100 %></td>
+        <td> <%= link_to "Select", trip_path(trip.id), class: "btn btn-default btn-small" %> </td>
+      </tr>
     <% end %>
   </tbody>
+
 </table>
+
+<% if !@trips.present? %>
+  <p class="no-trip"> There are currently no available trips from this category. Please make other plans.</p>
+<% end %>
 
 <div class="trips-space"></div>
 

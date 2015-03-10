@@ -5,7 +5,9 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :avatar,
                     :styles => { :medium => "300x400>",
-                    :thumb => "100x100>" },
+                                 :thumb => "100x100>",
+                                 :city => "280x340",
+                                 :large => "500x500"},
                     :default_url => "/images/:style/logo3.png"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

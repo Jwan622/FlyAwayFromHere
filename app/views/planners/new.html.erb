@@ -65,30 +65,30 @@
 
 <div class="welcome-bottom">
   <div class="welcome-question">
-    Your ideal trip involves...
+    Plan a Trip Around Your Favorite Activity...
   </div>
 
   <div class="row">
     <div class="text-center">
-      <% @activity_categories.each do |activity| %>
+      <% @activity_categories.each do |category| %>
         <div class="col-sm-4 trip-item">
-          <%= link_to("#{activity.name}", trips_path(activity: activity.name.parameterize), class: "btn btn-primary traveler-type") %>
-          <%= image_tag activity.photos.first.avatar.url(:medium) %>
+          <%= link_to("#{category.name}", trips_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+          <%= image_tag category.photos.first.avatar.url(:medium) %>
         </div>
       <% end %>
     </div>
   </div>
 
   <div class="welcome-question">
-    You've always wanted to go...
+    Or fly to your favorite city...
   </div>
 
   <div class="row">
     <div class="text-center">
-      <% @location_categories.each do |location| %>
-        <div class="col-sm-4 trip-item">
-          <%= link_to("#{location.name}", trips_path(location: location.name.parameterize), class: "btn btn-primary traveler-type") %>
-          <%= image_tag location.photos.first.avatar.url(:medium) %>
+      <% @location_categories.each do |category| %>
+        <div class="col-sm-3 trip-item">
+          <%= link_to("#{category.name}", trips_path(category: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+          <%= image_tag category.photos.first.avatar.url(:city) %>
         </div>
       <% end %>
     </div>
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div category="row">
     <div class="col-mid-3 text-center tell-button">
       <%= button_to('Bargain Hunt for Me', bargainer_path, :class => 'btn btn-large btn-primary traveler-type') %>
     </div>

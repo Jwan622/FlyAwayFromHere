@@ -5,30 +5,26 @@
 
   <div class="col-md-4">
     <%= div_for(@trip, class: "photo") do %>
-      <%= image_tag @trip.photos.first.avatar.url(:medium) %>
+      <%= image_tag @trip.photos.first.avatar.url(:large) %>
     <% end %>
   </div>
 
   <div class="col-md-4 col-md-offset-4">
 
-    <table class="table table-bordered">
+    <table class="table table-bordered table-color">
       <tr>
         <td>Price</td><td><%= number_to_currency @trip.price / 100.00 %></td>
       </tr>
       <tr>
-        <td>Description</td><td><%= @trip.full_description %> %</td>
+        <td>Description</td><td><%= @trip.full_description %> </td>
       </tr>
       <tr>
-        <td>Departure Date</td><td><%= @trip.departure_date %> </td>
+        <td>Departure Date</td><td><%= @trip.departure_date.strftime("%m-%d-%Y, %H:%M, %Z") %> </td>
       </tr>
       <tr>
-        <td>Return Date</td><td><%= @trip.return_date %> </td>
+        <td>Return Date</td><td><%= @trip.return_date.strftime("%m-%d-%Y, %H:%M, %Z") %> </td>
       </tr>
     </table>
-
-    <div class="row">
-      <%= button_to "Book Ticket", "http://www.kayak.com", data: { confirm: "You're about to leave the site. Are you sure?" } %>
-    </div>
 
   </div>
 
@@ -36,7 +32,7 @@
 
 <div class="trip-information">
 
-  <table class="table table-bordered">
+  <table class="table table-bordered table-color">
     <tr>
       <td>Trip Description</td><td><%=  @trip.full_description %></td>
     </tr>
@@ -47,4 +43,7 @@
 
 </div>
 
+<div class="row">
+  <%= button_to "Book Ticket", "http://www.kayak.com", data: { confirm: "You're about to leave the site. Are you sure?" }, class: "btn btn-default btn-lg book-now" %>
+</div>
 <%= render "shared/plan_again" %>
