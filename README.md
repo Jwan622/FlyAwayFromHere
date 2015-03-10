@@ -1,28 +1,14 @@
-== README
+### FlyAwayFromHere
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# This app is a Turing School Personal project that incorporates the following functionality:
+# Twitter Oauth
+# Jquery/Javascript filtering
+# Friendly forwarding
+# Presenter classes for controller abstraction
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Dependencies
+# factory girl
+# Figaro
+# Twitter Oauth
+# Twitter Bootstrap
+# Paperclip

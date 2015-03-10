@@ -2,7 +2,9 @@
   <thead>
     <tr class="warning">
       <th data-field='ranking'>Ranking</th>
-      <th data-field='ranking'>Title</th>
+      <th data-field='title'>Title</th>
+      <th data-field='departure_city'>Departure City</th>
+      <th data-field='arrival_city'>Arrival City</th>
       <th data-field='airline'>Airline</th>
       <th data-field='trip_details'>Trip Details</th>
       <th data-field='date'>Departure Date</th>
@@ -17,6 +19,8 @@
       <tr>
         <td id="ranking"><%= @trips.index(trip) + 1 %></td>
         <td><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
+        <td><%= trip.departure_city %></td>
+        <td><%= trip.arrival_city %></td>
         <td><%= trip.airline %></td>
         <td><%= trip.short_description %></td>
         <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
