@@ -1,4 +1,5 @@
 class Trip < ActiveRecord::Base
+  before_save :ranking
   has_many :photos
 
   has_many :categories_trip
@@ -13,4 +14,8 @@ class Trip < ActiveRecord::Base
   validates :short_description, presence: true
   validates :categories, presence: true
   validates :photos, presence: true
+
+  def ranking
+    self.ranking = (upvotes.to_f / downvotes.to_f) || 0
+  end
 end

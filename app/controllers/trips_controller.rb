@@ -1,9 +1,9 @@
 class TripsController < ApplicationController
   def index
     if params[:category]
-      @trips = Trip.joins(:categories).where("categories.slug = ?", params[:category])
+      @trips = Trip.joins(:categories).where("categories.slug = ?", params[:category]).order(:ranking)
     else
-      @trips = Trip.includes(:categories).all
+      @trips = Trip.includes(:categories).all.order(:ranking)
     end
   end
 
