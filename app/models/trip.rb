@@ -24,6 +24,24 @@ class Trip < ActiveRecord::Base
     includes(:categories).where("categories.slug = ?", type).order(ranking: :desc).references(:categories)
   end
 
+  def self.by_plan(quality, location, activity)
+    category_slugs = [quality, location, activity].reject(&:empty?)
+
+    if category_slugs.count == 3
+      includes(:categories).where( { categories: { slug: category_slugs[0] } } ).
+                            where( { categories: { slug: category_slugs[1] } } ).
+                            where( { categories: { slug: category_slugs[2] } } ).
+                            order(ranking: :desc)
+    elsif category_slugs.count == 2
+      includes(:categories).where( { categories: { slug: category_slugs[0] } } ).
+                            where( { categories: { slug: category_slugs[1] } } ).
+                            order(ranking: :desc)
+    else category_slugs.count == 1
+      includes(:categories).where( { categories: { slug: category_slugs[0] } } ).
+                            order(ranking: :desc)
+    end
+  end
+
   def self.by_price(type)
     joins(:categories).where("price <= :price_level", { price_level: type }).order(price: :asc)
   end

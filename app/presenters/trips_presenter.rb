@@ -1,5 +1,6 @@
 class TripsPresenter
   attr_reader :data
+  
   def initialize(data)
     @data = data
   end
@@ -10,5 +11,9 @@ class TripsPresenter
     else
       Trip.all_by_ranking
     end
+  end
+
+  def plan
+    Trip.by_plan(@data[:quality_category], @data[:location_category], @data[:activity_category])
   end
 end

@@ -4,14 +4,14 @@
 </div>
 
 <div class="planner">
-  <%= form_for :plan, url: trips_path do |f| %>
+  <%= form_for :plan, url: trips_path, method: :get do |f| %>
     <table>
       <tr>
         <td>
           <%= f.label :quality, "I am looking for trips that are", class: "plan-label" %>
         </td>
         <td>
-          <%= f.collection_select :quality_category, Category.quality_categories, :id, :name, { include_blank: "Quality" }, { class: "btn-lg plan-lines" } %>
+          <%= f.collection_select :quality_category, Category.quality_categories, :slug, :name, { include_blank: "Quality" }, { class: "btn-lg plan-lines" } %>
         </td>
       </tr>
 
@@ -20,7 +20,7 @@
           <%= f.label :location, "and I am looking to fly", class: "plan-label" %>
         </td>
         <td>
-          <%= f.collection_select :location_category, Category.proximity_categories, :id, :name, { include_blank: "Proximity" }, { class: "btn-lg plan-lines" } %>
+          <%= f.collection_select :location_category, Category.proximity_categories, :slug, :name, { include_blank: "Proximity" }, { class: "btn-lg plan-lines" } %>
         </td>
       </tr>
 
@@ -29,7 +29,7 @@
           <%= f.label :activity, "and I plan on", class: "plan-label" %>
         </td>
         <td>
-          <%= f.collection_select :activity_category, Category.activity_categories, :id, :name, { include_blank: "Activity" }, { class: "btn-lg plan-lines" } %>
+          <%= f.collection_select :activity_category, Category.activity_categories, :slug, :name, { include_blank: "Activity" }, { class: "btn-lg plan-lines" } %>
         </td>
       </tr>
     </table>

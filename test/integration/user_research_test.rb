@@ -74,14 +74,17 @@ class UserResearchTest < ActionDispatch::IntegrationTest
   end
 
   test "a user visits trips index and sees the trips in rank order" do
-    trip = create(:trip, upvotes: 20, downvotes: 10)
-    trip1 = create(:trip, upvotes: 19, downvotes: 10)
-    trip2 = create(:trip, upvotes: 21, downvotes: 10)
+    trip = create(:trip, title: "second ranked", upvotes: 20, downvotes: 10)
+    trip1 = create(:trip, title: "third ranked", upvotes: 19, downvotes: 10)
+    trip2 = create(:trip, title: "highest ranked", upvotes: 21, downvotes: 10)
 
     visit trips_path
+    save_and_open_page
 
-
+    assert page.first("#trip-title").has_content?(trip2.title)
+    assert page.all("#trip-title").last.has_content?(trip1.title)
   end
+
   test "a user visits home and clicks on the beaches cateogory and sees trips
     on the next page associated with beaches in rank order" do
     skip

@@ -18,7 +18,7 @@
     <% @trips.each do |trip| %>
       <tr>
         <td id="ranking"><%= @trips.index(trip) + 1 %></td>
-        <td><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
+        <td id="trip-title"><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
         <td><%= trip.departure_city %></td>
         <td><%= trip.arrival_city %></td>
         <td><%= trip.airline %></td>

@@ -31,8 +31,15 @@ User.create!(
   role:                  1
   )
 
-# categories-activity
+# categories-quality
+super_cheap = Category.create(name: "Super Cheap", type: "Quality")
+valuable = Category.create(name: "Valuable", type: "Quality")
 
+#categories-proximity
+international = Category.create(name: "International", type: "Proximity")
+domestic = Category.create(name: "Domestic", type: "Proximity")
+
+# categories-activity
 party = Category.create!(
   name: "Partaaaying",
   type: "Activity")
@@ -93,7 +100,6 @@ ice.photos << Photo.create!(
 )
 
 # categories-location
-
 new_york = Category.create!(
   name: "New York City",
   type: "Location"
@@ -166,14 +172,6 @@ sydney.photos << Photo.create!(
   avatar: File.new("#{Rails.root}/app/assets/images/location-sydney.jpeg")
 )
 
-# categories-quality
-super_cheap = Category.create(name: "Super Cheap", type: "Quality")
-valuable = Category.create(name: "Valuable", type: "Quality")
-
-#categories-proximity
-international = Category.create(name: "International", type: "Proximity")
-domestic = Category.create(name: "Domestic", type: "Proximity")
-
 # trips
 iceland = Trip.create!(
   title: "Iceland",
@@ -188,7 +186,7 @@ iceland = Trip.create!(
   departure_city: "New York",
   arrival_city: "Reykjavik",
   upvotes: 15,
-  categories: [ice, hiking],
+  categories: [ice, hiking, valuable, international],
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/ice.jpg"))])
 
 hawaii = Trip.create!(
@@ -204,7 +202,7 @@ hawaii = Trip.create!(
   departure_city: "New York",
   arrival_city: "Honolulu",
   upvotes: 15,
-  categories: [beaches, party],
+  categories: [beaches, party, valuable, domestic],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 greece = Trip.create!(
@@ -220,7 +218,7 @@ greece = Trip.create!(
   departure_city: "New York",
   arrival_city: "Athens",
   upvotes: 15,
-  categories: [beaches, party],
+  categories: [beaches, party, valuable, international],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 maine = Trip.create!(
@@ -236,7 +234,7 @@ maine = Trip.create!(
   arrival_city: "Portland",
   downvotes: 10,
   upvotes: 1000,
-  categories: [eating, hiking],
+  categories: [eating, hiking, domestic, valuable],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 costa_rica = Trip.create!(
@@ -252,7 +250,7 @@ costa_rica = Trip.create!(
   departure_city: "New York",
   arrival_city: "San Jose",
   upvotes: 1,
-  categories: [beaches, hiking],
+  categories: [beaches, hiking, valuable, international],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 new_york = Trip.create!(
@@ -268,7 +266,7 @@ new_york = Trip.create!(
   arrival_city: "New York",
   downvotes: 10,
   upvotes: 1,
-  categories: [new_york, great_cities],
+  categories: [new_york, great_cities, super_cheap, domestic],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-nyc.png"))])
 
 santa_monica = Trip.create!(
@@ -284,7 +282,7 @@ santa_monica = Trip.create!(
   arrival_city: "Los Angeles",
   downvotes: 10,
   upvotes: 1,
-  categories: [santa_monica],
+  categories: [santa_monica, domestic, super_cheap, beaches],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-santa.jpg"))])
 
 london = Trip.create!(
@@ -300,7 +298,7 @@ london = Trip.create!(
   arrival_city: "London",
   downvotes: 10,
   upvotes: 1,
-  categories: [london],
+  categories: [london, great_cities, international, valuable],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-london.jpg"))])
 
 kyoto = Trip.create!(
@@ -316,7 +314,7 @@ kyoto = Trip.create!(
   arrival_city: "Kyoto",
   downvotes: 10,
   upvotes: 1,
-  categories: [kyoto, great_cities],
+  categories: [kyoto, great_cities, valuable, international],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-kyoto.jpg"))])
 
 10.times do |number|
@@ -334,7 +332,7 @@ kyoto = Trip.create!(
   arrival_city: "Munich",
   upvotes: 120 + number - 5,
   downvotes: 120 + number - 2,
-  categories: [ice, festivals, super_cheap],
+  categories: [ice, festivals, super_cheap, international],
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/cat-festivals.jpg"))])
 end
 
@@ -352,7 +350,7 @@ end
   arrival_city: "Orenjestad",
   upvotes: 120 + number - 5,
   downvotes: 120 + number - 2,
-  categories: [beaches, valuable, party],
+  categories: [beaches, valuable, party, international],
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/location-aruba.jpg"))])
 end
 
@@ -370,6 +368,24 @@ end
   arrival_city: "Shanghai",
   upvotes: 120 + number - 5,
   downvotes: 120 + number - 2,
-  categories: [great_cities, party],
+  categories: [great_cities, party, international, valuable],
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/location-shanghai.jpg"))])
+end
+
+10.times do |number|
+  Trip.create!(
+  title: "Vegasss baby Vegas#{number+1}",
+  price: 12000 + number,
+  short_description: "These are trips in the Great Cities and Party Category",
+  airline: "AA",
+  departure_date: Date.new(2015,2,2),
+  return_date: Date.new(2015,3,number+1),
+  full_description: "These are trips in the Great Cities and party Category" +
+                    "These are trips in the Great Cities Category Lorem Ipsum",
+  departure_city: "New York",
+  arrival_city: "Shanghai",
+  upvotes: 120 + number - 5,
+  downvotes: 120 + number - 2,
+  categories: [great_cities, party, super_cheap, party, eating, domestic],
+  photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/location-vegas.jpg"))])
 end
