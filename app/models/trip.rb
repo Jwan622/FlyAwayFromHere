@@ -26,7 +26,8 @@ class Trip < ActiveRecord::Base
 
   def self.by_plan(quality, location, activity)
     category_slugs = [quality, location, activity].reject(&:empty?)
-
+    # Trip.includes(:categories).select("\"categories\".\"name\" AS the_categories").where("? ALL IN the_categories", ["cat1", "cat2"]).references(:categories).to_sql
+    # Category.find_by(name: category_slugs).map(&:trips)
     if category_slugs.count == 3
       includes(:categories).where( { categories: { slug: category_slugs[0] } } ).
                             where( { categories: { slug: category_slugs[1] } } ).

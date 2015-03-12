@@ -3,10 +3,12 @@ class TripsController < ApplicationController
   def index
     if params[:plan] && plan_params.values.all? { |value| !value.empty? }
       @trips = TripsPresenter.new(plan_params).plan
+      @categories = Category.select(:name).all
     elsif params[:plan] && plan_params.values.all? { |value| value.empty? }
       redirect_to new_planner_path, flash: { error: "You need to make a valid selection." }
     else
       @trips = TripsPresenter.new(params).trips
+      @categories = Category.select(:name).all
     end
   end
 

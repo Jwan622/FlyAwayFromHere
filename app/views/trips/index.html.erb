@@ -1,3 +1,37 @@
+<div class="container">
+  <i class="fa fa-filter fa-4x"></i>
+  <%= render partial: "shared/trip_filters" %>
+</div>
+
+<script charset="utf-8">
+  $(".fa-filter").on("click", function() {
+    $("#visible-filters").toggleClass( "trip-filters" );
+  });
+
+  var cleanCategories = function(checked_categories) {
+    var cleaned_categories = []
+    checked_categories.forEach(function(element) {
+      cleaned_categories.push(element.match(/\[(.*?)\]/)[1])
+    });
+    return cleaned_categories
+  };
+
+  $(document).ready(function() {
+    var checked_categories = []
+    $('input:checkbox').change(function(){
+      if ($(this).is(':checked')) {
+        checked_categories.push(this.name)
+      };
+      var cleanedCategories = cleanCategories(checked_categories)
+      var filteredCategories = filterCategories(cleanedCategories);
+    });
+  });
+</script>
+
+
+
+
+
 <table class="table table-hover trips-table table-bordered">
   <thead>
     <tr class="warning">
