@@ -1,6 +1,6 @@
 class TripsPresenter
   attr_reader :data
-  
+
   def initialize(data)
     @data = data
   end
@@ -15,5 +15,9 @@ class TripsPresenter
 
   def plan
     Trip.by_plan(@data[:quality_category], @data[:location_category], @data[:activity_category])
+  end
+
+  def filterz
+    Trip.by_filter(@data)
   end
 end

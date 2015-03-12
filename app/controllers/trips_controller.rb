@@ -8,7 +8,7 @@ class TripsController < ApplicationController
     elsif params[:plan] && plan_params.values.all? { |value| value.empty? }
       redirect_to new_planner_path, flash: { error: "You need to make a valid selection." }
     elsif params[:categories]
-      require 'pry' ; binding.pry
+      @trips = TripsPresenter.new(params[:categories]).filterz
       respond_with @trips
     else
       @trips = TripsPresenter.new(params).trips

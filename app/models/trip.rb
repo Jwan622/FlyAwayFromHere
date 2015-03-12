@@ -47,6 +47,10 @@ class Trip < ActiveRecord::Base
     joins(:categories).where("price <= :price_level", { price_level: type }).order(price: :asc)
   end
 
+  def self.by_filter(category_array)
+    joins(:categories).where( { categories: { slug: category_array[0] } } )
+  end
+
   def self.all_by_ranking
     includes(:categories).all.order(ranking: :desc)
   end

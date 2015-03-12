@@ -13,7 +13,8 @@
       var checkedCategories = $('input:checkbox:checked').map(function (index, element) {
         return element.getAttribute('id').replace('category_', '');
       });
-      $.getJSON('/trips.json', { categories: checkedCategories }).then(function (data) {
+      $.getJSON('/trips.json', { categories: checkedCategories.toArray() }, function(data) {
+        console.log("hi");
         console.log(data);
       });
     });
