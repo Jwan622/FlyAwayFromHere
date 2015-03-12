@@ -22,6 +22,7 @@ gem "rails_12factor",           '~> 0.0.3'
 gem 'aws-sdk',                  '~> 1.5.7'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'responders',               '~> 2.1.0'
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'

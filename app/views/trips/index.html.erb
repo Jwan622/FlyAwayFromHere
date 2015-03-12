@@ -8,27 +8,17 @@
     $("#visible-filters").toggleClass( "trip-filters" );
   });
 
-  var cleanCategories = function(checked_categories) {
-    var cleaned_categories = []
-    checked_categories.forEach(function(element) {
-      cleaned_categories.push(element.match(/\[(.*?)\]/)[1])
-    });
-    return cleaned_categories
-  };
-
   $(document).ready(function() {
-    var checked_categories = []
-    $('input:checkbox').change(function(){
-      if ($(this).is(':checked')) {
-        checked_categories.push(this.name)
-      };
-      var cleanedCategories = cleanCategories(checked_categories)
-      var filteredCategories = filterCategories(cleanedCategories);
+    $("input:checkbox").change(function() {
+      var checkedCategories = $('input:checkbox:checked').map(function (index, element) {
+        return element.getAttribute('id').replace('category_', '');
+      });
+      $.getJSON('/trips.json', { categories: checkedCategories }).then(function (data) {
+        console.log(data);
+      });
     });
   });
 </script>
-
-
 
 
 

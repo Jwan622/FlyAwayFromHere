@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+  respond_to :json
 
   def index
     if params[:plan] && plan_params.values.all? { |value| !value.empty? }
@@ -6,6 +7,9 @@ class TripsController < ApplicationController
       @categories = Category.select(:name).all
     elsif params[:plan] && plan_params.values.all? { |value| value.empty? }
       redirect_to new_planner_path, flash: { error: "You need to make a valid selection." }
+    elsif params[:categories]
+      require 'pry' ; binding.pry
+      respond_with @trips
     else
       @trips = TripsPresenter.new(params).trips
       @categories = Category.select(:name).all
