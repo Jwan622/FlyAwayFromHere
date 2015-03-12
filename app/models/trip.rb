@@ -1,4 +1,5 @@
 class Trip < ActiveRecord::Base
+  attr_reader :qpx
 
   before_save :ranking
   has_many :photos
@@ -15,6 +16,14 @@ class Trip < ActiveRecord::Base
   validates :short_description, presence: true
   validates :categories, presence: true
   validates :photos, presence: true
+
+  def qpx
+    @qpx ||= QPXService.new
+  end
+
+  def search(departure_date, return_date)
+    qpx.search(departure_date, return_date)
+  end
 
   def ranking
     self.ranking = (upvotes.to_f / downvotes.to_f) || 0
@@ -53,5 +62,9 @@ class Trip < ActiveRecord::Base
 
   def self.all_by_ranking
     includes(:categories).all.order(ranking: :desc)
+  end
+
+  def self._build_object(data)
+    OpenStruct.new(data)
   end
 end

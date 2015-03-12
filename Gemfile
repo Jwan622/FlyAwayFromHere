@@ -23,6 +23,8 @@ gem 'aws-sdk',                  '~> 1.5.7'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'responders',               '~> 2.1.0'
+gem 'faraday'
+gem 'rest-client',              '~> 1.7.3'
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'

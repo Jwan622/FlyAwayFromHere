@@ -1,6 +1,13 @@
-<div class="container">
-  <i class="fa fa-filter fa-4x"></i>
-  <%= render partial: "shared/trip_filters" %>
+<div class="row">
+
+  <div class="container">
+    <i class="fa fa-filter fa-4x"></i>
+    <%= render partial: "shared/trip_filters" %>
+  </div>
+  <div class="trips-table">
+
+  </div>
+
 </div>
 
 <script charset="utf-8">
@@ -9,16 +16,31 @@
   });
 
   $(document).ready(function() {
+
     $("input:checkbox").change(function() {
-      var checkedCategories = $('input:checkbox:checked').map(function (index, element) {
+      if ($("input:checked").length > 0) {
+        var checkedCategories = $('input:checkbox:checked').map(function (index, element) {
         return element.getAttribute('id').replace('category_', '');
-      });
-      $.getJSON('/trips.json', { categories: checkedCategories.toArray() }, function(data) {
-        console.log("hi");
-        console.log(data);
-      });
+        });
+
+        $("trips-table").empty();
+
+        $.getJSON('/trips.json', { categories: checkedCategories.toArray() }, function(data) {
+          data.forEach(function(trip){
+            console.log("hi");
+            // appendToTable(trip);
+          });
+        });
+      } else {
+        $.getJSON('/trips.json', function(data){
+          data.forEach(function(trip) {
+            console.log("empty");
+          });
+        });
+      };
     });
   });
+
 </script>
 
 
@@ -41,7 +63,7 @@
 
   <tbody>
     <% @trips.each do |trip| %>
-      <tr>
+      <tr data-categories= "<%= trip.categories.map(&:name).join(":") %>">
         <td id="ranking"><%= @trips.index(trip) + 1 %></td>
         <td id="trip-title"><%= link_to "#{trip.title}", trip_path(trip.id) %></td>
         <td><%= trip.departure_city %></td>
