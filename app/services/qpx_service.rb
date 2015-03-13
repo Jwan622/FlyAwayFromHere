@@ -8,9 +8,9 @@ class QPXService
     @connection = Faraday.new(url: "https://www.googleapis.com/qpxExpress/v1")
   end
 
-  def search(origin_airport, destination_airport, departure_date, max_price)
+  def search(destination, origin, departure_date, return_date, max_price)
     response = parse(connection.post do |req|
-      req.url "trips/search", key: "AIzaSyAaLHEBBLCI4aHLNu2jHiiAQGDbCunBQX0"
+      req.url "trips/search", key: Figaro.env.qpx_api_key
       req.headers['Content-Type'] = ['application/json']
       req.body = { request: {
         passengers: {

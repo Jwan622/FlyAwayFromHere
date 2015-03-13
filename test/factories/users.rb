@@ -10,5 +10,6 @@ FactoryGirl.define do
     country "USA"
     role 0
     email "Jwan622@yahoo.com"
+    departure_airport "JFK"
   end
 end

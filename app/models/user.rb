@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
                     if: :not_through_oauth?
 
   validate :valid_email?
+  validates :departure_airport, presence: true,
+                                length: { :is => 3 }
 
   enum role: [ :flyer, :admin ]
 

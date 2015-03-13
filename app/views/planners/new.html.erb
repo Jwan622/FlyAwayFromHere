@@ -8,28 +8,46 @@
     <table>
       <tr>
         <td>
-          <%= f.label :quality, "I am looking for trips that are", class: "plan-label" %>
+          <%= f.label :destination, "I am flying away to...", class: "plan-label" %>
         </td>
         <td>
-          <%= f.collection_select :quality_category, Category.quality_categories, :slug, :name, { include_blank: "Quality" }, { class: "btn-lg plan-lines" } %>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <%= f.label :location, "and I am looking to fly", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.collection_select :location_category, Category.proximity_categories, :slug, :name, { include_blank: "Proximity" }, { class: "btn-lg plan-lines" } %>
+          <%= f.collection_select :destination, Category.location_categories, :slug, :name, { include_blank: "Destination" }, { class: "btn-lg plan-lines" } %>
         </td>
       </tr>
 
       <tr>
         <td>
-          <%= f.label :activity, "and I plan on", class: "plan-label" %>
+          <%= f.label :origin, "and I am flying from...", class: "plan-label" %>
         </td>
         <td>
-          <%= f.collection_select :activity_category, Category.activity_categories, :slug, :name, { include_blank: "Activity" }, { class: "btn-lg plan-lines" } %>
+          <%= f.collection_select :origin, Category.location_categories, :slug, :name, { include_blank: "Origin" }, { class: "btn-lg plan-lines" } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.label :max_price, "and my max flight price is...", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.select :max_price, options_for_select([["$400","$400"],["$300","$300"],["$200","$200"],["No Limit Baby", "10000"]]), { include_blank: "Price" }, { class: "btn-lg plan-lines" } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.label :departure_date, "and I would like to depart on...", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.text_field :departure_date, :class => 'datepicker form-control' %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.label :return_date, "and return on...", class: "plan-label" %>
+        </td>
+        <td>
+          <%= f.text_field :return_date, :class => 'datepicker form-control' %>
         </td>
       </tr>
     </table>
@@ -37,57 +55,18 @@
   <% end %>
 </div>
 
-<div class="row praise-row">
-    <div class="col-sm-3 col-sm-offset-2">
-      <div class="praise-text">
-      "Jeff Wan has certainly outdone himself in the design world again. How does he do it??"
-      </div>
-
-      <div class="praise-time-logo"></div>
-
-    </div>
-
-    <i class="col-sm-1 fa fa-heart-o fa-3x"></i>
-
-    <div class="col-sm-3">
-      <div class="praise-text">
-        "One has to ask... is Jeff Wan for real?"
-      </div>
-
-      <div class="praise-cosmo-logo"></div>
-
-    </div>
-</div>
-
-<div class="front-page-divider">
-
-</div>
+<%= render "layouts/praise_bar" %>
 
 <div class="welcome-bottom">
   <div class="welcome-question">
-    Plan a Trip Around Your Favorite Activity...
-  </div>
-
-  <div class="row">
-    <div class="text-center">
-      <% @activity_categories.each do |category| %>
-        <div class="col-sm-4 trip-item">
-          <%= link_to("#{category.name}", trips_path(search_type: "category", search_value: category.name.parameterize), class: "btn btn-primary traveler-type") %>
-          <%= image_tag category.photos.first.avatar.url(:medium) %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="welcome-question">
-    Or fly to your favorite city...
+    Fly to Your Favorite City For Cheap!
   </div>
 
   <div class="row">
     <div class="text-center">
       <% @location_categories.each do |category| %>
         <div class="col-sm-3 trip-item">
-          <%= link_to("#{category.name}", trips_path(search_type: "category", search_value: category.name.parameterize), class: "btn btn-primary traveler-type") %>
+          <%= link_to("#{category.name}", trips_path(search_type: "category", search_value: category.name.parameterize, destination_airport: category.destination_airport), class: "btn btn-primary traveler-type") %>
           <%= image_tag category.photos.first.avatar.url(:city) %>
         </div>
       <% end %>
@@ -103,7 +82,7 @@
 
   <div category="row">
     <div class="col-mid-3 text-center tell-button">
-      <%= link_to('Bargain Hunt for Me', trips_path(search_type: "price", search_value: 20000), :class => 'btn btn-large btn-primary traveler-type') %>
+      <%= link_to('Bargain Hunt for Me', trips_path(search_type: "price", search_value: 20000, max_price: "USD200"), :class => 'btn btn-large btn-primary traveler-type') %>
     </div>
   </div>
 </div>

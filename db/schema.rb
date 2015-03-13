@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310214853) do
+ActiveRecord::Schema.define(version: 20150313171414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "type"
     t.string   "slug"
+    t.string   "destination_airport"
   end
 
   create_table "categories_trips", force: :cascade do |t|
@@ -71,7 +72,6 @@ ActiveRecord::Schema.define(version: 20150310214853) do
     t.text     "full_description"
     t.integer  "downvotes"
     t.decimal  "ranking",           precision: 5, scale: 2
-    t.string   "departure_city"
     t.string   "arrival_city"
   end
 
@@ -86,12 +86,13 @@ ActiveRecord::Schema.define(version: 20150310214853) do
     t.integer  "role"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "provider"
     t.string   "token"
     t.string   "uid"
     t.string   "image_url"
+    t.string   "departure_airport"
   end
 
   add_foreign_key "categories_trips", "categories"

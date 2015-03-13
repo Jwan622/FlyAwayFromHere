@@ -195,7 +195,7 @@ footer {
   font-weight: 300;
   min-width: 280px;
   max-width: 650px;
-  min-height: 253px;
+  min-height: 340px;
   margin: 0 auto;
   margin-bottom: 200px;
   padding: 2% 3%;
@@ -234,8 +234,22 @@ footer {
   float: right;
   padding: 4px;
   font-size: 20px;
-
 }
+
+.form-control {
+  display: block;
+  margin-left: 42px;
+  width: 71%;
+  height: 34px;
+  padding: 5px 5px;
+  font-size: 17px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+}
+
 // Itinerary-bar
 .itinerary-underline {
   text-decoration: underline;
@@ -323,5 +337,5 @@ footer {
 }
 
 span {
-  display:block;
+  display: block;
 }

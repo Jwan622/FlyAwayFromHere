@@ -1,3 +1,7 @@
+# def display_cost
+#   "#{currency}#{cents_in_dollars}"
+# end
+
 class TripsPresenter
   attr_reader :data
 

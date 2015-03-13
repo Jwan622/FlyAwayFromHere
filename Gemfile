@@ -25,6 +25,7 @@ gem 'figaro'
 gem 'responders',               '~> 2.1.0'
 gem 'faraday'
 gem 'rest-client',              '~> 1.7.3'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'
