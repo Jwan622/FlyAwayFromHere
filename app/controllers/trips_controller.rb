@@ -14,6 +14,7 @@ class TripsController < ApplicationController
       @trips = TripsPresenter.new(params).trips
       @categories = Category.select(:name).all
     end
+    @trips = TripSearcher.new("BOS", "LAS", "2015-03-23", "USD2999").search
   end
 
   def new

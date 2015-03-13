@@ -1,3 +1,5 @@
+require 'pp'
+
 class QPXService
   attr_reader :connection
   attr_accessor :qpx_post
@@ -6,30 +8,30 @@ class QPXService
     @connection = Faraday.new(url: "https://www.googleapis.com/qpxExpress/v1")
   end
 
-  def search
-    response = connection.post do |req|
-      req.url "trips/search?key=AIzaSyAaLHEBBLCI4aHLNu2jHiiAQGDbCunBQX0",
+  def search(origin_airport, destination_airport, departure_date, max_price)
+    response = parse(connection.post do |req|
+      req.url "trips/search", key: "AIzaSyAaLHEBBLCI4aHLNu2jHiiAQGDbCunBQX0"
       req.headers['Content-Type'] = ['application/json']
       req.body = { request: {
-         passengers: {
-           adultCount: 1
-         },
-         slice: [
-           {
-             origin: "BOS",
-             destination: "LAX",
-             date: "2015-03-22"
-           },
-           {
-             origin: "LAX",
-             destination: "BOS",
-             date: "2015-03-28"
-           }
-         ]
-       }
-     }.to_json
+        passengers: {
+          adultCount: 1,
+          infantInLapCount: 0,
+          seniorCount: 0
+        },
+        slice: [
+          {
+            origin: origin_airport,
+            destination: destination_airport,
+            date: departure_date,
+            maxStops: 0
+          }
+        ],
+        maxPrice: max_price,
+        solutions: 2
+        }
+      }.to_json
     end
-    puts response.body
+    )
   end
 
   private
@@ -39,6 +41,6 @@ class QPXService
   end
 
   def parse(response)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 end

@@ -21,10 +21,6 @@ class Trip < ActiveRecord::Base
     @qpx ||= QPXService.new
   end
 
-  def search(departure_date, return_date)
-    qpx.search(departure_date, return_date)
-  end
-
   def ranking
     self.ranking = (upvotes.to_f / downvotes.to_f) || 0
   end
@@ -50,6 +46,9 @@ class Trip < ActiveRecord::Base
       includes(:categories).where( { categories: { slug: category_slugs[0] } } ).
                             order(ranking: :desc)
     end
+  end
+
+  def self.by_plan(quality, location, activity)
   end
 
   def self.by_price(type)
