@@ -3,7 +3,8 @@ class TripsController < ApplicationController
 
   def index
     trips = FindTrip.new(trip_search_params).find_all
-    @trips = trips.map { |t| TripPresenter.new(t) }
+    require 'pry' ; binding.pry
+    @trips = trips.map { |trip| TripsPresenter.new(trip) }
 
     if params[:plan] && plan_params.values.all? { |value| !value.empty? }
       @trips = TripsPresenter.new(plan_params).plan

@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  include RedirectHelper
+  # include RedirectHelper
+  # include AirportAndCityLookupHelper
+
   protect_from_forgery with: :exception
 
   private

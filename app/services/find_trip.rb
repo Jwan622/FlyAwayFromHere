@@ -36,20 +36,6 @@ class FindTrip
     @max_price = price_cleaner(max_price)
   end
 
-  def airport_lookup
-    {
-      "aruba"         => "AUA",
-      "barcelona"     => "BCN",
-      "new-york-city" => "NYC",
-      "reykjavik"     => "REK",
-      "kyoto"         => "UKY",
-      "los-angeles"   => "LAX",
-      "london"        => "LON",
-      "shanghai"      => "PVG",
-      "sydney"        => "SYD"
-    }
-  end
-
   def date_cleaner(unformatted_date)
     split_date = unformatted_date.split("/")
     date_object = Date.parse("#{ split_date[2] }-#{ split_date[0] }-#{ split_date[1] }")

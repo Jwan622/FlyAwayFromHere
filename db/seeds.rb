@@ -45,7 +45,7 @@ aruba.photos << Photo.create!(
 )
 
 barcelona = Category.create!(
-  name: "barcelona",
+  name: "Barcelona",
   type: "Location",
   destination_airport: "BCN"
 )

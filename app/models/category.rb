@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
   self.inheritance_column = nil
   before_save :create_slug
+  before_save :downcase_type
 
   has_many :categories_trips
   has_many :trips, through: :categories_trips
@@ -9,6 +10,10 @@ class Category < ActiveRecord::Base
 
   def create_slug
     self.slug = name.parameterize
+  end
+
+  def downcase_type
+    self.type = type.downcase
   end
 
   def self.quality_categories
