@@ -50,8 +50,6 @@ class SessionsController < ApplicationController
   def redirect_flyer_or_admin(user)
     if user.flyer?
       redirect_back_or(root_path)
-    # else
-      # redirect_to admin_dashboard_path
     end
   end
 end

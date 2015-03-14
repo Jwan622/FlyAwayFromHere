@@ -44,13 +44,13 @@ aruba.photos << Photo.create!(
   avatar: File.new("#{Rails.root}/app/assets/images/location-aruba.jpg")
 )
 
-barcalona = Category.create!(
-  name: "Barcalona",
+barcelona = Category.create!(
+  name: "barcelona",
   type: "Location",
   destination_airport: "BCN"
 )
 
-barcalona.photos << Photo.create!(
+barcelona.photos << Photo.create!(
   avatar: File.new("#{Rails.root}/app/assets/images/location-barca.jpg")
 )
 
@@ -144,7 +144,7 @@ Trip.create!(
   photos: [Photo.create(avatar: File.new("#{Rails.root}/app/assets/images/ice.jpg"))])
 
 hawaii = Trip.create!(
-  title: "Barcalona",
+  title: "barcelona",
   price: 70000,
   short_description: "Park Guell, Gaudi everything, and the land of tapas.",
   full_description: "Park Guell, Gaudi everything, and the land of tapas." +
@@ -153,9 +153,9 @@ hawaii = Trip.create!(
   departure_date: Date.new(2010,2,3),
   return_date: Date.new(2010,2,3),
   downvotes: 10,
-  arrival_city: "Barcalona",
+  arrival_city: "barcelona",
   upvotes: 15,
-  categories: [barcalona],
+  categories: [barcelona],
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/trip-hawaii.jpg"))])
 
 new_york = Trip.create!(

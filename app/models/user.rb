@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
                     if: :not_through_oauth?
 
   validate :valid_email?
-  validates :departure_airport, presence: true,
-                                length: { :is => 3 }
 
   enum role: [ :flyer, :admin ]
 
@@ -23,6 +21,7 @@ class User < ActiveRecord::Base
       member.last_name = auth.info.name.split[1] if auth.info.name.split[1]
       member.username = auth.info.nickname
       member.image_url = auth.info.image
+      member.role = 0
       member.city = auth.info.location
       member.token = auth.credentials.token
       member.password = SecureRandom.urlsafe_base64

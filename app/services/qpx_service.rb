@@ -20,9 +20,15 @@ class QPXService
         },
         slice: [
           {
-            origin: origin_airport,
-            destination: destination_airport,
+            origin: origin,
+            destination: destination,
             date: departure_date,
+            maxStops: 0
+          },
+          {
+            origin: destination,
+            destination: origin,
+            date: return_date,
             maxStops: 0
           }
         ],
