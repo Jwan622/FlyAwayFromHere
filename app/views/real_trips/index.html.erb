@@ -40,7 +40,7 @@
         <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
         <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
         <td><%= trip.price %></td>
-        <td><%= link_to "Details", real_trip_path(trip, info: { departure_date: trip.departure_date, return_date: trip.return_date, price: trip.price }), class: "btn btn-regular" %></td>
+        <td><%= link_to "Details", real_trip_path(trip, info: { departure_date: trip.departure_date, return_date: trip.return_date, price: trip.price }), class: "btn btn-info" %></td>
       </tr>
     <% end %>
   </tbody>

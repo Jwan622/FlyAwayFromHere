@@ -1,7 +1,6 @@
 class TripInfo < ActiveRecord::Base
   extend AirportAndCityLookupHelper
 
-
   has_many :photos
 
   def self.find(airport)

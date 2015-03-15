@@ -29,7 +29,7 @@ class RealTrip
   end
 
   def to_param
-    @departure_city
+    @arrival_city
   end
 
   private
