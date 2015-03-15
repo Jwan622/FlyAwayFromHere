@@ -1,6 +1,6 @@
 class RealTripsController < ApplicationController
   def index
-    if params_incomplete?
+    if planner_params_incomplete?
       redirect_to new_planner_path, flash: { error: "Please fill out your flight preferences fully."}
     else
       trips = FindTrip.new(trip_search_params).find_all
@@ -37,7 +37,7 @@ class RealTripsController < ApplicationController
 
   private
 
-  def params_incomplete?
+  def planner_params_incomplete?
     params[:plan][:destination].blank? ||
     params[:plan][:origin].blank? ||
     params[:plan][:departure_date].blank? ||

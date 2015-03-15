@@ -44,9 +44,13 @@ class FindTrip
   end
 
   def date_cleaner(unformatted_date)
-    split_date = unformatted_date.split("/")
-    date_object = Date.parse("#{ split_date[2] }-#{ split_date[0] }-#{ split_date[1] }")
-    date_object.strftime("%Y-%m-%d")
+    if already_in_date_parse_able_format(unformatted_date)
+      Date.parse(unformatted_date).strftime("%Y-%m-%d")
+    else
+      split_date = unformatted_date.split("/")
+      date_object = Date.parse("#{ split_date[2] }-#{ split_date[0] }-#{ split_date[1] }")
+      date_object.strftime("%Y-%m-%d")
+    end
   end
 
   def price_cleaner(max_price)
@@ -57,5 +61,9 @@ class FindTrip
     else
       max_price.prepend("USD")
     end
+  end
+
+  def already_in_date_parse_able_format(unformatted_date)
+    unformatted_date[-3..-1] == "UTC"
   end
 end
