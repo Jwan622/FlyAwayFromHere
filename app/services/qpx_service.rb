@@ -1,5 +1,3 @@
-require 'pp'
-
 class QPXService
   attr_reader :connection
   attr_accessor :qpx_post
@@ -9,10 +7,10 @@ class QPXService
   end
 
   def search(destination, origin, departure_date, return_date, max_price)
-    response = parse(connection.post do |req|
-      req.url "trips/search", key: Figaro.env.qpx_api_key
-      req.headers['Content-Type'] = ['application/json']
-      req.body = { request: {
+    response = parse(connection.post do |request|
+      request.url "trips/search", key: Figaro.env.qpx_api_key
+      request.headers['Content-Type'] = ['application/json']
+      request.body = { request: {
         passengers: {
           adultCount: 1,
           infantInLapCount: 0,

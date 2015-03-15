@@ -16,19 +16,7 @@ class Category < ActiveRecord::Base
     self.type = type.downcase
   end
 
-  def self.quality_categories
-    where(type: "quality")
-  end
-
-  def self.proximity_categories
-    where(type: "proximity")
-  end
-
-  def self.activity_categories
-    where(type: "activity")
-  end
-
   def self.location_categories
-    where(type: "location")
+    where(type: "location").order(:name)
   end
 end

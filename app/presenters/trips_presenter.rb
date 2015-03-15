@@ -1,27 +1,28 @@
-# def display_cost
-#   "#{currency}#{cents_in_dollars}"
-# end
-
+#I can rank trips here
 class TripsPresenter
-  attr_reader :data
+  attr_reader :real_trips
 
-  def initialize(data)
-    @data = data
+  def initialize(real_trips)
+    @real_trips = real_trips
+  end
+
+  def rank
+    real_trips.sort_by { |real_trip| real_trip.price }
   end
 
   def trips
-    if data[:search_type]
-      Trip.send("by_#{@data[:search_type]}", @data[:search_value])
+    if real_trips[:search_type]
+      Trip.send("by_#{@real_trips[:search_type]}", @real_trips[:search_value])
     else
       Trip.all_by_ranking
     end
   end
 
   def plan
-    Trip.by_plan(@data[:quality_category], @data[:location_category], @data[:activity_category])
+    Trip.by_plan(@real_trips[:quality_category], @real_trips[:location_category], @real_trips[:activity_category])
   end
 
   def filterz
-    Trip.by_filter(@data)
+    Trip.by_filter(@real_trips)
   end
 end

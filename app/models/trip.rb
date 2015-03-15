@@ -22,7 +22,8 @@ class Trip < ActiveRecord::Base
   end
 
   def ranking
-    self.ranking = (upvotes.to_f / downvotes.to_f) || 0
+    rand(1..100)
+    #state of the art algorithm at the moment...
   end
 
   def self.by_category(type)

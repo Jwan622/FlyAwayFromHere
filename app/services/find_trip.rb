@@ -1,9 +1,12 @@
 class FindTrip
+  include AirportAndCityLookupHelper
+
   attr_reader :destination,
               :origin,
               :departure_date,
               :return_date,
               :max_price,
+              :all_trips,
               :qpx_service
 
   def initialize(destination:, origin:, departure_date:, return_date:, max_price: "5000")
@@ -16,8 +19,12 @@ class FindTrip
   end
 
   def find_all
-    qpx_search["trips"]["tripOption"].map do |trip_data|
-      RealTrip.new(trip_data)
+    if qpx_data = qpx_search["trips"]["tripOption"]
+      qpx_data.map do |trip_data|
+        RealTrip.new(trip_data)
+      end
+    else
+      false
     end
   end
 
@@ -43,6 +50,12 @@ class FindTrip
   end
 
   def price_cleaner(max_price)
-    "USD" + max_price
+    if max_price[0..5] == "USDUSD"
+      max_price.gsub("USDUSD", "USD")
+    elsif max_price[0..2] == "USD"
+      max_price
+    else
+      max_price.prepend("USD")
+    end
   end
 end

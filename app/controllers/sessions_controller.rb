@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include RedirectHelper
+  
   def create
     if auth_hash
       @user             = User.find_or_create_from_auth_hash(auth_hash)

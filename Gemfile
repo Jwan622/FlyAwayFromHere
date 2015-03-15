@@ -29,8 +29,8 @@ gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'
-  gem 'byebug'
   gem 'pry',                    '~> 0.10.1'
+  gem 'pry-byebug'
   gem "factory_girl_rails",     '~> 4.0'
   gem 'web-console',            '~> 2.0'
   gem 'spring',                 '~> 1.2.0'
