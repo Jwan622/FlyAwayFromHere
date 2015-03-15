@@ -1,0 +1,45 @@
+<% provide(:title, "Trip") %>
+<div id="title"><h1><%= @trip_info.title %></h1></div>
+
+<div class="row text-center">
+
+  <div class="col-md-4">
+    <%= div_for(@trip_info, class: "photo") do %>
+      <%= image_tag @trip_info.photos.first.avatar.url(:large) %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-2">
+
+    <table class="table table-bordered table-color">
+      <tr>
+        <td>Price</td><td><%= @real_trip_info.price%></td>
+      </tr>
+      <tr>
+        <td>Description</td><td><%= @trip_info.short_description %> </td>
+      </tr>
+      <tr>
+        <td>Departure Date</td><td><%= @real_trip_info.departure_date.strftime("%m-%d-%Y, %H:%M") %> </td>
+      </tr>
+      <tr>
+        <td>Return Date</td><td><%= @real_trip_info.return_date.strftime("%m-%d-%Y, %H:%M") %> </td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
+
+<div class="trip-info-information lead">
+  <table class="table table-bordered table-color">
+    <tr>
+      <td>Trip Description</td><td><%=  @trip_info.long_description %></td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="row">
+  <%= button_to "Book Ticket", "http://www.kayak.com", data: { confirm: "You're about to leave the site. Are you sure?" }, class: "btn btn-default btn-lg book-now" %>
+</div>
+<%= render "shared/plan_again" %>

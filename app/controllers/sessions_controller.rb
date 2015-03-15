@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include RedirectHelper
+  
   def create
     if auth_hash
       @user             = User.find_or_create_from_auth_hash(auth_hash)
@@ -50,8 +52,6 @@ class SessionsController < ApplicationController
   def redirect_flyer_or_admin(user)
     if user.flyer?
       redirect_back_or(root_path)
-    # else
-      # redirect_to admin_dashboard_path
     end
   end
 end

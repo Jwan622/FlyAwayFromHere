@@ -1,0 +1,60 @@
+<div class="row">
+
+  <div class="container">
+    <i class="fa fa-filter fa-4x"></i>
+    <%= render partial: "shared/trip_filters" %>
+  </div>
+  <div class="trips-table">
+
+  </div>
+
+</div>
+
+<table class="table table-hover trips-table table-bordered">
+  <thead>
+    <tr class="warning">
+      <th data-field='ranking'>Ranking</th>
+      <th data-field='title'>Title</th>
+      <th data-field='departure_city'>Departure City</th>
+      <th data-field='arrival_city'>Arrival City</th>
+      <th data-field='airline'>Airline</th>
+      <th data-field='trip_details'>Trip Details</th>
+      <th data-field='date'>Departure Date</th>
+      <th data-field='date'>Return Date</th>
+      <th data-field='price'>Price</th>
+      <th data-field="select"> Select </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr data-categories= "<%= @categories.map(&:name).join(":") %>">
+        <td id="ranking"><%= @trips.index(trip) + 1 %></td>
+        <td id="trip-title"> <%= trip.title %> </td>
+        <td><%= trip.departure_city %></td>
+        <td><%= trip.arrival_city %></td>
+        <td><%= trip.departure_airline %></td>
+        <td><%= trip.short_description %></td>
+        <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
+        <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
+        <td><%= trip.price %></td>
+        <td><%= link_to "Details", real_trip_path(trip, info: { departure_date: trip.departure_date, return_date: trip.return_date, price: trip.price }), class: "btn btn-regular" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<% if !@trips.present? %>
+  <p class="no-trip"> There are currently no available trips to this destination. Please make other plans.</p>
+<% end %>
+
+<div class="trips-space"></div>
+
+<div class="plan-again-text">
+  Didn't find the perfect trip? Let's plan again.
+</div>
+
+<div class="plan-again">
+  <%= link_to "Let's Plan Again.", new_planner_path, class: "btn btn-primary" %>
+</div>

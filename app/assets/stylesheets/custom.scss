@@ -1,3 +1,4 @@
+
 // body
 body {
   background-color: #b6e2f9;
@@ -93,7 +94,7 @@ footer {
   background: rgba(220,220,235,0.9);
   border-radius: 10px;
   width: 102%;
-  min-height: 70px;
+  min-height: 73px;
   padding-top: 20px;
   padding: 20px 14px -10px;
 }
@@ -108,7 +109,7 @@ footer {
   background-image: url(/assets/time.png);
   background-size: 130px;
   background-repeat: no-repeat;
-  margin-top: 2px;
+  margin-top: 14px;
   margin-left: 45px;
   height: 68px;
 }
@@ -117,7 +118,7 @@ footer {
   background-image: url(/assets/cosmo-logo.jpg);
   background-size: 150px;
   background-repeat: no-repeat;
-  margin-top:11px;
+  margin-top:24px;
   margin-left: 35px;
   height: 38px;
 }
@@ -194,9 +195,9 @@ footer {
   font-weight: 300;
   min-width: 280px;
   max-width: 650px;
-  min-height: 253px;
+  min-height: 330px;
   margin: 0 auto;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   padding: 2% 3%;
   text-align: left;
 }
@@ -233,8 +234,22 @@ footer {
   float: right;
   padding: 4px;
   font-size: 20px;
-
 }
+
+.form-control {
+  display: block;
+  margin-left: 42px;
+  width: 71%;
+  height: 34px;
+  padding: 5px 5px;
+  font-size: 17px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+}
+
 // Itinerary-bar
 .itinerary-underline {
   text-decoration: underline;
@@ -301,7 +316,7 @@ footer {
 
 //trip show page
 
-.trip-information {
+.trip-info-information {
   margin-top: 25px;
 }
 
@@ -313,4 +328,14 @@ footer {
   float: right;
   margin-right: 45px;
   margin-bottom: 20px;
+}
+
+// trip-filter
+
+.trip-filters {
+  display: none;
+}
+
+span {
+  display: block;
 }

@@ -78,4 +78,12 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal "Jeffrey Wan", user.full_name
   end
+
+  test "a user has a home airport that is 3 characters long" do
+    user = build(:user, departure_airport: "JFK")
+    user1 = build(:user, departure_airport: "JFKF")
+
+    assert user.valid?
+    assert user1.invalid?
+  end
 end

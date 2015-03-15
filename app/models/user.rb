@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :photos
   before_save :email_downcase
+  before_save :city_slugify
 
   validates :username, presence: true,
                        uniqueness: true
@@ -21,6 +22,8 @@ class User < ActiveRecord::Base
       member.last_name = auth.info.name.split[1] if auth.info.name.split[1]
       member.username = auth.info.nickname
       member.image_url = auth.info.image
+      member.role = 0
+      member.departure_airport = "NYC"
       member.city = auth.info.location
       member.token = auth.credentials.token
       member.password = SecureRandom.urlsafe_base64
@@ -48,12 +51,17 @@ class User < ActiveRecord::Base
     end
   end
 
+
   def not_through_oauth?
     !token.present?
   end
 
   def email_downcase
     self.email = email.downcase if not_through_oauth?
+  end
+
+  def city_slugify
+    self.departure_city_slug = city.parameterize
   end
 
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories, only: [:index]
+  resources :real_trips, only: [:index, :show]
   resources :trips, only: [:index, :new, :show, :create, :destroy]
   resource :planner, only: [:new, :create]
   resource :itinerary, only: [:new, :create, :show]
