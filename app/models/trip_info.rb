@@ -1,9 +1,10 @@
 class TripInfo < ActiveRecord::Base
-  include AirportAndCityLookupHelper
+  extend AirportAndCityLookupHelper
+
 
   has_many :photos
 
   def self.find(airport)
-    find_by(:airport => airport)
+    find_by(:airport => airport_converter[airport])
   end
 end

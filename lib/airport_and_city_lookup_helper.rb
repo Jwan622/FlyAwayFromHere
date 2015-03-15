@@ -20,4 +20,23 @@ module AirportAndCityLookupHelper
     airport_lookup.invert
     #I love this method.
   end
+
+  def airport_converter
+    {
+      "AUA"           => "AUA",
+      "BCN"           => "BCN",
+      "DEL"           => "DEL",
+      "JFK"           => "NYC",
+      "NYC"           => "NYC",
+      "LGA"           => "NYC",
+      "KEF"           => "KEF",
+      "KIX"           => "KIX",
+      "LAS"           => "LAS",
+      "LAX"           => "LAX",
+      "MUC"           => "MUC",
+      "LON"           => "LON",
+      "PVG"           => "PVG",
+      "SYD"           => "SYD"
+    }
+  end
 end

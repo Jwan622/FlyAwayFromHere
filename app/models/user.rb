@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
       member.username = auth.info.nickname
       member.image_url = auth.info.image
       member.role = 0
-      member.departure_airport = "NYC"
+      member.departure_city_slug = "new-york-city"
       member.city = auth.info.location
       member.token = auth.credentials.token
       member.password = SecureRandom.urlsafe_base64

@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :real_trips, only: [:index, :show]
   resources :trips, only: [:index, :new, :show, :create, :destroy]
   resource :planner, only: [:new, :create]
-  resource :itinerary, only: [:new, :create, :show]
 
   namespace :admin do
     get "/dashboard", to: "base#dashboard"

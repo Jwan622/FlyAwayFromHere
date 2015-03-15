@@ -1,4 +1,6 @@
 class RealTripsController < ApplicationController
+  before_action :require_login, only: [:index, :show]
+
   def index
     if planner_params_incomplete?
       redirect_to new_planner_path, flash: { error: "Please fill out your flight preferences fully."}
