@@ -31,7 +31,7 @@ class QPXService
           }
         ],
         maxPrice: max_price,
-        solutions: 1
+        solutions: 6
         }
       }.to_json
     end

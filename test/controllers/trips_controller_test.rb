@@ -12,8 +12,6 @@ class TripsControllerTest < ActionController::TestCase
     arrival_city = trip_data["trips"]["tripOption"].first["slice"].first["segment"].first["leg"].first["destination"]
     origin_city = trip_data["trips"]["tripOption"].first["slice"].first["segment"].first["leg"].first["origin"]
 
-
-    assert_response :success
     assert_equal "$100", price
     assert_equal "2015-01-01", departure_date
     assert_equal "2015-01-02", arrival_date

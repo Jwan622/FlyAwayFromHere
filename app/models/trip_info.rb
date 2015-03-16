@@ -4,6 +4,6 @@ class TripInfo < ActiveRecord::Base
   has_many :photos
 
   def self.find(airport)
-    find_by(:airport => airport_converter[airport])
+    find_by(:airport => airport_converter[airport]) 
   end
 end

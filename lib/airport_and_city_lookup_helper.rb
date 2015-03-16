@@ -17,8 +17,12 @@ module AirportAndCityLookupHelper
   end
 
   def city_lookup
-    airport_lookup.invert
-    #I love this method.
+    city_lookup = airport_lookup.invert
+    city_lookup["EWR"] = "new-york-city"
+    city_lookup["LGA"] = "new-york-city"
+    city_lookup["JFK"] = "new-york-city"
+    city_lookup["LHR"] = "london"
+    city_lookup
   end
 
   def airport_converter
@@ -28,13 +32,15 @@ module AirportAndCityLookupHelper
       "DEL"           => "DEL",
       "JFK"           => "NYC",
       "NYC"           => "NYC",
+      "EWR"           => "NYC",
       "LGA"           => "NYC",
       "KEF"           => "KEF",
       "KIX"           => "KIX",
       "LAS"           => "LAS",
       "LAX"           => "LAX",
       "MUC"           => "MUC",
-      "LON"           => "LON",
+      "LON"           => "LHR",
+      "LHR"           => "LHR",
       "PVG"           => "PVG",
       "SYD"           => "SYD"
     }
