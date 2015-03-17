@@ -1,7 +1,6 @@
 module SetupForTripInfoPage
   def trip_info_setup
-    user = create(:user)
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    log_in
     create(:category, name: "New York City")
     las_vegas = create(:category, name: "Las Vegas")
     real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)

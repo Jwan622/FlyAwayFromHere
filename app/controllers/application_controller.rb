@@ -17,11 +17,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def itinerary
-    Itinerary.new(session[:itinerary])
-  end
-  helper_method :itinerary
-
   def logged_in?
     current_user != nil
   end

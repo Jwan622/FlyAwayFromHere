@@ -21,20 +21,21 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   end
 
   def test_a_user_can_see_trips_while_logged_in
-    create(:category)
-    user = create(:user)
-    QPXService.any_instance.stubs(:search).returns(JSON.parse(QPXStubbedJSON.qpx_data.to_json))
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
-    FindTrip.any_instance.stubs(:find_all).returns(test_trip_objects)
+    log_in
+    origin = create(:category, name: "New York City")
+    destination = create(:category, name: "Las Vegas")
+    real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
+    FindTrip.any_instance.stubs(:find_all).returns([real_trip])
 
-    visit real_trips_path(trips_test_params)
+    visit real_trips_path({ plan: { destination: "NYC", origin: "LAS", departure_date: "2015-03-29", return_date: "2015-04-18", max_price: "USD5000" } })
 
     assert page.has_content?("Here are your search results!")
+    assert page.has_content?("#{destination.name} trip")
+    assert page.has_content?("#{origin.name}")
   end
 
   def test_logged_in_user_can_see_trip_info_page
-    user = create(:user)
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    log_in
     create(:category, name: "New York City")
     las_vegas = create(:category, name: "Las Vegas")
     real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)

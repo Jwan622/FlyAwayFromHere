@@ -12,12 +12,6 @@
 <body>
   <div class="main-body container">
     <%= render "layouts/nav_bar" %>
-    <% if itinerary.present? %>
-      <div class="complete-itinerary">
-        Finish Planning and
-          <%= link_to "Fly Away.", itinerary_path, class: "itinerary-underline" %>
-      </div>
-    <% end %>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :class => "flash-#{name}" %>
     <% end %>
