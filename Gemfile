@@ -39,4 +39,6 @@ group :development, :test do
   gem 'launchy',                '~> 2.4.3'
   gem 'capybara_minitest_spec'
   gem 'database_cleaner',       '~> 1.4.0'
+  gem 'quiet_assets'
+  gem 'awesome_print',          require: "ap"
 end

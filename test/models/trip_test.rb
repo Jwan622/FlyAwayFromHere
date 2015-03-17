@@ -71,15 +71,4 @@ class TripTest < ActiveSupport::TestCase
     assert_equal 1, trip.photos.count
     refute trip2.valid?
   end
-
-  test "the ranking algo works" do
-    trip = create(:trip, upvotes: 20, downvotes: 10)
-    trip1 = create(:trip, upvotes: 19, downvotes: 10)
-    trip2 = create(:trip, upvotes: 21, downvotes: 10)
-
-    assert_equal trip.ranking, 2.0
-    assert_equal trip1.ranking, 1.9
-    assert_equal trip2.ranking, 2.1
-  end
-
 end

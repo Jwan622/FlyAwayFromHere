@@ -9,7 +9,7 @@ FactoryGirl.define do
     state "NY"
     country "USA"
     role 0
-    email "Jwan622@yahoo.com"
+    sequence(:email) { |n| "Jwan622@yahoo.com#{n}" }
     departure_city_slug "new-york-city"
   end
 end

@@ -79,11 +79,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "Jeffrey Wan", user.full_name
   end
 
-  test "a user has a home airport that is 3 characters long" do
-    user = build(:user, departure_airport: "JFK")
-    user1 = build(:user, departure_airport: "JFKF")
+  test "a user has a departure city slug that's just the parameterized
+    version of the city" do
+    user = create(:user, city: "New York City")
+    user1 = create(:user, city: "Los Angeles")
 
-    assert user.valid?
-    assert user1.invalid?
+    assert_equal "new-york-city", user.departure_city_slug
+    assert_equal "los-angeles", user1.departure_city_slug
   end
 end

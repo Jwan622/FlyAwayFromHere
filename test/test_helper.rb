@@ -35,6 +35,7 @@ class ActionDispatch::IntegrationTest
   include FactoryGirl::Syntax::Methods
   include Capybara::DSL
   include TestHelperMethods
+  include TripsTestParams
 
   def setup
     DatabaseCleaner.start
