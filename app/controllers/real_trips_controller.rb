@@ -24,6 +24,7 @@ class RealTripsController < ApplicationController
   def planner_params_incomplete?
     params[:plan][:destination].blank? ||
     params[:plan][:origin].blank? ||
+    params[:plan][:origin] == "unknown"
     params[:plan][:departure_date].blank? ||
     params[:plan][:return_date].blank? ||
     params[:plan][:max_price].blank?

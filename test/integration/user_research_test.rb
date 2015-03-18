@@ -75,6 +75,16 @@ class UserResearchTest < ActionDispatch::IntegrationTest
 
   test "a user visits home and clicks Bargain Hunt option and sees trips on the
     next page under $500 round trip in price order" do
+    user = create(:user)
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    create(:category, name: "New York City")
+    create(:category, name: "Las Vegas")
+    create(:category, name: "Los Angeles")
+    create(:category, name: "Kyoto")
+    create(:category, name: "Munich")
+    create(:category, name: "Shanghai")
+    create(:category, name: "Boston")
+
     visit root_path
 
     click_link "Bargain Hunt for Me"

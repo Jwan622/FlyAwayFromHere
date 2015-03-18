@@ -2,6 +2,7 @@ module AirportAndCityLookupHelper
   def airport_lookup
     {
       "aruba"         => "AUA",
+      "boston"        => "BOS",
       "barcelona"     => "BCN",
       "delhi"         => "DEL",
       "new-york-city" => "NYC",
@@ -29,6 +30,7 @@ module AirportAndCityLookupHelper
     {
       "AUA"           => "AUA",
       "BCN"           => "BCN",
+      "BOS"           => "BOS",
       "DEL"           => "DEL",
       "JFK"           => "NYC",
       "NYC"           => "NYC",
