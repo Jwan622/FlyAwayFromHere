@@ -1,6 +1,5 @@
 class QPXService
   attr_reader :connection
-  attr_accessor :qpx_post
 
   def initialize
     @connection = Faraday.new(url: "https://www.googleapis.com/qpxExpress/v1")
@@ -39,10 +38,6 @@ class QPXService
   end
 
   private
-
-  def api_key
-    ENV[:qpx_api_key]
-  end
 
   def parse(response)
     JSON.parse(response.body)

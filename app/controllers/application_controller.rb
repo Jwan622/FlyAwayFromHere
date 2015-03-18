@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless logged_in?
-      redirect_to root_path, alert: "You must login first before flying."
+      redirect_to root_path, alert: "Your Flight is Delayed until you log in."
     end
   end
 

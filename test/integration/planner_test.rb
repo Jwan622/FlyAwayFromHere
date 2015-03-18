@@ -21,7 +21,6 @@ class PlannerTest < ActionDispatch::IntegrationTest
 
   test "in the new planner box there is a select dropdown that list the prices" do
     visit root_path
-    save_and_open_page
 
     assert page.has_select?("plan[max_price]", options: ["Price", "$250", "$500", "$750", "$1000", "$1250", "$1500", "No Limit Baby"])
   end

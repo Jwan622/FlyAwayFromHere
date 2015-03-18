@@ -16,6 +16,11 @@ require "factory_girl_rails"
 require "database_cleaner"
 require "date"
 
+VCR.configure do |config|
+  config.cassette_library_dir = "test/vcr_cassettes"
+  config.hook_into :faraday
+end
+
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
@@ -36,6 +41,8 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
   include TestHelperMethods
   include TripsTestParams
+  include SetupForTripInfoPage
+  include SetupForTripIndexPage
 
   def setup
     DatabaseCleaner.start
