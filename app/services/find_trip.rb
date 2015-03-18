@@ -24,16 +24,16 @@ class FindTrip
         RealTrip.new(trip_data)
       end
     else
-      false
+      []
     end
   end
+
+  private
 
   def qpx_search
     clean_arguments_for_qpx
     qpx_service.search(destination, origin, departure_date, return_date, max_price)
   end
-
-  private
 
   def clean_arguments_for_qpx
     @destination = airport_lookup[destination]

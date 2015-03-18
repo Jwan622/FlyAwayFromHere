@@ -1,5 +1,5 @@
 <% provide(:title, "Trip") %>
-<div id="title"><h1><%= @trip_info.title %></h1></div>
+<div class="real-trip-title"><h1><%= @trip_info.title %></h1></div>
 
 <div class="row text-center">
 
@@ -13,7 +13,7 @@
 
     <table class="table table-bordered table-color">
       <tr>
-        <td>Price</td><td><%= @real_trip_info.price%></td>
+        <td>Price</td><td class="lead"><strong><mark><%= @real_trip_info.price%></mark></strong></td>
       </tr>
       <tr>
         <td>Description</td><td><%= @trip_info.short_description %> </td>
@@ -40,6 +40,6 @@
 </div>
 
 <div class="row">
-  <%= button_to "Book Ticket", "http://www.kayak.com", data: { confirm: "You're about to leave the site. Are you sure?" }, class: "btn btn-default btn-lg book-now" %>
+  <%= link_to "Book Ticket", "http://www.kayak.com", data: { confirm: "You're about to leave the site. Are you sure?" }, class: "btn btn-default btn-lg book-now" %>
 </div>
 <%= render "shared/plan_again" %>

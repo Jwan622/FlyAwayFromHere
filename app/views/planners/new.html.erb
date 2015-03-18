@@ -66,7 +66,7 @@
     <div class="text-center">
       <% @location_categories.each do |category| %>
         <div class="col-sm-3 trip-item">
-          <%= link_to("#{category.name}", real_trips_path(plan: { destination: category.slug, origin: current_user.departure_city_slug, departure_date: 10.days.from_now, return_date: 20.days.from_now, max_price: "USD9999"} ), class: "btn btn-primary traveler-type") %>  
+          <%= link_to("#{category.name}", real_trips_path_by(category), class: "btn btn-primary traveler-type") %>
           <%= image_tag category.photos.first.avatar.url(:city) %>
         </div>
       <% end %>

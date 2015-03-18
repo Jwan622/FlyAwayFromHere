@@ -23,7 +23,7 @@ gem 'aws-sdk',                  '~> 1.5.7'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'responders',               '~> 2.1.0'
-gem 'faraday'
+gem 'faraday',                  '< 0.9.0'
 gem 'rest-client',              '~> 1.7.3'
 gem 'bootstrap-datepicker-rails'
 
@@ -39,4 +39,7 @@ group :development, :test do
   gem 'launchy',                '~> 2.4.3'
   gem 'capybara_minitest_spec'
   gem 'database_cleaner',       '~> 1.4.0'
+  gem 'quiet_assets'
+  gem 'awesome_print',          require: "ap"
+  gem 'vcr'
 end

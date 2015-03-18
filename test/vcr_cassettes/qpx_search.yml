@@ -1,0 +1,321 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+    body:
+      encoding: UTF-8
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-03-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-04-13","maxStops":0}],"maxPrice":"USD4000","solutions":1}}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 18 Mar 2015 20:27:49 GMT
+      etag:
+      - '"pE4Ij-sDT0oqs3CLaXHFAmNlZKw/rml82Lpbnp8uKudW_XyL9nXmeaY"'
+      vary:
+      - Origin, X-Origin
+      content-type:
+      - application/json; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      alternate-protocol:
+      - 443:quic,p=0.5
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "qpxExpress#tripsSearch",
+         "trips": {
+          "kind": "qpxexpress#tripOptions",
+          "requestId": "OUdoKK3eS6SVWkn7r0LmLj",
+          "data": {
+           "kind": "qpxexpress#data",
+           "airport": [
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "JFK",
+             "city": "NYC",
+             "name": "New York John F Kennedy International"
+            },
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "LAS",
+             "city": "LAS",
+             "name": "Las Vegas McCarran International"
+            }
+           ],
+           "city": [
+            {
+             "kind": "qpxexpress#cityData",
+             "code": "LAS",
+             "name": "Las Vegas"
+            },
+            {
+             "kind": "qpxexpress#cityData",
+             "code": "NYC",
+             "name": "New York"
+            }
+           ],
+           "aircraft": [
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "320",
+             "name": "Airbus A320"
+            }
+           ],
+           "tax": [
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "ZP",
+             "name": "US Flight Segment Tax"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "XF",
+             "name": "US Passenger Facility Charge"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "US_001",
+             "name": "US Transportation Tax"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "AY_001",
+             "name": "US September 11th Security Fee"
+            }
+           ],
+           "carrier": [
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "B6",
+             "name": "Jetblue Airways Corporation"
+            }
+           ]
+          },
+          "tripOption": [
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD622.15",
+            "id": "04639IBJxwDN4MQwf25mQN001",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 286,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 286,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "712"
+                },
+                "id": "GNCvicDQM1+OrhIE",
+                "cabin": "COACH",
+                "bookingCode": "B",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LIqW3wVTa3TQF8Zt",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-03-29T04:55-04:00",
+                  "departureTime": "2015-03-28T21:09-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 286,
+                  "onTimePerformance": 70,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 353,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 353,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "G76wHLR45c66PV1P",
+                "cabin": "COACH",
+                "bookingCode": "O",
+                "bookingCodeCount": 1,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LpmPOCYXfHR7MwT0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-04-14T00:23-07:00",
+                  "departureTime": "2015-04-13T21:30-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 353,
+                  "onTimePerformance": 70,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ARr2pmGXOmClkrpWQ+g4PqEtwzTRs1Y+DrXi0F7sWSWg",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "BH07AE5U"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ah5dKyLXjfGKmLQ8j7Ya3Hp4chcMTwnzL6YzsQAk9bqM",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "OH21AE2U"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ah5dKyLXjfGKmLQ8j7Ya3Hp4chcMTwnzL6YzsQAk9bqM",
+                "segmentId": "G76wHLR45c66PV1P",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 1
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ARr2pmGXOmClkrpWQ+g4PqEtwzTRs1Y+DrXi0F7sWSWg",
+                "segmentId": "GNCvicDQM1+OrhIE",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 1
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD552.52",
+              "saleFareTotal": "USD552.52",
+              "saleTaxTotal": "USD69.63",
+              "saleTotal": "USD622.15",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD41.43"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC Q15.53 388.26BH07AE5U B6 LAS 148.73OH21AE2U USD 552.52 END ZP LAS JFK XT 41.43US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-03-19T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           }
+          ]
+         }
+        }
+    http_version: 
+  recorded_at: Wed, 18 Mar 2015 20:27:50 GMT
+recorded_with: VCR 2.9.3

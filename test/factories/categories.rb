@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :category do
-    name "Ice and Snow Trek"
-    type "Activity"
+    name "Delhi"
+    type "Location"
 
     before(:create) do |category|
       category.photos << create(:photo)

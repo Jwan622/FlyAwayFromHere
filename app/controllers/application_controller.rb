@@ -11,12 +11,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def authorize
-    redirect_to login_path if current_user.nil?
+  def require_login
+    unless logged_in?
+      redirect_to root_path, alert: "Your Flight is Delayed until you log in."
+    end
   end
 
-  def itinerary
-    Itinerary.new(session[:itinerary])
+  def logged_in?
+    current_user != nil
   end
-  helper_method :itinerary
 end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:username) { |n| "Flyer#{n}" }
+    sequence(:username) { |n| "flyer#{n}" }
     first_name "Jeffrey"
     last_name "Wan"
     street "E13th St Apt 3A"
@@ -9,7 +9,7 @@ FactoryGirl.define do
     state "NY"
     country "USA"
     role 0
-    email "Jwan622@yahoo.com"
-    departure_airport "JFK"
+    sequence(:email) { |n| "Jwan622@yahoo.com#{n}" }
+    departure_city_slug "new-york-city"
   end
 end

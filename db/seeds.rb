@@ -297,7 +297,7 @@ munich.photos << Photo.create!(
 
 TripInfo.create!(
   title: "Aruba... the Dutch Paradise of Conch and Beaches.",
-  city: "Oranjestad",
+  city: "Aruba",
   short_description: "At the island’s extreme ends are rugged, windswept vistas and uncrowded beaches. Aruba offers so much to the paradise-seeker.",
   long_description: "Americans from the east coast fleeing winter make Aruba the most touristed island in the southern Caribbean.
 And that’s not really surprising given that it has miles of the best beaches, plenty of package resorts and a compact and cute main town, Oranjestad, which is ideally suited for the two-hour strolls favored by day-tripping cruise-ship passengers. It’s all about sun, fun and spending money.",
@@ -364,7 +364,7 @@ TripInfo.create!(
   city: "London",
   short_description: "One of the world’s most visited cities, London has something for everyone: from history to culture, art to architecture.",
   long_description: "London is immersed in history. Not so much that it’s intimidating, but there’s sufficient antiquity and historic splendour (Tower of London, Westminster Abbey, Hampton Court) to blow you away. London’s buildings are eye-catching milestones in the city’s unique and compelling biography. There’s more than enough funky innovation (the Shard, the Aquatics Centre, the Gherkin) to put a crackle in the air, but it never drowns out London’s well-preserved, centuries-old narrative. Architectural grandeur rises up all around you in the West End, ancient remains dot the City and charming pubs punctuate the Thames riverside. Take your pick.",
-  airport: "LCY",
+  airport: "LHR",
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-london.jpg"))]
 )
 
