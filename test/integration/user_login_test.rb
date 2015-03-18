@@ -8,7 +8,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     visit root_path
     click_link "Delhi"
 
-    assert page.has_content?("You must login first before flying.")
+    assert page.has_content?("Your Flight is Delayed until you log in.")
   end
 
   def test_a_user_can_use_login_fields_to_log_in
