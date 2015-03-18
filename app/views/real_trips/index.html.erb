@@ -29,7 +29,7 @@
 
   <tbody>
     <% @trips.each do |trip| %>
-      <tr data-categories= "<%= @categories.map(&:name).join(":") %>">
+      <tr class="trip-row" data-categories= "<%= @categories.map(&:name).join(":") %>">
         <td id="ranking"><%= @trips.index(trip) + 1 %></td>
         <td id="trip-title"> <%= trip.title %> </td>
         <td><%= trip.departure_city %></td>
