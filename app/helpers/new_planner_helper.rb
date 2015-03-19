@@ -10,8 +10,8 @@ module NewPlannerHelper
   def real_trips_for_bargain_path
     if current_user
       real_trips_path(plan: { destination: "bargainer", origin: current_user.departure_city_slug, departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD500"} )
-    # else
-      # real_trips_path(plan: { destination: Category.all, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+    else
+      real_trips_path(plan: { destination: Category.all, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
     end
   end
 end
