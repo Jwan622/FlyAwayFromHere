@@ -3,9 +3,6 @@ class Category < ActiveRecord::Base
   before_save :create_slug
   before_save :downcase_type
 
-  has_many :categories_trips
-  has_many :trips, through: :categories_trips
-
   has_many :photos
 
   def create_slug
