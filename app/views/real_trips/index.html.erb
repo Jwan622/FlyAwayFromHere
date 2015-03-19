@@ -30,15 +30,15 @@
   <tbody>
     <% @trips.each do |trip| %>
       <tr class="trip-row" data-categories= "<%= @categories.map(&:name).join(":") %>">
-        <td id="ranking"><%= @trips.index(trip) + 1 %></td>
-        <td id="trip-title"> <%= trip.title %> </td>
+        <td class="ranking"><%= @trips.index(trip) + 1 %></td>
+        <td class="trip-title"> <%= trip.title %> </td>
         <td><%= trip.departure_city %></td>
         <td><%= trip.arrival_city %></td>
         <td><%= trip.departure_airline %></td>
         <td><%= trip.short_description %></td>
         <td><%= trip.departure_date.strftime("%b %d, %Y, %I:%M") %></td>
         <td><%= trip.return_date.strftime("%b %d, %Y, %I:%M") %></td>
-        <td><%= trip.price %></td>
+        <td class="trip-price"><%= trip.price %></td>
         <td><%= link_to "Details", real_trip_path(trip, info: { departure_date: trip.departure_date, return_date: trip.return_date, price: trip.price }), class: "btn btn-info" %></td>
       </tr>
     <% end %>

@@ -25,8 +25,8 @@ class RealTrip
     @departure_city = departure_city_name
     @arrival_city =  arrival_city_name
     @ranking = rand(100)
-    @title = arrival_city_name + " " + "trip"
-    @short_description = "This is a trip to #{arrival_city_name} from #{departure_city_name}."
+    @title = arrival_city+ " " + "trip"
+    @short_description = "This is a trip to #{arrival_city} from #{departure_city}."
     @long_description = "This is where the long description should be. I'll eventually use a hash to do this but for now" +
                         "Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, blah blah."
   end

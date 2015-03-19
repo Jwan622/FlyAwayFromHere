@@ -67,29 +67,30 @@ class UserResearchTest < ActionDispatch::IntegrationTest
     within all(".trip-row")[2] do
       assert page.has_content?("2")
     end
+    save_and_open_page
 
     within all(".trip-row").last do
       assert page.has_content?("2")
     end
   end
 
-  test "a user visits home and clicks Bargain Hunt option and sees trips on the
-    next page under $500 round trip in price order" do
-    user = create(:user)
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
-    create(:category, name: "New York City")
-    create(:category, name: "Las Vegas")
-    create(:category, name: "Los Angeles")
-    create(:category, name: "Kyoto")
-    create(:category, name: "Munich")
-    create(:category, name: "Shanghai")
-    create(:category, name: "Boston")
+  test "it can bargain hunt" do
+    VCR.use_cassette("bargain_hunt") do
+      user = create(:user)
+      ApplicationController.any_instance.stubs(:current_user).returns(user)
+      create(:category, name: "New York City")
+      create(:category, name: "Las Vegas")
+      create(:category, name: "Los Angeles")
+      visit root_path
 
-    visit root_path
+      click_link "Bargain Hunt for Me"
+      prices = all(".trip-row .trip-price").map do |price|
+        price.text.to_f
+      end
 
-    click_link "Bargain Hunt for Me"
-
-    assert_equal real_trips_path, current_path
-    assert_equal
+      assert_equal real_trips_path, current_path
+      assert page.has_content?("Here are your search results!")
+      assert prices.none? { |price| price > 500 }
+    end
   end
 end

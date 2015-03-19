@@ -5,7 +5,7 @@ FactoryGirl.define do
     last_name "Wan"
     street "E13th St Apt 3A"
     password "password"
-    city "New York"
+    city "New York City"
     state "NY"
     country "USA"
     role 0

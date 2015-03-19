@@ -4,6 +4,9 @@ class RealTripsController < ApplicationController
   def index
     if planner_params_incomplete?
       redirect_to new_planner_path, flash: { error: "Please fill out your flight preferences fully."}
+    elsif bargain_hunting?
+      @trips = FindTrip.new(trip_search_params).bargains.flatten
+      @categories = Category.select(:slug, :name)
     else
       trips = FindTrip.new(trip_search_params).find_all
       @trips = TripsPresenter.new(trips).ordered_by_price
@@ -20,6 +23,10 @@ class RealTripsController < ApplicationController
   end
 
   private
+
+  def bargain_hunting?
+    plan_params[:destination] == "bargainer"
+  end
 
   def planner_params_incomplete?
     params[:plan][:destination].blank? ||
