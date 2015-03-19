@@ -6,6 +6,6 @@
 
   <%= form_for :user, url: user_path(current_user), method: :patch do |f|%>
     <%= f.text_field :city %>
-    <%= f.submit "Update City", class: "btn btn-small" %>
+    <%= f.submit "Update City", class: "btn btn-small btn-update" %>
   <% end %>
 </div>
