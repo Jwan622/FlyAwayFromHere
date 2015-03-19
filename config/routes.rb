@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "planners#new"
   get '/auth/:provider/callback', to: 'sessions#create'
   get "/about", to: "static_pages#about", as: "about"
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :categories, only: [:index]
   resources :real_trips, only: [:index, :show]
+  resources :trip_infos, only: [:index, :show]
+  resources :trips, only: [:index, :new, :show, :create, :destroy]
   resource :planner, only: [:new, :create]
 
   namespace :admin do
