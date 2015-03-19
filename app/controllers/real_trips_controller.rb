@@ -43,10 +43,6 @@ class RealTripsController < ApplicationController
   def trip_search_params
     if params[:plan]
       plan_params.symbolize_keys
-    # elsif params[:category]
-    #   category_params
-    # elsif params[:trip]
-    #   trip_params
     end
   end
 
