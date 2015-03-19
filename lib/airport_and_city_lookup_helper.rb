@@ -11,7 +11,7 @@ module AirportAndCityLookupHelper
       "las-vegas"     => "LAS",
       "los-angeles"   => "LAX",
       "munich"        => "MUC",
-      "london"        => "LON",
+      "london"        => "LCY",
       "shanghai"      => "PVG",
       "sydney"        => "SYD"
     }
