@@ -65,12 +65,11 @@ class UserResearchTest < ActionDispatch::IntegrationTest
     end
 
     within all(".trip-row")[2] do
-      assert page.has_content?("2")
+      assert page.has_content?("$2")
     end
-    save_and_open_page
 
     within all(".trip-row").last do
-      assert page.has_content?("2")
+      assert page.has_content?("$689.95")
     end
   end
 

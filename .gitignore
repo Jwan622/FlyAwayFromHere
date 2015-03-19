@@ -27,3 +27,6 @@
 
 # Ignore factories
 /test/factories
+
+# Ignore coverage
+/coverage
