@@ -38,7 +38,7 @@ class FindTrip
 
   def bargains
     all_bargain_trips = Category.location_categories.map do |category|
-      @destination = category.slug  #this is a side affect, bad form
+      @destination = category.slug
       find_all
     end
     all_bargain_trips
@@ -48,6 +48,7 @@ class FindTrip
 
   def qpx_search
     clean_arguments_for_qpx
+    require 'pry' ; binding.pry
     qpx_service.search(cleaned_destination, cleaned_origin, cleaned_departure_date, cleaned_return_date, max_price)
   end
 
