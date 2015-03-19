@@ -20,7 +20,7 @@
 /config/application.yml
 
 # Ignore public system
-/public/system
+
 
 # Ignore VCRs
 /test/vcr_cassettes
@@ -29,4 +29,4 @@
 /test/factories
 
 # Ignore coverage
-/coverage
+coverage

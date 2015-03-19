@@ -12,7 +12,7 @@
     street:                "E13th St",
     country:               Faker::Address.country,
     role:                  0
-    )
+  )
 end
 flyer = User.find_by(username: "flyer1")
 
