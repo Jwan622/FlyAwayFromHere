@@ -342,24 +342,6 @@ TripInfo.create!(
 )
 
 TripInfo.create!(
-  title: "Vegas baby, Vegas.",
-  city: "Las Vegas",
-  short_description: "Sin City... Need we say more?",
-  long_description: "Obviously what happens in Vegas stayed in Vegas and that's what makes it the ultimate escape. It's the only place you can spend the night partying in ancient Rome, wake up in Paris and brunch under the Eiffel Tower, watch an erupting volcano at sunset and get married in a pink Cadillac at midnight. Double down with the high rollers, browse couture or tacky souvenirs, sip a neon 3ft-high margarita or a frozen vodka martini set on a bar made of ice – it's all here for the taking. Time is irrelevant in Sin City and emptying your wallet never felt so good.",
-  airport: "LAS",
-  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-vegas.jpg"))]
-)
-
-TripInfo.create!(
-  title: "New York. We are the center of it all.",
-  city: "New York City",
-  short_description: "Anyone who lives anywhere else is, in some sense of the word, joking.",
-  long_description: "Although the city may present itself as rather straightforward – especially when one navigates the relentless stripes of perpendicular gridiron – New York is infinitely complex; it’s intricate parts twisting in tandem like the cogs of a clock. This feels particularly fitting in a place that has its own standards for telling time. Sand passes through the hourglass much faster here – change is constantly afoot, as locals hunt down the latest and greatest with alacrity only to shift gears the following week in search of the next big hit. So it really doesn’t matter when you visit – today, tomorrow, or in a year’s time – New York will always be ahead of the curve.",
-  airport: "NYC",
-  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-nyc.png"))]
-)
-
-TripInfo.create!(
   title: "London, the Land of bad teeth and food. But oh their accents...",
   city: "London",
   short_description: "One of the world’s most visited cities, London has something for everyone: from history to culture, art to architecture.",
@@ -387,6 +369,15 @@ TripInfo.create!(
 )
 
 TripInfo.create!(
+  title: "New York. We are the center of it all.",
+  city: "New York City",
+  short_description: "The true New Yorker secretly believes that people living anywhere else have to be, in some sense, kidding.",
+  long_description: "Although the city may present itself as rather straightforward – especially when one navigates the relentless stripes of perpendicular gridiron – New York is infinitely complex; it’s intricate parts twisting in tandem like the cogs of a clock. This feels particularly fitting in a place that has its own standards for telling time. Sand passes through the hourglass much faster here – change is constantly afoot, as locals hunt down the latest and greatest with alacrity only to shift gears the following week in search of the next big hit. So it really doesn’t matter when you visit – today, tomorrow, or in a year’s time – New York will always be ahead of the curve.",
+  airport: "NYC",
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-nyc.png"))]
+)
+
+TripInfo.create!(
   title: "Shanghai, the City on the Sea.",
   city: "Shanghai",
   short_description: "Shànghǎi: few world cities evoke so much history, excess, glamour, mystique and exotic promise in name alone",
@@ -402,4 +393,13 @@ TripInfo.create!(
   long_description: "Brash is the word that inevitably gets bandied around when it comes to describing the Harbour City, and let's face it, Sydney is one hot mess! Compared to its Australian sister cities, Sydney is loud, uncompromising and in-your-face. Fireworks displays are more dazzling here, heels are higher, bodies more buffed, contact sports more brutal, starlets shinier, drag queens glitzier and chefs more adventurous. Australia’s best musos, foodies, actors, stockbrokers, models, writers and architects flock to the city to make their mark, and the effect is dazzling: a hyperenergetic, ambitious marketplace of the soul, where anything goes and everything usually does.",
   airport: "SYD",
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-sydney.jpeg"))]
+)
+
+TripInfo.create!(
+  title: "Vegas baby, Vegas.",
+  city: "Las Vegas",
+  short_description: "Sin City... Need we say more?",
+  long_description: "Obviously what happens in Vegas stayed in Vegas and that's what makes it the ultimate escape. It's the only place you can spend the night partying in ancient Rome, wake up in Paris and brunch under the Eiffel Tower, watch an erupting volcano at sunset and get married in a pink Cadillac at midnight. Double down with the high rollers, browse couture or tacky souvenirs, sip a neon 3ft-high margarita or a frozen vodka martini set on a bar made of ice – it's all here for the taking. Time is irrelevant in Sin City and emptying your wallet never felt so good.",
+  airport: "LAS",
+  photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-vegas.jpg"))]
 )

@@ -1,10 +1,10 @@
 <div id="visible-filters" class="trip-filters">
-  <p> Trip Categories </p>
-  <% @categories.each do |category| %>
-    <% if params[:category] == category.slug %>
-      <%= check_box :category, category.slug, {checked: true} %> <%= category.name %><br/>
+  <p> Trip Filters </p>
+  <% @trips.each do |trip| %>
+    <% if params[:category] == trip.arrival_city %>
+      <%= check_box :trip, trip.arrival_city, {checked: true} %> <%= trip.arrival_city %><br/>
     <% else %>
-      <%= check_box :category, category.slug %> <%= category.name %><br/>
+      <%= check_box :trip, trip.arrival_city %> <%= trip.arrival_city %><br/>
     <% end %>
   <% end %>
   <br/>

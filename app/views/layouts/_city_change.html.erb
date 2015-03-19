@@ -1,0 +1,11 @@
+<div class="user-city-change">
+  <div>
+    Are you not flying from <div class="current-user-city"><%= current_user.city %>?</div> </br>
+    Where are you flying from today?
+  </div>
+
+  <%= form_for :user, url: user_path(current_user), method: :patch do |f|%>
+    <%= f.text_field :city %>
+    <%= f.submit "Update City", class: "btn btn-small" %>
+  <% end %>
+</div>
