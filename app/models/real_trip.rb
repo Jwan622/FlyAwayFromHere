@@ -20,7 +20,7 @@ class RealTrip
     @departure_airline = outbound_trip.first["flight"]["carrier"]
     @return_airline = trip_data["slice"].second["segment"].first["flight"]["carrier"]
     @departure_date = Time.parse(outbound_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
-    @return_date = Time.parse(return_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M") 
+    @return_date = Time.parse(return_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
     @arrival_airport = arrival_airport
     @departure_city = departure_city_name
     @arrival_city =  arrival_city_name
@@ -58,6 +58,7 @@ class RealTrip
   end
 
   def arrival_city_name
+    require 'pry' ; binding.pry
     Category.find_by(slug: arrival_city_slug).name
   end
 
