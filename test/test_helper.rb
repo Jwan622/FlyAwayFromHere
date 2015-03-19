@@ -1,6 +1,7 @@
 require "simplecov"
 SimpleCov.start do
   add_filter "/factories/"
+  add_filter "/vcr_cassettes"
 end
 
 Dir[Rails.root.join("test/support/**/*.rb")].each { |f| require f }

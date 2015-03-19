@@ -2,6 +2,7 @@ module AirportAndCityLookupHelper
   def airport_lookup
     {
       "aruba"         => "AUA",
+      "boston"        => "BOS",
       "barcelona"     => "BCN",
       "delhi"         => "DEL",
       "new-york-city" => "NYC",
@@ -17,18 +18,32 @@ module AirportAndCityLookupHelper
   end
 
   def city_lookup
-    city_lookup = airport_lookup.invert
-    city_lookup["EWR"] = "new-york-city"
-    city_lookup["LGA"] = "new-york-city"
-    city_lookup["JFK"] = "new-york-city"
-    city_lookup["LHR"] = "london"
-    city_lookup
+    {
+      "AUA" => "aruba",
+      "BOS" => "boston",
+      "BCN" => "barcelona",
+      "DEL" => "delhi",
+      "EWR" => "new-york-city",
+      "JFK" => "new-york-city",
+      "KEF" => "reykjavik",
+      "KIX" => "kyoto",
+      "LAS" => "las-vegas",
+      "LAX" => "los-angeles",
+      "LHR" => "london",
+      "LGA" => "new-york-city",
+      "MUC" => "munich",
+      "NYC" => "new-york-city",
+      "LON" => "london",
+      "PVG" => "shanghai",
+      "SYD" => "sydney"
+    }
   end
 
   def airport_converter
     {
       "AUA"           => "AUA",
       "BCN"           => "BCN",
+      "BOS"           => "BOS",
       "DEL"           => "DEL",
       "JFK"           => "NYC",
       "NYC"           => "NYC",

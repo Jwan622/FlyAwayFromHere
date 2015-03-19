@@ -18,3 +18,12 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore public system
+/public/system
+
+# Ignore VCRs
+/test/vcr_cassettes
+
+# Ignore factories
+/test/factories

@@ -46,19 +46,51 @@ class UserResearchTest < ActionDispatch::IntegrationTest
     assert page.has_selector?(:link, "Book Ticket")
   end
 
-  test "the trips are in rank order in the trips index page" do
-    skip
-    trip = create(:trip)
-    trip2 = create(:trip)
+  test "the trips are in price order in the trips index page" do
+    user = create(:user)
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    create(:category, name: "New York City")
+    create(:category, name: "Las Vegas")
+    real_trip1 = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
+    real_trip2 = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
+    real_trip3 = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
+    real_trip2.stubs(:price).returns("$1")
+    real_trip3.stubs(:price).returns("$2")
+    FindTrip.any_instance.stubs(:find_all).returns([real_trip1, real_trip2, real_trip3])
 
-    visit trips_path
+    visit real_trips_path({ plan: { destination: "NYC", origin: "LAS", departure_date: "2015-03-29", return_date: "2015-04-18", max_price: "USD5000" } })
 
-    assert page.has_content?("1")
-    assert page.has_content?("2")
+    within first(".trip-row") do
+      assert page.has_content?("$1")
+    end
+
+    within all(".trip-row")[2] do
+      assert page.has_content?("2")
+    end
+    save_and_open_page
+
+    within all(".trip-row").last do
+      assert page.has_content?("2")
+    end
   end
 
-  test "a user visits home and clicks Bargain Hunt option and sees trips on the
-    next page under $400 round trip in rank order" do
-    skip
+  test "it can bargain hunt" do
+    VCR.use_cassette("bargain_hunt") do
+      user = create(:user)
+      ApplicationController.any_instance.stubs(:current_user).returns(user)
+      create(:category, name: "New York City")
+      create(:category, name: "Las Vegas")
+      create(:category, name: "Los Angeles")
+      visit root_path
+
+      click_link "Bargain Hunt for Me"
+      prices = all(".trip-row .trip-price").map do |price|
+        price.text.to_f
+      end
+
+      assert_equal real_trips_path, current_path
+      assert page.has_content?("Here are your search results!")
+      assert prices.none? { |price| price > 500 }
+    end
   end
 end

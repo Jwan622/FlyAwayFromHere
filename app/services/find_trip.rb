@@ -2,18 +2,26 @@ class FindTrip
   include AirportAndCityLookupHelper
 
   attr_reader :destination,
+              :cleaned_destination,
               :origin,
+              :cleaned_origin,
               :departure_date,
+              :cleaned_departure_date,
               :return_date,
+              :cleaned_return_date,
               :max_price,
               :all_trips,
               :qpx_service
 
   def initialize(destination:, origin:, departure_date:, return_date:, max_price: "5000")
     @destination = destination
+    @cleaned_destination = ""
     @origin = origin
+    @cleaned_origin = ""
     @departure_date = departure_date
+    @cleaned_departure_date = ""
     @return_date = return_date
+    @cleaned_return_date = ""
     @max_price = max_price
     @qpx_service = QPXService.new
   end
@@ -28,18 +36,26 @@ class FindTrip
     end
   end
 
+  def bargains
+    all_bargain_trips = Category.location_categories.map do |category|
+      @destination = category.slug  #this is a side affect, bad form
+      find_all
+    end
+    all_bargain_trips
+  end
+
   private
 
   def qpx_search
     clean_arguments_for_qpx
-    qpx_service.search(destination, origin, departure_date, return_date, max_price)
+    qpx_service.search(cleaned_destination, cleaned_origin, cleaned_departure_date, cleaned_return_date, max_price)
   end
 
   def clean_arguments_for_qpx
-    @destination = airport_lookup[destination]
-    @origin = airport_lookup[origin]
-    @departure_date = date_cleaner(departure_date)
-    @return_date = date_cleaner(return_date)
+    @cleaned_destination = airport_lookup[destination]
+    @cleaned_origin = airport_lookup[origin]
+    @cleaned_departure_date = date_cleaner(departure_date)
+    @cleaned_return_date = date_cleaner(return_date)
     @max_price = price_cleaner(max_price)
   end
 
