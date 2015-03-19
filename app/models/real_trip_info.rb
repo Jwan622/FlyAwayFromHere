@@ -4,8 +4,8 @@ class RealTripInfo < ActiveRecord::Base
               :price
 
   def initialize(departure_date:, return_date:, price:)
-    @departure_date = Date.parse(departure_date)
-    @return_date = Date.parse(return_date)
+    @departure_date = departure_date
+    @return_date = return_date
     @price = price
   end
 end

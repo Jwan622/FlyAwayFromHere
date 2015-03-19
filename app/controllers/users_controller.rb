@@ -14,6 +14,15 @@ class UsersController < ApplicationController
   def show
   end
 
+  def update
+    user = User.find(params[:id])
+    if user.update_attributes(update_user_params)
+      redirect_to root_path, notice: "You have updated your origin city."
+    else
+      redirect_to root_path, flash: { error: "We don't fly from that city hub...yet." }
+    end
+  end
+
   private
 
   def user_params
@@ -28,6 +37,10 @@ class UsersController < ApplicationController
                                  :password,
                                  :password_confirmation
                                  )
+  end
+
+  def update_user_params
+    params.require(:user).permit(:city)
   end
 
   def invalid_user_signup(user)

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include AirportAndCityLookupHelper
+
   has_secure_password
   has_many :photos
   before_save :email_downcase
@@ -13,6 +15,7 @@ class User < ActiveRecord::Base
                     if: :not_through_oauth?
 
   validate :valid_email?
+  validate :valid_city?, :on => :update
 
   enum role: [ :flyer, :admin ]
 
@@ -38,6 +41,11 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
+  def valid_city?
+    unless airport_lookup[departure_city_slug]
+      errors.add(:error, "We don't fly from that city hub.")
+    end
+  end
 
   private
 
@@ -47,10 +55,9 @@ class User < ActiveRecord::Base
 
   def email_checker
     unless self.email =~ /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$/
-      errors.add(:email, "Your email isn't valid")
+      errors.add(:error, "Your email isn't valid")
     end
   end
-
 
   def not_through_oauth?
     !token.present?

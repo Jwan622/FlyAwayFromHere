@@ -91,18 +91,17 @@ footer {
 
 // planner mid row
 .praise-row {
-  background: rgba(220,220,235,0.9);
-  border-radius: 10px;
-  width: 102%;
+  background: rgb(210,220,235);
+  border-radius: 15px;
+  min-width: 100px;
   min-height: 73px;
   padding-top: 20px;
-  padding: 20px 14px -10px;
+  padding: 20px 18px -10px;
 }
 
 .praise-text {
   font-size: 18px;
   min-height: 96px;
-  // vertical-align: middle;
 }
 
 .praise-time-logo {
@@ -261,6 +260,18 @@ footer {
     background-color: rgb(190, 20, 30);
     margin-bottom: -13px;
   }
+}
+
+.current-user-city {
+  color: rgb(20,20,190);
+  text-decoration: underline;
+}
+
+.user-city-change {
+  float: right;
+  border: 2px solid rgb(20,20,190);
+  border-radius: 30px;
+  padding: 10px;
 }
 
 // Itinerary-bar
