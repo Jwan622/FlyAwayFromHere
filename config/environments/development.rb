@@ -1,6 +1,4 @@
 Rails.application.configure do
-  Paperclip.options[:command_path] = "/usr/local/bin/"
-
   config.cache_classes = false
 
   config.eager_load = false

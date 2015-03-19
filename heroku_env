@@ -1,0 +1,20 @@
+Running `env` attached to terminal... up, run.5430
+TERM=xterm-256color
+RACK_ENV=production
+COLUMNS=179
+DYNO=run.5430
+PATH=/app/bin:/app/vendor/bundle/bin:/app/vendor/bundle/ruby/2.1.0/bin:/usr/local/bin:/usr/bin:/bin
+SECRET_KEY_BASE=8f5c50816f94360be929a5239cb716e8e963e2bdee82e96667cd2f3cb67b272324cc64e3aa0d5f911f88eaa0d4c2c2b67f76d95241b2970793c88705fba5d165
+PWD=/app
+RAILS_SERVE_STATIC_FILES=enabled
+LANG=en_US.UTF-8
+PS1=\[\033[01;34m\]\w\[\033[00m\] \[\033[01;32m\]$ \[\033[00m\]
+LINES=42
+SHLVL=1
+HOME=/app
+RAILS_ENV=production
+HEROKU_POSTGRESQL_RED_URL=postgres://nfxpowoagflsdk:kwaRgnRRn9_XN-2Jrjob5atb7m@ec2-23-23-180-133.compute-1.amazonaws.com:5432/dcupo0bv9gjqdb
+GEM_PATH=/app/vendor/bundle/ruby/2.1.0:
+PORT=15931
+DATABASE_URL=postgres://nfxpowoagflsdk:kwaRgnRRn9_XN-2Jrjob5atb7m@ec2-23-23-180-133.compute-1.amazonaws.com:5432/dcupo0bv9gjqdb
+_=/usr/bin/env
