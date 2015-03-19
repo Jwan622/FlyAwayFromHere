@@ -48,7 +48,6 @@ class FindTrip
 
   def qpx_search
     clean_arguments_for_qpx
-    require 'pry' ; binding.pry
     qpx_service.search(cleaned_destination, cleaned_origin, cleaned_departure_date, cleaned_return_date, max_price)
   end
 

@@ -7,6 +7,7 @@ class TripsPresenter
   end
 
   def ordered_by_price
+    require 'pry' ; binding.pry
     real_trips.sort_by { |real_trip| real_trip.price }
   end
 
