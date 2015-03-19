@@ -1,7 +1,6 @@
 class Photo < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
-  belongs_to :trip
   belongs_to :trip_info
 
   has_attached_file :avatar,

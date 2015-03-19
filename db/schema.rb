@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315022647) do
+ActiveRecord::Schema.define(version: 20150319043406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,22 +25,8 @@ ActiveRecord::Schema.define(version: 20150315022647) do
     t.string   "destination_airport"
   end
 
-  create_table "categories_trips", force: :cascade do |t|
-    t.integer "trip_id"
-    t.integer "category_id"
-  end
-
-  add_index "categories_trips", ["category_id"], name: "index_categories_trips_on_category_id", using: :btree
-  add_index "categories_trips", ["trip_id"], name: "index_categories_trips_on_trip_id", using: :btree
-
-  create_table "itineraries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "trip_id"
     t.integer  "category_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -50,18 +36,9 @@ ActiveRecord::Schema.define(version: 20150315022647) do
   end
 
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
-  add_index "photos", ["trip_id"], name: "index_photos_on_trip_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "real_trip_infos", force: :cascade do |t|
-    t.integer  "price"
-    t.datetime "departure_date"
-    t.datetime "return_date"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "real_trips", force: :cascade do |t|
     t.integer  "price"
     t.datetime "departure_date"
     t.datetime "return_date"
@@ -77,20 +54,6 @@ ActiveRecord::Schema.define(version: 20150315022647) do
     t.string   "airport"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "trips", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "price"
-    t.string   "short_description"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.string   "airline"
-    t.datetime "departure_date"
-    t.datetime "return_date"
-    t.text     "full_description"
-    t.decimal  "ranking",           precision: 5, scale: 2
-    t.string   "arrival_city"
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,9 +76,6 @@ ActiveRecord::Schema.define(version: 20150315022647) do
     t.string   "departure_city_slug"
   end
 
-  add_foreign_key "categories_trips", "categories"
-  add_foreign_key "categories_trips", "trips"
   add_foreign_key "photos", "categories"
-  add_foreign_key "photos", "trips"
   add_foreign_key "photos", "users"
 end
