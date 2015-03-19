@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.1.3'
+
 gem 'rails',                    '4.2.0'
 gem 'pg',                       '~>0.18.1'
 gem 'sass-rails',               '~> 5.0'
@@ -26,6 +28,7 @@ gem 'responders',               '~> 2.1.0'
 gem 'faraday',                  '< 0.9.0'
 gem 'rest-client',              '~> 1.7.3'
 gem 'bootstrap-datepicker-rails'
+
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'
