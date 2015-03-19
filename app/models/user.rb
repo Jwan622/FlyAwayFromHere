@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def valid_city?
-    unless airport_lookup[departure_city_slug]
+    unless airport_lookup[city.parameterize]
       errors.add(:error, "We don't fly from that city hub.")
     end
   end
