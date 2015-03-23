@@ -58,7 +58,6 @@ class RealTrip
   end
 
   def arrival_city_name
-    require 'pry' ; binding.pry
     Category.find_by(slug: arrival_city_slug).name
   end
 

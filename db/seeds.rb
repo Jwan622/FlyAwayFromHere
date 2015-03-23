@@ -1,5 +1,5 @@
 # users
-10.times do |n|
+15.times do |n|
   User.create!(
     username:              "flyer#{n + 1}",
     email:                 "flyer#{n + 1}@gmail.com",
