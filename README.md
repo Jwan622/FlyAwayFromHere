@@ -3,7 +3,7 @@
 Fly Away From Here is an app that helps users find cheap domestic and international flights. A user can specify a destination city, an origin city, a max price, and travel dates and the application will help users find cheap flights while adhering to the user's preferences. However, the big use-case for the app is the "big red button" which generates flight ideas and ticket prices that are under $500 from the user's origin city. It takes away the pain of trip planning.
 
 ### Getting Started
--To get the app running locally or run the test suite:
+To get the app running locally or run the test suite:
 
 ```
 git clone git@github.com:Jwan622/FlyAwayFromHere.git
