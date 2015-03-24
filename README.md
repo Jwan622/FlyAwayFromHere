@@ -44,8 +44,4 @@ Please feel free to inspect the code quality. The main functionality is within:
 ### If you want to create additional functionality:
 -You can only search for trips that are categories in the database. So if you want to fly to Boston, you need to create a Category in the
  seed file or create a Category via the web app as admin (not implemented yet). Currently, the seed file is the only way to add new location categories to fly to. You would then need to add the airport/cities to the hashes in the AirportAndCityLookuphelper module.  
-<<<<<<< HEAD
 -There are helpers in the support folder that allow you to reach real_trips_index page and the real_trip_info pages while writing new tests. Simply call the method in the associated folders and the setup will be complete and those pages will be reachable.
-=======
--There are helpers in the support folder that allow you to reach real_trips_index page and the real_trip_info pages while writing new tests. Simply call the method in the associated folders and the setup will be complete and those pages will be reachable.
->>>>>>> b630ee11375cbfdd800e48ad6119919549020a35
