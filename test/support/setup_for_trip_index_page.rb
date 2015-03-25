@@ -1,6 +1,6 @@
 module SetupForTripIndexPage
   def trip_index_setup
-    user = create(:user)
+    user = create(:user, activated: true)
     ApplicationController.any_instance.stubs(:current_user).returns(user)
     create(:category, name: "New York City")
     create(:category, name: "Las Vegas")

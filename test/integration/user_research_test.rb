@@ -20,7 +20,7 @@ class UserResearchTest < ActionDispatch::IntegrationTest
 
   test "a logged in user cannot click Get Travel Plans on new_planner_path
     without filling out the form completely" do
-    user = create(:user)
+    user = create(:user, activated: true)
 
     visit root_path
     log_in(as: user)

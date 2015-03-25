@@ -11,5 +11,6 @@ FactoryGirl.define do
     role 0
     sequence(:email) { |n| "Jwan622@yahoo.com#{n}" }
     departure_city_slug "new-york-city"
+    activated false
   end
 end

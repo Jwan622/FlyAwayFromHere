@@ -8,7 +8,6 @@ class UserSignupTest < ActionDispatch::IntegrationTest
 
   test "an unauthenticated user can click signup on the root page and see
     the signup form" do
-    skip
     visit root_path
 
     click_link "Signup"
@@ -17,9 +16,7 @@ class UserSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "a user can signup and return back to root url" do
-    skip
     get new_user_path
-
     post users_path, user: { username: "jwan6222",
                                 first_name: "user",
                                 last_name: "name",
@@ -78,6 +75,7 @@ class UserSignupTest < ActionDispatch::IntegrationTest
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
+    #where is assigns looking here for that instance variable?
     assert_not user.activated?
     log_in_as(user)
     assert_not is_logged_in?
