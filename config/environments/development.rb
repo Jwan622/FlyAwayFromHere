@@ -3,7 +3,8 @@ Rails.application.configure do
 
   config.eager_load = false
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
+  #why is caching even defaulted to false in the first place for development? How odd... What's the advantage?
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
   config.assets.debug = true
@@ -13,7 +14,4 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
-
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
 end
