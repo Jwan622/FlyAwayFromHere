@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :trip_infos, only: [:index, :show]
   resources :trips, only: [:index, :new, :show, :create, :destroy]
   resource :planner, only: [:new, :create]
+  resources :account_activations, only: [:edit]
 
   namespace :admin do
     get "/dashboard", to: "base#dashboard"

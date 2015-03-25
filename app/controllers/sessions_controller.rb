@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   include RedirectHelper
-  
+
   def create
     if auth_hash
       @user             = User.find_or_create_from_auth_hash(auth_hash)
@@ -30,7 +30,11 @@ class SessionsController < ApplicationController
   end
 
   def authenticate_user(user)
-    if user && user.authenticate(session_password)
+    if !user.activated
+      message = "Account not activated. Check your email for activation link."
+      flash[:warning] = message
+      redirect_to root_path
+    elsif user && user.authenticate(session_password)
       session[:user_id] = user.id
       flash[:notice] = "Welcome back to the skies #{user.username}"
       redirect_flyer_or_admin(user)
