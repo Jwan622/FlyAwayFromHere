@@ -34,6 +34,7 @@ Please feel free to inspect the code quality. The main functionality is within:
 ### This personal project incorporates the following functionality:
 - Consuming the QPX flight-data API  
 - Twitter Oauth  
+- Activation Account mailer in development and production using Rails' Action Mailer.
 - Friendly forwarding  
 - Presenter classes for cleaning up the Rails views of Activerecord logic.  
 - Non-databased backed models/POROs for converting API data into Ruby objects.  
