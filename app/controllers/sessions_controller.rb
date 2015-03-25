@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   include RedirectHelper
+  include AccountActivationsHelper
 
   def create
     if auth_hash
@@ -35,7 +36,7 @@ class SessionsController < ApplicationController
       flash[:error] = message
       redirect_to root_path
     elsif user && user.authenticate(session_password)
-      session[:user_id] = user.id
+      log_in(user)
       flash[:notice] = "Welcome back to the skies #{user.username}"
       redirect_flyer_or_admin(user)
     else

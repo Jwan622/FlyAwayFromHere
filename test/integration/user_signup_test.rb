@@ -75,7 +75,7 @@ class UserSignupTest < ActionDispatch::IntegrationTest
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
-    #where is assigns looking here for that instance variable?
+    #where is assigns looking here for that instance variable? Is it the last controller action? I think that was the create action in users then.
     assert_not user.activated?
     log_in_as(user)
     assert_not is_logged_in?
