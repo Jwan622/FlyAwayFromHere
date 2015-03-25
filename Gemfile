@@ -27,6 +27,7 @@ gem 'responders',               '~> 2.1.0'
 gem 'faraday',                  '< 0.9.0'
 gem 'rest-client',              '~> 1.7.3'
 gem 'bootstrap-datepicker-rails'
+gem "dalli"
 
 
 group :development, :test do
