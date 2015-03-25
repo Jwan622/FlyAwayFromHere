@@ -30,9 +30,9 @@ class SessionsController < ApplicationController
   end
 
   def authenticate_user(user)
-    if !user.activated
+    if user && !user.activated
       message = "Account not activated. Check your email for activation link."
-      flash[:warning] = message
+      flash[:error] = message
       redirect_to root_path
     elsif user && user.authenticate(session_password)
       session[:user_id] = user.id
