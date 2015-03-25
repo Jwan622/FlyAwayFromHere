@@ -81,7 +81,7 @@ class UserSignupTest < ActionDispatch::IntegrationTest
     assert_not user.activated?
     log_in_as(user)
     assert_not is_logged_in?
-    # Invalid activation token
+    # Invalid activation token because it's not the token associated with the user and there isn't an email to find a user
     get edit_account_activation_path("invalid token")
     assert_not is_logged_in?
     # Valid token, wrong email

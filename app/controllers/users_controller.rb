@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   def valid_user_signup(user)
     user.save
     user.send_activation_email
-    flash[:info] = "Please check your email to activate your account."
+    flash[:success] = "Please check your email to activate your account."
     redirect_to root_path
   end
 end
