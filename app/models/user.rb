@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
+  attr_accessor :activation_token
   include AirportAndCityLookupHelper
 
   has_secure_password
+  before_create :create_activation_digest
+
   has_many :photos
   before_save :email_downcase
   before_save :city_slugify
@@ -47,6 +50,32 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
+
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    #this next line checks if the digest matches the encrypted token.
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   private
 
   def self.attributes_from(auth)
@@ -70,5 +99,4 @@ class User < ActiveRecord::Base
   def city_slugify
     self.departure_city_slug = city.parameterize
   end
-
 end

@@ -12,7 +12,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   end
 
   def test_a_user_can_use_login_fields_to_log_in
-    user = create(:user)
+    user = create(:user, activated: true)
 
     visit root_path
     log_in(as: user)
@@ -21,13 +21,14 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   end
 
   def test_a_user_can_see_trips_while_logged_in
+    user = create(:user, activated: true)
     origin = create(:category, name: "New York City")
     destination = create(:category, name: "Las Vegas")
     real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
     FindTrip.any_instance.stubs(:find_all).returns([real_trip])
 
     visit root_path
-    log_in
+    log_in(as: user)
     visit real_trips_path({ plan: { destination: "NYC", origin: "LAS", departure_date: "2015-03-29", return_date: "2015-04-18", max_price: "USD5000" } })
 
     assert page.has_content?("Here are your search results!")
@@ -36,6 +37,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   end
 
   def test_logged_in_user_can_see_trip_info_page
+    user = create(:user, activated: true)
     create(:category, name: "New York City")
     las_vegas = create(:category, name: "Las Vegas")
     real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)
@@ -48,9 +50,10 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     trip_info.photos << create(:photo)
 
     visit root_path
-    log_in
+    log_in(as: user)
     visit real_trip_path(real_trip, info: { departure_date: real_trip.departure_date, return_date: real_trip.return_date, price: real_trip.price })
 
+    # assert_template :show # Why doesn't this work?
     assert page.has_content?("$689.95")
     assert page.has_content?("Las Vegas title")
     assert page.has_content?("Las Vegas short description")

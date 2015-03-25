@@ -1,6 +1,7 @@
 module SetupForTripInfoPage
   def trip_info_setup
-    log_in
+    user = create(:user, activated: true)
+    log_in(as: user)
     create(:category, name: "New York City")
     las_vegas = create(:category, name: "Las Vegas")
     real_trip = RealTrip.new(QPXStubbedJSON.qpx_data["trips"]["tripOption"].first)

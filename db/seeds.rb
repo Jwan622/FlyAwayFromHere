@@ -11,6 +11,7 @@
     state:                 "NY",
     street:                "E13th St",
     country:               Faker::Address.country,
+    activated:             true,
     role:                  0
   )
 end
@@ -28,6 +29,7 @@ User.create!(
   state:                 "NY",
   street:                "E14th St",
   country:               Faker::Address.country,
+  activated:             true,
   role:                  1
   )
 
