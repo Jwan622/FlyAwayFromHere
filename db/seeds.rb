@@ -116,7 +116,7 @@ new_york.photos << Photo.create!(
 london = Category.create!(
   name: "London",
   type: "Location",
-  destination_airport: "LCY"
+  destination_airport: "LON"
 )
 
 london.photos << Photo.create!(
@@ -348,7 +348,7 @@ TripInfo.create!(
   city: "London",
   short_description: "One of the world’s most visited cities, London has something for everyone: from history to culture, art to architecture.",
   long_description: "London is immersed in history. Not so much that it’s intimidating, but there’s sufficient antiquity and historic splendour (Tower of London, Westminster Abbey, Hampton Court) to blow you away. London’s buildings are eye-catching milestones in the city’s unique and compelling biography. There’s more than enough funky innovation (the Shard, the Aquatics Centre, the Gherkin) to put a crackle in the air, but it never drowns out London’s well-preserved, centuries-old narrative. Architectural grandeur rises up all around you in the West End, ancient remains dot the City and charming pubs punctuate the Thames riverside. Take your pick.",
-  airport: "LHR",
+  airport: "LON",
   photos: [Photo.create!(avatar: File.new("#{Rails.root}/app/assets/images/location-london.jpg"))]
 )
 

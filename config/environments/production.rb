@@ -14,6 +14,10 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
 
+  # for caching in production
+  config.cache_store = :dalli_store
+  config.action_controller.perform_caching = true
+
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.raise_delivery_errors = true

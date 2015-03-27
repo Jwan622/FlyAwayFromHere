@@ -11,7 +11,7 @@ module AirportAndCityLookupHelper
       "las-vegas"     => "LAS",
       "los-angeles"   => "LAX",
       "munich"        => "MUC",
-      "london"        => "LCY",
+      "london"        => "LON",
       "shanghai"      => "PVG",
       "sydney"        => "SYD"
     }
@@ -30,6 +30,7 @@ module AirportAndCityLookupHelper
       "LAS" => "las-vegas",
       "LAX" => "los-angeles",
       "LHR" => "london",
+      "LON" => "london",
       "LGA" => "new-york-city",
       "MUC" => "munich",
       "NYC" => "new-york-city",
@@ -54,8 +55,8 @@ module AirportAndCityLookupHelper
       "LAS"           => "LAS",
       "LAX"           => "LAX",
       "MUC"           => "MUC",
-      "LON"           => "LHR",
-      "LHR"           => "LHR",
+      "LON"           => "LON",
+      "LHR"           => "LON",
       "PVG"           => "PVG",
       "SYD"           => "SYD"
     }

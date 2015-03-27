@@ -65,7 +65,6 @@ class UserResearchTest < ActionDispatch::IntegrationTest
     end
 
     within all(".trip-row")[2] do
-      puts all(".trip-row")[2]
       assert page.has_content?("2")
     end
 

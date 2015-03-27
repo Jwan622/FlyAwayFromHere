@@ -4,6 +4,8 @@ class RealTripsController < ApplicationController
   def index
     if planner_params_incomplete?
       redirect_to new_planner_path, flash: { error: "Please fill out your flight preferences fully."}
+    elsif arriving_and_departing_to_same_destination?
+      redirect_to new_planner_path, flash: { error: "We love flying too, but you can't fly to and depart from the same city..."}
     elsif bargain_hunting?
       trips = FindTrip.new(trip_search_params).bargains.flatten
       @trips = TripsPresenter.new(trips).ordered_by_price
@@ -40,10 +42,12 @@ class RealTripsController < ApplicationController
     params.require(:plan).permit(:destination, :origin, :departure_date, :return_date, :max_price)
   end
 
+  def arriving_and_departing_to_same_destination?
+    plan_params[:destination] == plan_params[:origin]
+  end
+
   def trip_search_params
-    if params[:plan]
-      plan_params.symbolize_keys
-    end
+    plan_params.symbolize_keys
   end
 
   def real_trip_params

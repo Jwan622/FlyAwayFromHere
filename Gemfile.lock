@@ -78,6 +78,7 @@ GEM
     coffee-script-source (1.9.1)
     columnize (0.9.0)
     commonjs (0.2.7)
+    dalli (2.7.4)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
@@ -274,6 +275,7 @@ DEPENDENCIES
   capybara (~> 2.4.4)
   capybara_minitest_spec
   coffee-rails (~> 4.1.0)
+  dalli
   database_cleaner (~> 1.4.0)
   factory_girl_rails (~> 4.0)
   faker (~> 1.4.2)
@@ -291,7 +293,7 @@ DEPENDENCIES
   pry-byebug
   quiet_assets
   rails (= 4.2.0)
-  rails_12factor (~> 0.0.3)
+  rails_12factor
   responders (~> 2.1.0)
   rest-client (~> 1.7.3)
   sass-rails (~> 5.0)
