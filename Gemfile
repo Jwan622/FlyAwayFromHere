@@ -19,7 +19,6 @@ gem 'bcrypt',                   '~> 3.1.7'
 gem 'unicorn',                  '~> 4.8.3'
 gem "therubyracer",             '~> 0.12.1'
 gem "less-rails",               '~> 2.6.0'
-gem "rails_12factor",           '~> 0.0.3'
 gem 'aws-sdk',                  '~> 1.5.7'
 gem 'omniauth-twitter',         '~> 1.1.0'
 gem 'figaro',                   '~> 1.1.0'
@@ -29,6 +28,9 @@ gem 'rest-client',              '~> 1.7.3'
 gem 'bootstrap-datepicker-rails'
 gem "dalli"
 
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'simplecov',              '~> 0.9.1'

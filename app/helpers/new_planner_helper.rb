@@ -14,4 +14,12 @@ module NewPlannerHelper
       real_trips_path(plan: { destination: Category.all, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
     end
   end
+
+  def cache_key_for_categories
+    count = Category.count
+    if current_user
+      user_departure_city = current_user.departure_city_slug
+      "Categories/#{count}/#{user_departure_city}"
+    end
+  end
 end
