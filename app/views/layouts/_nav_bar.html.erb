@@ -4,7 +4,7 @@
       <%= menu_item image_tag('logo3.png', size: "55x55", class: "brand"), root_path  %>
       <%= menu_item "Plan a Trip", new_planner_path, class: "nav-link" %>
       <%= menu_item "Explore", trip_infos_path, class: "nav-link" %>
-      <%= menu_item "Admin Dashboard", admin_dashboard_path, class: "nav-link" %>
+      <%= menu_item "Admin Dashboard", admin_dashboard_path, class: "nav-link" if admin? %>
     <% end %>
 
     <%= menu_group pull: :right do %>

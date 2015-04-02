@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user != nil
   end
+
+  def admin?
+    current_user && current_user.admin?
+  end
+  helper_method :admin?
 end
