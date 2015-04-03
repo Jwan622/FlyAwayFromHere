@@ -1,6 +1,6 @@
 # FlyAwayFromHere
 
-Fly Away From Here is an app that helps users find cheap domestic and international flights. A user can specify a destination city, an origin city, a max price, and travel dates and the application will help users find cheap flights while adhering to the user's preferences. However, the big use-case for the app is the "big red button" which generates flight ideas and ticket prices that are under $500 from the user's origin city. It takes away the pain of trip planning.
+Fly Away From Here is an app that helps users find cheap domestic and international flights. A user can specify a destination city, an origin city, a max price, and travel dates and the application will help users find cheap flights while adhering to the user's preferences. However, the big use*case for the app is the "big red button" which generates flight ideas and ticket prices that are under $500 from the user's origin city. It takes away the pain of trip planning.
 
 ### Getting Started
 To get the app running locally or run the test suite:
@@ -26,23 +26,22 @@ There are 3 main ways to use the application.
 
 ### The code:
 Please feel free to inspect the code quality. The main functionality is within:  
-- app/models/real_trip.rb  
-- app/controllers/real_trips_controller.rb  
-- app/services/find_trip.rb  
-- app/services/qpx_service.rb  
+* app/models/real_trip.rb  
+* app/controllers/real_trips_controller.rb  
+* app/services/find_trip.rb  
+* app/services/qpx_service.rb  
 
 ### This personal project incorporates the following functionality:
-- Consuming the QPX flight-data API  
-- Twitter Oauth  
-- Activation Account mailer in development and production using Rails' Action Mailer.
-- Friendly forwarding  
-- Presenter classes for cleaning up the Rails views of Activerecord logic.  
-- Non-databased backed models/POROs for converting API data into Ruby objects.  
-- PORO's for activerecord ducktyping. Since I was using Non-databased backed models, I needed to create a PORO to simulate ActiveRecord methods to create/modify the non-databased backed models and make them available for use in the controller/views.  
-- jQuery/JavaScript filtering  
-- Twitter Bootstrap  
+* Consuming the QPX flight*data API  
+* Twitter Oauth  
+* Activation Account mailer in development and production using Rails' Action Mailer.
+* Friendly forwarding
+* Fragment caching  
+* Presenter classes for cleaning up the Rails views of Activerecord logic.  
+* Non-databased backed models/POROs for converting API data into Ruby objects.  
+* PORO's for activerecord ducktyping. Since I was using Non-databased backed models, I needed to create a PORO to simulate ActiveRecord methods to create/modify the non-databased backed models and make them available for use in the controller/views.  
+* Twitter Bootstrap  
 
 ### If you want to create additional functionality:
-- You can only search for trips that are categories in the database. So if you want to fly to Boston, you need to create a Category in the
- seed file or create a Category via the web app as admin (not implemented yet). Currently, the seed file is the only way to add new location categories to fly to. You would then need to add the airport/cities to the hashes in the AirportAndCityLookuphelper module.  
-- There are helpers in the support folder that allow you to reach real_trips_index page and the real_trip_info pages while writing new tests. Simply call the method in the associated folders and the setup will be complete and those pages will be reachable.
+* You can only search for trips that are categories in the database. So if you want to fly to Boston, you need to create a Category in the seed file or create a Category via the web app as admin (not implemented yet). Currently, the seed file is the only way to add new location categories to fly to. You would then need to add the airport/cities to the hashes in the AirportAndCityLookuphelper module.  
+* There are helpers in the support folder that allow you to reach real_trips_index page and the real_trip_info pages while writing new tests. Simply call the method in the associated folders and the setup will be complete and those pages will be reachable.
