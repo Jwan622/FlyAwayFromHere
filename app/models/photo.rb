@@ -10,4 +10,6 @@ class Photo < ActiveRecord::Base
                                  :large => "500x300#"
                                 },
                     :default_url => "/images/:style/logo3.png"
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end
