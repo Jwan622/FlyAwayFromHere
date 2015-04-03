@@ -4,8 +4,8 @@ class Photo < ActiveRecord::Base
   belongs_to :trip_info
 
   has_attached_file :avatar,
-                    :styles => { :medium => "310x300#>",
-                                 :thumb => "100x100#>",
+                    :styles => { :medium => "310x300#",
+                                 :thumb => "100x100#",
                                  :city => "260x250#",
                                  :large => "500x300#"
                                 },
