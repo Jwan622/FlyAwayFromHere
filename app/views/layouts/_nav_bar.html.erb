@@ -21,7 +21,7 @@
         <%= menu_item "Login With Twitter", "/auth/twitter", class: "nav-link"  %>
       <% else %>
         <% unless current_user.admin? %>
-          <%= menu_item "Profile", user_path(current_user), class: "nav-link" %>
+          <%= menu_item "Profile", user_path(current_user), method: :patch, class: "nav-link" %>
         <% end %>
         <li class="divider-vertical"></li>
         <%= menu_item "Logout", logout_path, class: "nav-link" %>
