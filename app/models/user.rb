@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
       member.departure_city_slug = "new-york-city"
       member.city = auth.info.location.capitalize
       member.token = auth.credentials.token
-      member.password = SecureRandom.urlsafe_base64
+      member.password = SecureRandom.urlsafe_base64(8)
     end
   end
 
