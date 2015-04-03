@@ -9,7 +9,6 @@ class RealTrip
               :departure_city,
               :arrival_city,
               :title,
-              :ranking,
               :short_description,
               :long_description,
               :trip_data
@@ -24,7 +23,6 @@ class RealTrip
     @arrival_airport = arrival_airport
     @departure_city = departure_city_name
     @arrival_city =  arrival_city_name
-    @ranking = rand(100)
     @title = arrival_city + " " + "trip"
     @short_description = "This is a trip to #{arrival_city} from #{departure_city}."
     @long_description = "This is where the long description should be. I'll eventually use a hash to do this but for now" +

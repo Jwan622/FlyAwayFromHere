@@ -2,6 +2,7 @@ class Category < ActiveRecord::Base
   self.inheritance_column = nil
   before_save :create_slug
   before_save :downcase_type
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 
   has_many :photos
 
