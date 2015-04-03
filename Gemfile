@@ -13,6 +13,7 @@ gem 'jbuilder',                 '~> 2.0'
 gem 'sdoc',                     '~> 0.4.0', group: :doc
 gem 'paperclip',                '~> 4.2.1'
 gem 'faker',                    '~> 1.4.2'
+gem 'bootstrap-sass',           '~> 3.2.0'
 gem "twitter-bootstrap-rails",  '~> 3.2.0'
 gem 'bootstrap_form',           '~> 2.2.0'
 gem 'bcrypt',                   '~> 3.1.7'
