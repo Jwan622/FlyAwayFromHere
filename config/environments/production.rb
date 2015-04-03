@@ -4,7 +4,6 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  Paperclip.options[:command_path] = "/usr/local/bin/"
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
   config.assets.js_compressor = :uglifier

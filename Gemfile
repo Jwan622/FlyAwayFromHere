@@ -27,6 +27,7 @@ gem 'faraday',                  '< 0.9.0'
 gem 'rest-client',              '~> 1.7.3'
 gem 'bootstrap-datepicker-rails'
 gem "dalli"
+gem "rmagick"
 
 group :production do
   gem 'rails_12factor'

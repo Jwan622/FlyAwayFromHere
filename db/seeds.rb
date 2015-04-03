@@ -157,6 +157,7 @@ sydney.photos << Photo.create!(
 )
 
 # 12
+
 munich = Category.create!(
   name: "Munich",
   type: "Location",
