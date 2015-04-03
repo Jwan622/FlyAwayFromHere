@@ -2,7 +2,7 @@
   <% @trip_infos.each do |trip_info| %>
     <div class="col-md-4 trip-info-item">
       <p class="lead"><strong><%= trip_info.city %></strong></p>
-      <%= image_tag trip_info.photos.first.avatar.url(:city) %>
+      <%= image_tag trip_info.photos.first.avatar.url(:medium) %>
       <p><%= trip_info.short_description %></p>
     </div>
   <% end %>
