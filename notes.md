@@ -1,4 +1,4 @@
-# Things learned from this project:
+# Things I learned from this project:
 
 1) presenter puts stuff in display format. convenience methods. allows view to stay slim and not do logic in view.
 
@@ -40,5 +40,3 @@ Refactor possibilities:
   and prevents me from changing the internals of the object during the code.
 
 * Naming of the POROs.
-
-* Take out the logic from the Find Trip for cleaning and make a cleaner class.

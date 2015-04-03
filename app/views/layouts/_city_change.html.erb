@@ -5,7 +5,7 @@
   </div>
 
   <%= form_for :user, url: user_path(current_user), method: :patch do |f|%>
-    <%= f.text_field :city %>
+    <%= f.collection_select :city, Category.all, :name, :name, { :prompt => "Choose Home City" }, { :class => "input-sm" } %>
     <%= f.submit "Update City", class: "btn btn-small btn-update" %>
   <% end %>
 </div>
