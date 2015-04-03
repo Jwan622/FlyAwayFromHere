@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessor :activation_token
   include AirportAndCityLookupHelper
+  attr_accessor :activation_token
 
   has_secure_password
   before_create :create_activation_digest
@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :photos
   before_save :email_downcase
   before_save :city_slugify
+  before_save :city_upcase
 
   validates :username, presence: true,
                        uniqueness: true
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
       member.image_url = auth.info.image
       member.role = 0
       member.departure_city_slug = "new-york-city"
-      member.city = auth.info.location
+      member.city = auth.info.location.capitalize
       member.token = auth.credentials.token
       member.password = SecureRandom.urlsafe_base64
     end
@@ -98,5 +99,9 @@ class User < ActiveRecord::Base
 
   def city_slugify
     self.departure_city_slug = city.parameterize
+  end
+
+  def city_upcase
+    self.city = city.capitalize
   end
 end

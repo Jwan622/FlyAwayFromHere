@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if user.update_attributes(update_user_params)
       redirect_to root_path, notice: "You have updated your origin city."
     else
-      redirect_to root_path, flash: { error: "We don't fly from that city hub...yet." }
+      redirect_to root_path
     end
   end
 

@@ -269,13 +269,6 @@ footer {
   text-decoration: underline;
 }
 
-.user-city-change {
-  float: right;
-  border: 2px solid rgb(20,20,190);
-  border-radius: 30px;
-  padding: 10px;
-}
-
 // Itinerary-bar
 .itinerary-underline {
   text-decoration: underline;
@@ -299,7 +292,16 @@ footer {
 
 // city change
 .btn-update {
-  background-color: rgb(80,180,190)
+  background-color: rgb(80,180,190);
+  border-radius: 13px;
+}
+
+.user-city-change {
+  float: right;
+  border: 2px solid rgb(20,20,190);
+  border-radius: 30px;
+  padding: 10px;
+  min-width: 280px;
 }
 
 // flash messages
