@@ -20,7 +20,7 @@ class QPXServiceTest < ActiveSupport::TestCase
   end
 
   def test_qpx_data_has_relevant_fields_to_create_real_trips_objects_with_vcr
-    VCR.use_cassette("qpx_search") do
+    VCR.use_cassette("qpx_search", :re_record_interval => 25.days) do
       flight_data = QPXService.new.search("NYC", "LAS", "2016-02-28", "2016-03-13", "USD4000")
       price = flight_data["trips"]["tripOption"].first["saleTotal"].gsub("USD", "$")
       departure_date = flight_data["trips"]["tripOption"].first["slice"].first["segment"].first["leg"].first["departureTime"]
