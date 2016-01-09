@@ -15,11 +15,11 @@ class RealTrip
 
   def initialize(trip_data)
     @trip_data = trip_data
-    @price = trip_data["saleTotal"].gsub("USD", "$")
+    #@price = trip_data["saleTotal"].gsub("USD", "$")
     @departure_airline = outbound_trip.first["flight"]["carrier"]
-    @return_airline = trip_data["slice"].second["segment"].first["flight"]["carrier"]
-    @departure_date = Time.parse(outbound_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
-    @return_date = Time.parse(return_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
+    @return_airline    = trip_data["slice"].second["segment"].first["flight"]["carrier"]
+    @departure_date    = Time.parse(outbound_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
+    @return_date       = Time.parse(return_trip.first["leg"].first["departureTime"]).strftime("%b %d, %Y, %I:%M")
     @arrival_airport = arrival_airport
     @departure_city = departure_city_name
     @arrival_city =  arrival_city_name
@@ -31,6 +31,10 @@ class RealTrip
 
   def to_param
     @arrival_airport
+  end
+
+  def price
+    trip_data["saleTotal"].gsub("USD", "$")
   end
 
   private

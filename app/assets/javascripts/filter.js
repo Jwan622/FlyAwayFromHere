@@ -3,7 +3,7 @@ $(".fa-filter").on("click", function() {
 });
 
 $(".fa-filter").on("click", function() {
-$("#visible-filters").toggleClass( "trip-filters" );
+  $("#visible-filters").toggleClass( "trip-filters" );
 });
 
 $(document).ready(function() {

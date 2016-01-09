@@ -1,4 +1,3 @@
-
 // body
 body {
   background-color: #b6e2f9;
@@ -18,6 +17,121 @@ body {
 
 .btn-lg {
   max-width: 140px;
+}
+
+// navbar
+.nav-row {
+  margin-right: -4%;
+  margin-left: -1%;
+  margin-top: 5px;
+}
+
+.divider-vertical {
+  height: 65px;
+  margin: -5px 2px;
+  border-left: 1px solid #F2F2F2;
+  border-right: 1px solid #FFF;
+}
+
+.nav-link {
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  &:hover {
+    color: white !important;
+  }
+}
+
+.navbar {
+  background-color: #093d5e;
+  opacity: 0.8;
+  color: white;
+  font-size: 1.3em;
+}
+
+.brand {
+  margin: -14px;
+}
+
+// planner new
+.planner {
+  background: rgb(50, 140, 220);
+  border-radius: 20px;
+  font-size: 2.3em;
+  font-weight: 300;
+  min-width: 280px;
+  max-width: 650px;
+  min-height: 330px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding: 2% 3%;
+  text-align: left;
+}
+
+.message {
+  font-size: 3.3em;
+  margin-bottom: 28px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.plan-lines {
+  margin: 0% 2%;
+  margin-left: 40px;
+}
+
+.traveler-type {
+  border-radius: 18px;
+  font-size: 2.4em;
+  margin: 2%;
+  padding: 5px 18px;
+}
+
+.plan-label {
+  font-size: 24px;
+  width: 390px;
+}
+
+.plan-button {
+  background: rgb(30,140,180);
+  border-radius: 10px;
+  color: rgb(30,20,70);
+  margin-top: 20px;
+  float: right;
+  padding: 4px;
+  font-size: 20px;
+}
+
+.form-control {
+  display: block;
+  margin-left: 42px;
+  width: 71%;
+  height: 34px;
+  padding: 5px 5px;
+  font-size: 17px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+}
+
+.bargain-hunter {
+  padding: 50px;
+  background-color: rgb(190, 20, 30);
+  border-radius: 40px;
+  font-size: 33px;
+
+  &:hover {
+    font-size: 42px;
+    background-color: rgb(190, 20, 30);
+    margin-bottom: -13px;
+  }
+}
+
+.current-user-city {
+  color: rgb(20,20,190);
+  text-decoration: underline;
 }
 
 // footer
@@ -152,121 +266,6 @@ footer {
   text-align: center;
   margin: 40px auto;
   width: 514px;
-}
-
-// navbar
-.nav-row {
-  margin-right: -4%;
-  margin-left: -1%;
-  margin-top: 5px;
-}
-
-.divider-vertical {
-  height: 65px;
-  margin: -5px 2px;
-  border-left: 1px solid #F2F2F2;
-  border-right: 1px solid #FFF;
-}
-
-.nav-link {
-  font-size: 16px;
-  margin-bottom: 8px;
-  margin-right: 5px;
-  &:hover {
-    color: white !important;
-  }
-}
-
-.navbar {
-  background-color: #093d5e;
-  opacity: 0.8;
-  color: white;
-  font-size: 1.3em;
-}
-
-.brand {
-  margin: -14px;
-}
-
-// planner new
-.planner {
-  background: rgb(50, 140, 220);
-  border-radius: 20px;
-  font-size: 2.3em;
-  font-weight: 300;
-  min-width: 280px;
-  max-width: 650px;
-  min-height: 330px;
-  margin: 0 auto;
-  margin-bottom: 150px;
-  padding: 2% 3%;
-  text-align: left;
-}
-
-.message {
-  font-size: 3.3em;
-  margin-bottom: 28px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.plan-lines {
-  margin: 0% 2%;
-  margin-left: 40px;
-}
-
-.traveler-type {
-  border-radius: 18px;
-  font-size: 2.4em;
-  margin: 2%;
-  padding: 5px 18px;
-}
-
-.plan-label {
-  font-size: 24px;
-  width: 390px;
-}
-
-.plan-button {
-  background: rgb(30,140,180);
-  border-radius: 10px;
-  color: rgb(30,20,70);
-  margin-top: 20px;
-  float: right;
-  padding: 4px;
-  font-size: 20px;
-}
-
-.form-control {
-  display: block;
-  margin-left: 42px;
-  width: 71%;
-  height: 34px;
-  padding: 5px 5px;
-  font-size: 17px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-}
-
-.bargain-hunter {
-  padding: 50px;
-  background-color: rgb(190, 20, 30);
-  border-radius: 40px;
-  font-size: 33px;
-
-  &:hover {
-    font-size: 42px;
-    background-color: rgb(190, 20, 30);
-    margin-bottom: -13px;
-  }
-}
-
-.current-user-city {
-  color: rgb(20,20,190);
-  text-decoration: underline;
 }
 
 // Itinerary-bar

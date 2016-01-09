@@ -22,6 +22,10 @@ VCR.configure do |config|
   config.hook_into :faraday
 end
 
+Capybara.register_driver :selenium_firefox do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end
+
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 

@@ -3,58 +3,7 @@
   Let's plan a trip...
 </div>
 
-<div class="planner">
-  <%= form_for :plan, url: real_trips_path, method: :get do |f| %>
-    <table>
-      <tr>
-        <td>
-          <%= f.label :destination, "I am flying away to...", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.collection_select :destination, Category.location_categories, :slug, :name, { include_blank: "Destination" }, { class: "btn-lg plan-lines" } %>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <%= f.label :origin, "and I am flying from...", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.collection_select :origin, Category.location_categories, :slug, :name, { include_blank: "Origin" }, { class: "btn-lg plan-lines" } %>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <%= f.label :max_price, "and my max flight price is...", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.select :max_price, options_for_select([["$250","250"],["$500","500"],["$750","750"],["$1000","1000"],["$1250","1250"],["$1500","1500"],["No Limit Baby", "9999"]]), { include_blank: "Price" }, { class: "btn-lg plan-lines" } %>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <%= f.label :departure_date, "and I would like to depart on...", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.text_field :departure_date, :class => 'datepicker form-control' %>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <%= f.label :return_date, "and return on...", class: "plan-label" %>
-        </td>
-        <td>
-          <%= f.text_field :return_date, :class => 'datepicker form-control' %>
-        </td>
-      </tr>
-    </table>
-      <%= f.submit 'Get Travel Plans', class: "plan-button plan-lines" %>
-  <% end %>
-</div>
-
+<%= render "layouts/new_planner" %>
 <%= render "layouts/praise_bar" %>
 <%= render "layouts/city_change" if current_user %>
 
@@ -63,21 +12,10 @@
     Fly to Your Favorite City For Cheap!
   </div>
 
-  <div class="row">
-    <div class="text-center">
-      <% cache(cache_key_for_categories) do %>
-        <% @location_categories.each do |category| %>
-          <div class="col-sm-3 trip-item">
-            <%= link_to("#{category.name}", real_trips_path_by(category), class: "btn btn-primary traveler-type") %>
-            <%= image_tag category.photos.first.avatar.url(:city) %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <%= render "layouts/countries" %>
 
   </br>
-   do
+
   <div class="row">
     <div class="col-mid-4 welcome-question">
       Or Just...

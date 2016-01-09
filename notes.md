@@ -35,3 +35,118 @@ Classes:
   and prevents me from changing the internals of the object during the code.
 
 * Naming of the POROs.
+
+
+
+
+#### Walking through some key parts of the code:
+1. If you click on a category on the first page, the link_to's url is a custom path helper that I created in the helpers/new_planner_helper.rb file.
+
+```rails
+def real_trips_path_by(category)
+  if current_user
+    real_trips_path(plan: { destination: category.slug, origin: current_user.departure_city_slug, departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+  else
+    real_trips_path(plan: { destination: category.slug, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+  end
+end
+```
+
+The reason why I needed this because I needed to grab things on the page and pass them to the real_trips_controller that weren't just intrinsic to the category like the current_user's departure city. **I wonder if I needed to pass in the departure_dates and return_dates and max price or if they could have been handled later on in the code perhaps in the service object. I need to look into this.**
+
+2. Let's look at our real_trips_controller index action:
+
+```ruby
+def index
+  if planner_params_incomplete?
+    redirect_to new_planner_path, flash: { error: "Please fill out your flight preferences fully."}
+  elsif arriving_and_departing_to_same_destination?
+    redirect_to new_planner_path, flash: { error: "We love flying too, but you can't fly to and depart from the same city..."}
+  elsif bargain_hunting?
+    trips = FindTrip.new(trip_search_params).bargains.flatten
+    @trips = TripsPresenter.new(trips).ordered_by_price
+  else
+    trips = FindTrip.new(trip_search_params).find_all
+    @trips = TripsPresenter.new(trips).ordered_by_price
+  end
+end
+```
+
+- So if planner_params_incomplete? is true meaning is destination or origin or departure date or max price is blank, then we redirect back to the planners/new.html.erb page.
+- arriving_and_departing_to_same_destination is self explanatory. That's off origin and destination are == .
+- If we go into bargain_hunting? which is if the user clicks the big red button, then we finally get into the FindTrip model.
+
+Some notes before proceeding. Let's take a look at the NewPlannerHelper:
+
+```ruby
+module NewPlannerHelper
+  def real_trips_path_by(category)
+    if current_user
+      real_trips_path(plan: { destination: category.slug, origin: current_user.departure_city_slug, departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+    else
+      real_trips_path(plan: { destination: category.slug, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+    end
+  end
+
+  def real_trips_for_bargain_path
+    if current_user
+      real_trips_path(plan: { destination: "bargainer", origin: current_user.departure_city_slug, departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD500"} )
+    else
+      real_trips_path(plan: { destination: Category.all, origin: "unknown", departure_date: 20.days.from_now, return_date: 35.days.from_now, max_price: "USD9999"} )
+    end
+  end
+```
+
+The check that I implemented is that if there is no current_user, the query parameter that we send has origin: "unknown" which will cause us to hit the planner_params_incomplete? conditional in the index action.
+
+3. Let's look at FindTrip and what happens when we hit the big red button.
+
+So when we hit here:
+
+```ruby
+elsif bargain_hunting?
+  trips = FindTrip.new(trip_search_params).bargains.flatten
+  @trips = TripsPresenter.new(trips).ordered_by_price
+```
+
+trip_search_params will be the symbolized keys and will look like this:
+
+```
+{:destination=>"bargainer", :origin=>"new-york-city", :departure_date=>"2016-01-29 19:01:08 UTC", :return_date=>"2016-02-13 19:01:08 UTC", :max_price=>"USD500"}
+```
+
+The most important fields are the destination and max_price
+
+- In FindTrip's initilaize method, we have required keyword arguments:
+
+> If a required keyword argument is missing, Ruby will raise a useful ArgumentError that tells us which required argument we must include. With first-class keyword arguments in the language, we don’t have to write the boilerplate code to extract hash options. Unnecessary boilerplate code increases the opportunity for typos and bugs. By using keyword arguments, we know what the arguments mean without looking up the implementation of the called method which is an advantage over just plain old positional arguments. Keyword arguments allow us to switch the order of the arguments, without affecting the behavior of the method:
+
+Here is that code:
+```rails
+def initialize(destination:, origin:, departure_date:, return_date:, max_price: "5000")
+  @destination = destination
+  @cleaned_destination = ""
+  @origin = origin
+  @cleaned_origin = ""
+  @departure_date = departure_date
+  @cleaned_departure_date = ""
+  @return_date = return_date
+  @cleaned_return_date = ""
+  @max_price = max_price
+  @qpx_service = QPXService.new
+end
+```
+
+And we then call the bargains method:
+
+```
+def bargains
+  all_bargain_trips = Category.location_categories.map do |category|
+    @destination = category.slug
+    find_all
+  end
+  all_bargain_trips
+end
+```
+
+The .slug takes the lower-cased and hyphenated names of the cities.

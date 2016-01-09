@@ -5,7 +5,123 @@ http_interactions:
     uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
     body:
       encoding: UTF-8
-      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-03-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-04-13","maxStops":0}],"maxPrice":"USD4000","solutions":1}}'
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-03-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-04-13","maxStops":0}],"maxPrice":"USD4000","solutions":8}}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: 
+    headers:
+      vary:
+      - Origin, X-Origin
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Tue, 04 Aug 2015 13:19:54 GMT
+      expires:
+      - Tue, 04 Aug 2015 13:19:54 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      alternate-protocol:
+      - 443:quic,p=1
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "error": {
+          "errors": [
+           {
+            "domain": "global",
+            "reason": "badRequest",
+            "message": "Invalid inputs for request id \"hPi4iUZIrqTFQdVzw0McJD\": QPX Warning.  Latest departure time of first slice (2015-03-29T06:59 UTC) is in the past or is incompatible with the prior slice arrival time and the requested minimum travel time."
+           }
+          ],
+          "code": 400,
+          "message": "Invalid inputs for request id \"hPi4iUZIrqTFQdVzw0McJD\": QPX Warning.  Latest departure time of first slice (2015-03-29T06:59 UTC) is in the past or is incompatible with the prior slice arrival time and the requested minimum travel time."
+         }
+        }
+    http_version: 
+  recorded_at: Tue, 04 Aug 2015 13:19:54 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+    body:
+      encoding: UTF-8
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-09-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-09-13","maxStops":0}],"maxPrice":"USD4000","solutions":8}}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: 
+    headers:
+      vary:
+      - Origin, X-Origin
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Tue, 04 Aug 2015 13:20:12 GMT
+      expires:
+      - Tue, 04 Aug 2015 13:20:12 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      alternate-protocol:
+      - 443:quic,p=1
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "error": {
+          "errors": [
+           {
+            "domain": "global",
+            "reason": "badRequest",
+            "message": "Invalid inputs for request id \"C6gM08mgoNWlGYWYD0McJE\": Input error for \"tripOptions\" (search), \"x.slices[1].date\" cannot be \"2015-09-13\": slice dates out of order: 2015-09-13 is before 2015-09-28."
+           }
+          ],
+          "code": 400,
+          "message": "Invalid inputs for request id \"C6gM08mgoNWlGYWYD0McJE\": Input error for \"tripOptions\" (search), \"x.slices[1].date\" cannot be \"2015-09-13\": slice dates out of order: 2015-09-13 is before 2015-09-28."
+         }
+        }
+    http_version: 
+  recorded_at: Tue, 04 Aug 2015 13:20:11 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+    body:
+      encoding: UTF-8
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-08-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-09-13","maxStops":0}],"maxPrice":"USD4000","solutions":8}}'
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,9 +139,9 @@ http_interactions:
       expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       date:
-      - Wed, 18 Mar 2015 20:27:49 GMT
+      - Tue, 04 Aug 2015 13:20:22 GMT
       etag:
-      - '"pE4Ij-sDT0oqs3CLaXHFAmNlZKw/rml82Lpbnp8uKudW_XyL9nXmeaY"'
+      - '"pE4Ij-sDT0oqs3CLaXHFAmNlZKw/Eqh3SuQeP40Bi0yQTm3fEQDjniA"'
       vary:
       - Origin, X-Origin
       content-type:
@@ -39,7 +155,7 @@ http_interactions:
       server:
       - GSE
       alternate-protocol:
-      - 443:quic,p=0.5
+      - 443:quic,p=1
       connection:
       - close
       transfer-encoding:
@@ -51,10 +167,16 @@ http_interactions:
          "kind": "qpxExpress#tripsSearch",
          "trips": {
           "kind": "qpxexpress#tripOptions",
-          "requestId": "OUdoKK3eS6SVWkn7r0LmLj",
+          "requestId": "nISpHH4XMu6iiY58D0McJE",
           "data": {
            "kind": "qpxexpress#data",
            "airport": [
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "EWR",
+             "city": "EWR",
+             "name": "Newark Liberty International"
+            },
             {
              "kind": "qpxexpress#airportData",
              "code": "JFK",
@@ -71,6 +193,11 @@ http_interactions:
            "city": [
             {
              "kind": "qpxexpress#cityData",
+             "code": "EWR",
+             "name": "Newark"
+            },
+            {
+             "kind": "qpxexpress#cityData",
              "code": "LAS",
              "name": "Las Vegas"
             },
@@ -85,6 +212,26 @@ http_interactions:
              "kind": "qpxexpress#aircraftData",
              "code": "320",
              "name": "Airbus A320"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "321",
+             "name": "Airbus A321"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "738",
+             "name": "Boeing 737"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "739",
+             "name": "Boeing 737"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "753",
+             "name": "Boeing 757"
             }
            ],
            "tax": [
@@ -95,8 +242,8 @@ http_interactions:
             },
             {
              "kind": "qpxexpress#taxData",
-             "id": "XF",
-             "name": "US Passenger Facility Charge"
+             "id": "AY_001",
+             "name": "US September 11th Security Fee"
             },
             {
              "kind": "qpxexpress#taxData",
@@ -105,8 +252,8 @@ http_interactions:
             },
             {
              "kind": "qpxexpress#taxData",
-             "id": "AY_001",
-             "name": "US September 11th Security Fee"
+             "id": "XF",
+             "name": "US Passenger Facility Charge"
             }
            ],
            "carrier": [
@@ -114,44 +261,54 @@ http_interactions:
              "kind": "qpxexpress#carrierData",
              "code": "B6",
              "name": "Jetblue Airways Corporation"
+            },
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "UA",
+             "name": "United Airlines, Inc."
+            },
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "US",
+             "name": "US Airways, Inc."
             }
            ]
           },
           "tripOption": [
            {
             "kind": "qpxexpress#tripOption",
-            "saleTotal": "USD622.15",
-            "id": "04639IBJxwDN4MQwf25mQN001",
+            "saleTotal": "USD404.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ001",
             "slice": [
              {
               "kind": "qpxexpress#sliceInfo",
-              "duration": 286,
+              "duration": 314,
               "segment": [
                {
                 "kind": "qpxexpress#segmentInfo",
-                "duration": 286,
+                "duration": 314,
                 "flight": {
                  "carrier": "B6",
-                 "number": "712"
+                 "number": "748"
                 },
-                "id": "GNCvicDQM1+OrhIE",
+                "id": "GYUOgEUco2s-YmT4",
                 "cabin": "COACH",
-                "bookingCode": "B",
-                "bookingCodeCount": 7,
+                "bookingCode": "Z",
+                "bookingCodeCount": 4,
                 "marriedSegmentGroup": "0",
                 "leg": [
                  {
                   "kind": "qpxexpress#legInfo",
-                  "id": "LIqW3wVTa3TQF8Zt",
+                  "id": "Lng8bWkCHj0v11Zq",
                   "aircraft": "320",
-                  "arrivalTime": "2015-03-29T04:55-04:00",
-                  "departureTime": "2015-03-28T21:09-07:00",
+                  "arrivalTime": "2015-08-28T21:51-04:00",
+                  "departureTime": "2015-08-28T13:37-07:00",
                   "origin": "LAS",
                   "destination": "JFK",
                   "originTerminal": "3",
                   "destinationTerminal": "5",
-                  "duration": 286,
-                  "onTimePerformance": 70,
+                  "duration": 314,
+                  "onTimePerformance": 60,
                   "mileage": 2241,
                   "secure": true
                  }
@@ -161,33 +318,33 @@ http_interactions:
              },
              {
               "kind": "qpxexpress#sliceInfo",
-              "duration": 353,
+              "duration": 345,
               "segment": [
                {
                 "kind": "qpxexpress#segmentInfo",
-                "duration": 353,
+                "duration": 345,
                 "flight": {
                  "carrier": "B6",
                  "number": "611"
                 },
-                "id": "G76wHLR45c66PV1P",
+                "id": "GjQ7utggpa-WALbF",
                 "cabin": "COACH",
-                "bookingCode": "O",
-                "bookingCodeCount": 1,
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
                 "marriedSegmentGroup": "1",
                 "leg": [
                  {
                   "kind": "qpxexpress#legInfo",
-                  "id": "LpmPOCYXfHR7MwT0",
+                  "id": "L9vz65hR1Jdq45d0",
                   "aircraft": "320",
-                  "arrivalTime": "2015-04-14T00:23-07:00",
-                  "departureTime": "2015-04-13T21:30-04:00",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
                   "origin": "JFK",
                   "destination": "LAS",
                   "originTerminal": "5",
                   "destinationTerminal": "3",
-                  "duration": 353,
-                  "onTimePerformance": 70,
+                  "duration": 345,
+                  "onTimePerformance": 80,
                   "mileage": 2241,
                   "secure": true
                  }
@@ -202,26 +359,28 @@ http_interactions:
               "fare": [
                {
                 "kind": "qpxexpress#fareInfo",
-                "id": "ARr2pmGXOmClkrpWQ+g4PqEtwzTRs1Y+DrXi0F7sWSWg",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
                 "carrier": "B6",
                 "origin": "LAS",
                 "destination": "NYC",
-                "basisCode": "BH07AE5U"
+                "basisCode": "ZH2AUEN5",
+                "private": true
                },
                {
                 "kind": "qpxexpress#fareInfo",
-                "id": "Ah5dKyLXjfGKmLQ8j7Ya3Hp4chcMTwnzL6YzsQAk9bqM",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
                 "carrier": "B6",
                 "origin": "NYC",
                 "destination": "LAS",
-                "basisCode": "OH21AE2U"
+                "basisCode": "UH2AUEN5",
+                "private": true
                }
               ],
               "segmentPricing": [
                {
                 "kind": "qpxexpress#segmentPricing",
-                "fareId": "Ah5dKyLXjfGKmLQ8j7Ya3Hp4chcMTwnzL6YzsQAk9bqM",
-                "segmentId": "G76wHLR45c66PV1P",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
                 "freeBaggageOption": [
                  {
                   "kind": "qpxexpress#freeBaggageAllowance",
@@ -237,14 +396,14 @@ http_interactions:
                     "subcode": "0GO"
                    }
                   ],
-                  "pieces": 1
+                  "pieces": 0
                  }
                 ]
                },
                {
                 "kind": "qpxexpress#segmentPricing",
-                "fareId": "ARr2pmGXOmClkrpWQ+g4PqEtwzTRs1Y+DrXi0F7sWSWg",
-                "segmentId": "GNCvicDQM1+OrhIE",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GYUOgEUco2s-YmT4",
                 "freeBaggageOption": [
                  {
                   "kind": "qpxexpress#freeBaggageAllowance",
@@ -260,15 +419,15 @@ http_interactions:
                     "subcode": "0GO"
                    }
                   ],
-                  "pieces": 1
+                  "pieces": 0
                  }
                 ]
                }
               ],
-              "baseFareTotal": "USD552.52",
-              "saleFareTotal": "USD552.52",
-              "saleTaxTotal": "USD69.63",
-              "saleTotal": "USD622.15",
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
               "passengers": {
                "kind": "qpxexpress#passengerCounts",
                "adultCount": 1
@@ -280,7 +439,7 @@ http_interactions:
                 "chargeType": "GOVERNMENT",
                 "code": "US",
                 "country": "US",
-                "salePrice": "USD41.43"
+                "salePrice": "USD26.23"
                },
                {
                 "kind": "qpxexpress#taxInfo",
@@ -307,8 +466,1913 @@ http_interactions:
                 "salePrice": "USD8.00"
                }
               ],
-              "fareCalculation": "LAS B6 NYC Q15.53 388.26BH07AE5U B6 LAS 148.73OH21AE2U USD 552.52 END ZP LAS JFK XT 41.43US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
-              "latestTicketingTime": "2015-03-19T23:59-04:00",
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD404.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ003",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 300,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 300,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "1248"
+                },
+                "id": "GvtrYrPJFqjtE3Ul",
+                "cabin": "COACH",
+                "bookingCode": "Z",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LzqVVPKRgL27GjqJ",
+                  "aircraft": "321",
+                  "arrivalTime": "2015-08-29T07:25-04:00",
+                  "departureTime": "2015-08-28T23:25-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 300,
+                  "onTimePerformance": 90,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 345,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 345,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "GjQ7utggpa-WALbF",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L9vz65hR1Jdq45d0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 345,
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "ZH2AUEN5",
+                "private": true
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "UH2AUEN5",
+                "private": true
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GvtrYrPJFqjtE3Ul",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD26.23"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD404.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ002",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 293,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 293,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "948"
+                },
+                "id": "GEmF0MTLL2619PLk",
+                "cabin": "COACH",
+                "bookingCode": "Z",
+                "bookingCodeCount": 1,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "Lx2fTSPfgRIB1qqj",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-08-29T05:00-04:00",
+                  "departureTime": "2015-08-28T21:07-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 293,
+                  "onTimePerformance": 40,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 345,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 345,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "GjQ7utggpa-WALbF",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L9vz65hR1Jdq45d0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 345,
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "ZH2AUEN5",
+                "private": true
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "UH2AUEN5",
+                "private": true
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GEmF0MTLL2619PLk",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD26.23"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD421.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ006",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 288,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 288,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1183"
+                },
+                "id": "GuD8whnr2Ed3T2BW",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 4,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LvE3YchsIJXhMMcq",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-29T05:54-04:00",
+                  "departureTime": "2015-08-28T22:06-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 288,
+                  "onTimePerformance": 70,
+                  "mileage": 2221,
+                  "meal": "Food and Beverages for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "APCpkir8wwdyyqr46IVHvhdcBRu7U8FvtbbVkVRZA3WM",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "SAA14AHS"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "APCpkir8wwdyyqr46IVHvhdcBRu7U8FvtbbVkVRZA3WM",
+                "segmentId": "GuD8whnr2Ed3T2BW",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD365.58",
+              "saleFareTotal": "USD365.58",
+              "saleTaxTotal": "USD55.62",
+              "saleTotal": "USD421.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD27.42"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 213.02SAA14AHS UA LAS 152.56KAA21AHS USD 365.58 END ZP LAS EWR XT 27.42US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD446.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ004",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 307,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 307,
+                "flight": {
+                 "carrier": "US",
+                 "number": "210"
+                },
+                "id": "G2yNbAjVdYHaw6E3",
+                "cabin": "COACH",
+                "bookingCode": "G",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LcdcdtfhArEWXf+T",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-28T16:07-04:00",
+                  "departureTime": "2015-08-28T08:00-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "1",
+                  "destinationTerminal": "8",
+                  "duration": 307,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 344,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 344,
+                "flight": {
+                 "carrier": "US",
+                 "number": "1263"
+                },
+                "id": "GOcPORk3w+7scl94",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LSM2dB9sucmBaZy1",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-09-13T10:14-07:00",
+                  "departureTime": "2015-09-13T07:30-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "8",
+                  "destinationTerminal": "1",
+                  "duration": 344,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 97,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "carrier": "US",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "GA14ZSJ1"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "carrier": "US",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "SA21ZSJ3"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "segmentId": "G2yNbAjVdYHaw6E3",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "segmentId": "GOcPORk3w+7scl94",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD388.83",
+              "saleFareTotal": "USD388.83",
+              "saleTaxTotal": "USD57.37",
+              "saleTotal": "USD446.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD29.17"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS US JFK 213.02GA14ZSJ1 US LAS 175.81SA21ZSJ3 USD 388.83 END ZP LAS JFK XT 29.17US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD446.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ005",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 312,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 312,
+                "flight": {
+                 "carrier": "US",
+                 "number": "120"
+                },
+                "id": "GCd-vXsosPBA82rP",
+                "cabin": "COACH",
+                "bookingCode": "G",
+                "bookingCodeCount": 5,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LeMkz8hT69rFjHGw",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-28T19:27-04:00",
+                  "departureTime": "2015-08-28T11:15-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "1",
+                  "destinationTerminal": "8",
+                  "duration": 312,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 344,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 344,
+                "flight": {
+                 "carrier": "US",
+                 "number": "1263"
+                },
+                "id": "GOcPORk3w+7scl94",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LSM2dB9sucmBaZy1",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-09-13T10:14-07:00",
+                  "departureTime": "2015-09-13T07:30-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "8",
+                  "destinationTerminal": "1",
+                  "duration": 344,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 97,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "carrier": "US",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "GA14ZSJ1"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "carrier": "US",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "SA21ZSJ3"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "segmentId": "GCd-vXsosPBA82rP",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "segmentId": "GOcPORk3w+7scl94",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD388.83",
+              "saleFareTotal": "USD388.83",
+              "saleTaxTotal": "USD57.37",
+              "saleTotal": "USD446.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD29.17"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS US JFK 213.02GA14ZSJ1 US LAS 175.81SA21ZSJ3 USD 388.83 END ZP LAS JFK XT 29.17US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD484.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ007",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 298,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 298,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "418"
+                },
+                "id": "GQFmNtzdLP5mQQq3",
+                "cabin": "COACH",
+                "bookingCode": "W",
+                "bookingCodeCount": 3,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LFdBPDQpwC3U5ENV",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-08-28T14:25-04:00",
+                  "departureTime": "2015-08-28T06:27-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 298,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "A3WBH060ZoiASjLmjeBkGXMsZmaQZu4MYfwHKwpdk77Q",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "WAA14AHN"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "A3WBH060ZoiASjLmjeBkGXMsZmaQZu4MYfwHKwpdk77Q",
+                "segmentId": "GQFmNtzdLP5mQQq3",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD424.19",
+              "saleFareTotal": "USD424.19",
+              "saleTaxTotal": "USD60.01",
+              "saleTotal": "USD484.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD31.81"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 271.63WAA14AHN UA LAS 152.56KAA21AHS USD 424.19 END ZP LAS EWR XT 31.81US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD689.20",
+            "id": "92JExqGyFT0OugVtoLPQeJ008",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 293,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 293,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "195"
+                },
+                "id": "GxCmjbOVqukgzh18",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L5GMtXjt1A-44+wx",
+                  "aircraft": "753",
+                  "arrivalTime": "2015-08-28T20:00-04:00",
+                  "departureTime": "2015-08-28T12:07-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 293,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ATjQOcEqTbxO4YUHY9rLlETP/jv74Z/0bk473VAUzS6E",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "UAA07AHN"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ATjQOcEqTbxO4YUHY9rLlETP/jv74Z/0bk473VAUzS6E",
+                "segmentId": "GxCmjbOVqukgzh18",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD614.89",
+              "saleFareTotal": "USD614.89",
+              "saleTaxTotal": "USD74.31",
+              "saleTotal": "USD689.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD46.11"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 462.33UAA07AHN UA LAS 152.56KAA21AHS USD 614.89 END ZP LAS EWR XT 46.11US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
               "ptc": "ADT"
              }
             ]
@@ -317,5 +2381,2331 @@ http_interactions:
          }
         }
     http_version: 
-  recorded_at: Wed, 18 Mar 2015 20:27:50 GMT
+  recorded_at: Tue, 04 Aug 2015 13:20:21 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+    body:
+      encoding: UTF-8
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-08-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-09-13","maxStops":0}],"maxPrice":"USD4000","solutions":8}}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Tue, 04 Aug 2015 13:21:43 GMT
+      etag:
+      - '"pE4Ij-sDT0oqs3CLaXHFAmNlZKw/QZ0gTSjMV8oNoFIP15icnOL0hoo"'
+      vary:
+      - Origin, X-Origin
+      content-type:
+      - application/json; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      alternate-protocol:
+      - 443:quic,p=1
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "qpxExpress#tripsSearch",
+         "trips": {
+          "kind": "qpxexpress#tripOptions",
+          "requestId": "HyrM5ZLguucq7nZ1n0McJF",
+          "data": {
+           "kind": "qpxexpress#data",
+           "airport": [
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "EWR",
+             "city": "EWR",
+             "name": "Newark Liberty International"
+            },
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "JFK",
+             "city": "NYC",
+             "name": "New York John F Kennedy International"
+            },
+            {
+             "kind": "qpxexpress#airportData",
+             "code": "LAS",
+             "city": "LAS",
+             "name": "Las Vegas McCarran International"
+            }
+           ],
+           "city": [
+            {
+             "kind": "qpxexpress#cityData",
+             "code": "EWR",
+             "name": "Newark"
+            },
+            {
+             "kind": "qpxexpress#cityData",
+             "code": "LAS",
+             "name": "Las Vegas"
+            },
+            {
+             "kind": "qpxexpress#cityData",
+             "code": "NYC",
+             "name": "New York"
+            }
+           ],
+           "aircraft": [
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "320",
+             "name": "Airbus A320"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "321",
+             "name": "Airbus A321"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "738",
+             "name": "Boeing 737"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "739",
+             "name": "Boeing 737"
+            },
+            {
+             "kind": "qpxexpress#aircraftData",
+             "code": "753",
+             "name": "Boeing 757"
+            }
+           ],
+           "tax": [
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "ZP",
+             "name": "US Flight Segment Tax"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "AY_001",
+             "name": "US September 11th Security Fee"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "US_001",
+             "name": "US Transportation Tax"
+            },
+            {
+             "kind": "qpxexpress#taxData",
+             "id": "XF",
+             "name": "US Passenger Facility Charge"
+            }
+           ],
+           "carrier": [
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "B6",
+             "name": "Jetblue Airways Corporation"
+            },
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "UA",
+             "name": "United Airlines, Inc."
+            },
+            {
+             "kind": "qpxexpress#carrierData",
+             "code": "US",
+             "name": "US Airways, Inc."
+            }
+           ]
+          },
+          "tripOption": [
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD404.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3001",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 314,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 314,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "748"
+                },
+                "id": "GYUOgEUco2s-YmT4",
+                "cabin": "COACH",
+                "bookingCode": "Z",
+                "bookingCodeCount": 4,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "Lng8bWkCHj0v11Zq",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-08-28T21:51-04:00",
+                  "departureTime": "2015-08-28T13:37-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 314,
+                  "onTimePerformance": 60,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 345,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 345,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "GjQ7utggpa-WALbF",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L9vz65hR1Jdq45d0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 345,
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "ZH2AUEN5",
+                "private": true
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "UH2AUEN5",
+                "private": true
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GYUOgEUco2s-YmT4",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD26.23"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD404.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3003",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 300,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 300,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "1248"
+                },
+                "id": "GvtrYrPJFqjtE3Ul",
+                "cabin": "COACH",
+                "bookingCode": "Z",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LzqVVPKRgL27GjqJ",
+                  "aircraft": "321",
+                  "arrivalTime": "2015-08-29T07:25-04:00",
+                  "departureTime": "2015-08-28T23:25-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 300,
+                  "onTimePerformance": 90,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 345,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 345,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "GjQ7utggpa-WALbF",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L9vz65hR1Jdq45d0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 345,
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "ZH2AUEN5",
+                "private": true
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "UH2AUEN5",
+                "private": true
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GvtrYrPJFqjtE3Ul",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD26.23"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD404.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3002",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 293,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 293,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "948"
+                },
+                "id": "GEmF0MTLL2619PLk",
+                "cabin": "COACH",
+                "bookingCode": "Z",
+                "bookingCodeCount": 1,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "Lx2fTSPfgRIB1qqj",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-08-29T05:00-04:00",
+                  "departureTime": "2015-08-28T21:07-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "3",
+                  "destinationTerminal": "5",
+                  "duration": 293,
+                  "onTimePerformance": 40,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 345,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 345,
+                "flight": {
+                 "carrier": "B6",
+                 "number": "611"
+                },
+                "id": "GjQ7utggpa-WALbF",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L9vz65hR1Jdq45d0",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-09-13T23:08-07:00",
+                  "departureTime": "2015-09-13T20:23-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "5",
+                  "destinationTerminal": "3",
+                  "duration": 345,
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "carrier": "B6",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "ZH2AUEN5",
+                "private": true
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "carrier": "B6",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "UH2AUEN5",
+                "private": true
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AgR//gXxz3yuoI0SJfXbVAV8o2WFHx6dj7nv/+PXY2e34/qWjE/cSdgndOf2tH62O55Hp9qKqj/xIk0gLh/40x6fTbY6znQpOMm+w/9SKS320/pZ1KnfpaTwCQOX9BVA+5/Cr9V7bIHfAKo",
+                "segmentId": "GEmF0MTLL2619PLk",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ACpurcUwHPuTsJHFihC3lLum16SGOT3Vsm6aPVhUQG752rYnZY8d8ndmajn5FFcJEr4FPBty1XRjHNNnXqS9xfDAW0KO1GwPPT0q1gfnivjwU4buOB9TOE8Q/eA/EXQR1P0ij6EGmIEUmSo",
+                "segmentId": "GjQ7utggpa-WALbF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 1,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD349.77",
+              "saleFareTotal": "USD349.77",
+              "saleTaxTotal": "USD54.43",
+              "saleTotal": "USD404.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD26.23"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS B6 NYC 197.21ZH2AUEN5 B6 LAS 152.56UH2AUEN5 USD 349.77 END ZP LAS JFK XT 26.23US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD421.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3006",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 288,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 288,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1183"
+                },
+                "id": "GuD8whnr2Ed3T2BW",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 4,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LvE3YchsIJXhMMcq",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-29T05:54-04:00",
+                  "departureTime": "2015-08-28T22:06-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 288,
+                  "onTimePerformance": 70,
+                  "mileage": 2221,
+                  "meal": "Food and Beverages for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "APCpkir8wwdyyqr46IVHvhdcBRu7U8FvtbbVkVRZA3WM",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "SAA14AHS"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "APCpkir8wwdyyqr46IVHvhdcBRu7U8FvtbbVkVRZA3WM",
+                "segmentId": "GuD8whnr2Ed3T2BW",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD365.58",
+              "saleFareTotal": "USD365.58",
+              "saleTaxTotal": "USD55.62",
+              "saleTotal": "USD421.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD27.42"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 213.02SAA14AHS UA LAS 152.56KAA21AHS USD 365.58 END ZP LAS EWR XT 27.42US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD446.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3004",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 307,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 307,
+                "flight": {
+                 "carrier": "US",
+                 "number": "210"
+                },
+                "id": "G2yNbAjVdYHaw6E3",
+                "cabin": "COACH",
+                "bookingCode": "G",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LcdcdtfhArEWXf+T",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-28T16:07-04:00",
+                  "departureTime": "2015-08-28T08:00-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "1",
+                  "destinationTerminal": "8",
+                  "duration": 307,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 344,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 344,
+                "flight": {
+                 "carrier": "US",
+                 "number": "1263"
+                },
+                "id": "GOcPORk3w+7scl94",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LSM2dB9sucmBaZy1",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-09-13T10:14-07:00",
+                  "departureTime": "2015-09-13T07:30-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "8",
+                  "destinationTerminal": "1",
+                  "duration": 344,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 97,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "carrier": "US",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "GA14ZSJ1"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "carrier": "US",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "SA21ZSJ3"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "segmentId": "G2yNbAjVdYHaw6E3",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "segmentId": "GOcPORk3w+7scl94",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD388.83",
+              "saleFareTotal": "USD388.83",
+              "saleTaxTotal": "USD57.37",
+              "saleTotal": "USD446.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD29.17"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS US JFK 213.02GA14ZSJ1 US LAS 175.81SA21ZSJ3 USD 388.83 END ZP LAS JFK XT 29.17US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD446.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3005",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 312,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 312,
+                "flight": {
+                 "carrier": "US",
+                 "number": "120"
+                },
+                "id": "GCd-vXsosPBA82rP",
+                "cabin": "COACH",
+                "bookingCode": "G",
+                "bookingCodeCount": 5,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LeMkz8hT69rFjHGw",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-08-28T19:27-04:00",
+                  "departureTime": "2015-08-28T11:15-07:00",
+                  "origin": "LAS",
+                  "destination": "JFK",
+                  "originTerminal": "1",
+                  "destinationTerminal": "8",
+                  "duration": 312,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 80,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 344,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 344,
+                "flight": {
+                 "carrier": "US",
+                 "number": "1263"
+                },
+                "id": "GOcPORk3w+7scl94",
+                "cabin": "COACH",
+                "bookingCode": "S",
+                "bookingCodeCount": 7,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LSM2dB9sucmBaZy1",
+                  "aircraft": "738",
+                  "arrivalTime": "2015-09-13T10:14-07:00",
+                  "departureTime": "2015-09-13T07:30-04:00",
+                  "origin": "JFK",
+                  "destination": "LAS",
+                  "originTerminal": "8",
+                  "destinationTerminal": "1",
+                  "duration": 344,
+                  "operatingDisclosure": "OPERATED BY AMERICAN AIRLINES INC.",
+                  "onTimePerformance": 97,
+                  "mileage": 2241,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "carrier": "US",
+                "origin": "LAS",
+                "destination": "NYC",
+                "basisCode": "GA14ZSJ1"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "carrier": "US",
+                "origin": "NYC",
+                "destination": "LAS",
+                "basisCode": "SA21ZSJ3"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "AkwJz9mMpn6C4lYZ2owr8BnkCPDmMiemmANMhOq+3AEI",
+                "segmentId": "GCd-vXsosPBA82rP",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Al7Cuyf4bK+8x580g0J5cpmpFdo6umZEpnPiF9WEz9q2",
+                "segmentId": "GOcPORk3w+7scl94",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ASSISTIVE DEVICES",
+                    "count": 0,
+                    "subcode": "0GM"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "INFANT CAR SEAT",
+                    "count": 0,
+                    "description": [
+                     "Infant Car Seat"
+                    ],
+                    "subcode": "0G5"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "STROLLER OR PUSHCHAIR",
+                    "count": 0,
+                    "description": [
+                     "Stroller/Pushchair"
+                    ],
+                    "subcode": "0F4"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD388.83",
+              "saleFareTotal": "USD388.83",
+              "saleTaxTotal": "USD57.37",
+              "saleTotal": "USD446.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD29.17"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS US JFK 213.02GA14ZSJ1 US LAS 175.81SA21ZSJ3 USD 388.83 END ZP LAS JFK XT 29.17US 8.00ZP 11.20AY 9.00XF LAS4.50 JFK4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD484.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3007",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 298,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 298,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "418"
+                },
+                "id": "GQFmNtzdLP5mQQq3",
+                "cabin": "COACH",
+                "bookingCode": "W",
+                "bookingCodeCount": 3,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "LFdBPDQpwC3U5ENV",
+                  "aircraft": "320",
+                  "arrivalTime": "2015-08-28T14:25-04:00",
+                  "departureTime": "2015-08-28T06:27-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 298,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "A3WBH060ZoiASjLmjeBkGXMsZmaQZu4MYfwHKwpdk77Q",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "WAA14AHN"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "A3WBH060ZoiASjLmjeBkGXMsZmaQZu4MYfwHKwpdk77Q",
+                "segmentId": "GQFmNtzdLP5mQQq3",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD424.19",
+              "saleFareTotal": "USD424.19",
+              "saleTaxTotal": "USD60.01",
+              "saleTotal": "USD484.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD31.81"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 271.63WAA14AHN UA LAS 152.56KAA21AHS USD 424.19 END ZP LAS EWR XT 31.81US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           },
+           {
+            "kind": "qpxexpress#tripOption",
+            "saleTotal": "USD689.20",
+            "id": "e133ACCdrm3MqC3XfRHZQ3008",
+            "slice": [
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 293,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 293,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "195"
+                },
+                "id": "GxCmjbOVqukgzh18",
+                "cabin": "COACH",
+                "bookingCode": "U",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "0",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L5GMtXjt1A-44+wx",
+                  "aircraft": "753",
+                  "arrivalTime": "2015-08-28T20:00-04:00",
+                  "departureTime": "2015-08-28T12:07-07:00",
+                  "origin": "LAS",
+                  "destination": "EWR",
+                  "originTerminal": "3",
+                  "destinationTerminal": "C",
+                  "duration": 293,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "kind": "qpxexpress#sliceInfo",
+              "duration": 336,
+              "segment": [
+               {
+                "kind": "qpxexpress#segmentInfo",
+                "duration": 336,
+                "flight": {
+                 "carrier": "UA",
+                 "number": "1916"
+                },
+                "id": "GAOr95Wp93ApqsTF",
+                "cabin": "COACH",
+                "bookingCode": "K",
+                "bookingCodeCount": 9,
+                "marriedSegmentGroup": "1",
+                "leg": [
+                 {
+                  "kind": "qpxexpress#legInfo",
+                  "id": "L1o8F42OKCvvaa1C",
+                  "aircraft": "739",
+                  "arrivalTime": "2015-09-13T09:16-07:00",
+                  "departureTime": "2015-09-13T06:40-04:00",
+                  "origin": "EWR",
+                  "destination": "LAS",
+                  "originTerminal": "C",
+                  "destinationTerminal": "3",
+                  "duration": 336,
+                  "onTimePerformance": 90,
+                  "mileage": 2221,
+                  "meal": "Food for Purchase",
+                  "secure": true
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            "pricing": [
+             {
+              "kind": "qpxexpress#pricingInfo",
+              "fare": [
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "ATjQOcEqTbxO4YUHY9rLlETP/jv74Z/0bk473VAUzS6E",
+                "carrier": "UA",
+                "origin": "LAS",
+                "destination": "EWR",
+                "basisCode": "UAA07AHN"
+               },
+               {
+                "kind": "qpxexpress#fareInfo",
+                "id": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "carrier": "UA",
+                "origin": "EWR",
+                "destination": "LAS",
+                "basisCode": "KAA21AHS"
+               }
+              ],
+              "segmentPricing": [
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "ATjQOcEqTbxO4YUHY9rLlETP/jv74Z/0bk473VAUzS6E",
+                "segmentId": "GxCmjbOVqukgzh18",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               },
+               {
+                "kind": "qpxexpress#segmentPricing",
+                "fareId": "Ai9ZJP5L5zujyRCe/NKbjAn0pc7EkTo/vs22IC9gDnXg",
+                "segmentId": "GAOr95Wp93ApqsTF",
+                "freeBaggageOption": [
+                 {
+                  "kind": "qpxexpress#freeBaggageAllowance",
+                  "bagDescriptor": [
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                    "count": 0,
+                    "description": [
+                     "Up to 50 lb/23 kg",
+                     "Up to 62 li/158 lcm"
+                    ],
+                    "subcode": "0GO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "MUSICAL INSTRUMENTS",
+                    "count": 0,
+                    "subcode": "0F2"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "ARCHERY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Archery Equipment"
+                    ],
+                    "subcode": "0FO"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "BOWLING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Bowling Equipment"
+                    ],
+                    "subcode": "0FS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "FISHING EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Fishing Equipment"
+                    ],
+                    "subcode": "0D6"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "GOLF EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Golf Equipment"
+                    ],
+                    "subcode": "0DC"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "HOCKEY EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Hockey Equipment"
+                    ],
+                    "subcode": "0F0"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKATEBOARD",
+                    "count": 0,
+                    "description": [
+                     "Skateboard"
+                    ],
+                    "subcode": "0IS"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Ski Equipment"
+                    ],
+                    "subcode": "0DD"
+                   },
+                   {
+                    "kind": "qpxexpress#bagDescriptor",
+                    "commercialName": "WATER SKI EQUIPMENT",
+                    "count": 0,
+                    "description": [
+                     "Water Ski Equipment"
+                    ],
+                    "subcode": "0G2"
+                   }
+                  ],
+                  "pieces": 0
+                 }
+                ]
+               }
+              ],
+              "baseFareTotal": "USD614.89",
+              "saleFareTotal": "USD614.89",
+              "saleTaxTotal": "USD74.31",
+              "saleTotal": "USD689.20",
+              "passengers": {
+               "kind": "qpxexpress#passengerCounts",
+               "adultCount": 1
+              },
+              "tax": [
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "US_001",
+                "chargeType": "GOVERNMENT",
+                "code": "US",
+                "country": "US",
+                "salePrice": "USD46.11"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "AY_001",
+                "chargeType": "GOVERNMENT",
+                "code": "AY",
+                "country": "US",
+                "salePrice": "USD11.20"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "XF",
+                "chargeType": "GOVERNMENT",
+                "code": "XF",
+                "country": "US",
+                "salePrice": "USD9.00"
+               },
+               {
+                "kind": "qpxexpress#taxInfo",
+                "id": "ZP",
+                "chargeType": "GOVERNMENT",
+                "code": "ZP",
+                "country": "US",
+                "salePrice": "USD8.00"
+               }
+              ],
+              "fareCalculation": "LAS UA EWR 462.33UAA07AHN UA LAS 152.56KAA21AHS USD 614.89 END ZP LAS EWR XT 46.11US 8.00ZP 11.20AY 9.00XF LAS4.50 EWR4.50",
+              "latestTicketingTime": "2015-08-05T23:59-04:00",
+              "ptc": "ADT"
+             }
+            ]
+           }
+          ]
+         }
+        }
+    http_version: 
+  recorded_at: Tue, 04 Aug 2015 13:21:42 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+    body:
+      encoding: UTF-8
+      string: '{"request":{"passengers":{"adultCount":1,"infantInLapCount":0,"seniorCount":0},"slice":[{"origin":"LAS","destination":"NYC","date":"2015-03-28","maxStops":0},{"origin":"NYC","destination":"LAS","date":"2015-04-13","maxStops":0}],"maxPrice":"USD4000","solutions":8}}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: 
+    headers:
+      vary:
+      - Origin, X-Origin
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sat, 09 Jan 2016 18:25:05 GMT
+      expires:
+      - Sat, 09 Jan 2016 18:25:05 GMT
+      cache-control:
+      - private, max-age=0
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      alternate-protocol:
+      - 443:quic,p=1
+      alt-svc:
+      - quic=":443"; ma=604800; v="30,29,28,27,26,25"
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "error": {
+          "errors": [
+           {
+            "domain": "global",
+            "reason": "badRequest",
+            "message": "Invalid inputs for request id \"WYXpe9uWzuMVHTurX0NZZp\": QPX Warning.  Latest departure time of first slice (2015-03-29T06:59 UTC) is in the past or is incompatible with the prior slice arrival time and the requested minimum travel time."
+           }
+          ],
+          "code": 400,
+          "message": "Invalid inputs for request id \"WYXpe9uWzuMVHTurX0NZZp\": QPX Warning.  Latest departure time of first slice (2015-03-29T06:59 UTC) is in the past or is incompatible with the prior slice arrival time and the requested minimum travel time."
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 09 Jan 2016 18:25:06 GMT
 recorded_with: VCR 2.9.3

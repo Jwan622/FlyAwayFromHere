@@ -1,5 +1,7 @@
 module AirportAndCityLookupHelper
   def airport_lookup
+    # the airport_lookup hash is used to clean the arguments from the new_planner
+    # page so that an api call to the qpx search can be made.
     {
       "aruba"         => "AUA",
       "boston"        => "BOS",
@@ -40,6 +42,8 @@ module AirportAndCityLookupHelper
     }
   end
 
+  # the airport_converter is used to look up trip_info seed data using the airport
+  # code returned from the google qpx api.
   def airport_converter
     {
       "AUA"           => "AUA",

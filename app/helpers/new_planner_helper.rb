@@ -19,7 +19,8 @@ module NewPlannerHelper
     count = Category.count
     if current_user
       user_departure_city = current_user.departure_city_slug
-      "Categories/#{count}/#{user_departure_city}"
+      return "Categories/#{count}/#{user_departure_city}"
     end
+    return "Categories/#{count}"
   end
 end

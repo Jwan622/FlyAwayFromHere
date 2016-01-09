@@ -49,4 +49,5 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'awesome_print',          require: "ap"
   gem 'vcr'
+  gem "selenium-webdriver"
 end
