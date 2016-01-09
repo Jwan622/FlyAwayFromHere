@@ -47,7 +47,6 @@ class RealTripsController < ApplicationController
   end
 
   def trip_search_params
-    require 'pry' ; binding.pry
     plan_params.symbolize_keys
   end
 
