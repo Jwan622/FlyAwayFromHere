@@ -150,3 +150,5 @@ end
 ```
 
 The .slug takes the lower-cased and hyphenated names of the cities.
+
+So the qpx_data is going to be an array of trips that satisfy the search.
