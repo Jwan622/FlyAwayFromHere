@@ -16,7 +16,7 @@ class RealTrip
   end
 
   def return_airline
-    trip_data["slice"].second["segment"].first["flight"]["carrier"]
+    return_trip.first["flight"]["carrier"]
   end
 
   def departure_date
@@ -62,15 +62,19 @@ class RealTrip
     trip_data["slice"].second["segment"]
   end
 
-  def arrival_airport
-    trip_data["slice"].first["segment"].first["leg"].first["destination"]
-  end
-
   def arrival_city_slug
-    city_lookup[trip_data["slice"].first["segment"].first["leg"].first["destination"]]
+    city_lookup[arrival_airport]
   end
 
   def departure_city_slug
-    city_lookup[trip_data["slice"].first["segment"].first["leg"].first["origin"]]
+    city_lookup[departing_airport]
+  end
+
+  def arrival_airport
+    outbound_trip.first["leg"].first["destination"]
+  end
+
+  def departing_airport
+    outbound_trip.first["leg"].first["origin"]
   end
 end

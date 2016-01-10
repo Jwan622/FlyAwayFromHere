@@ -45,3 +45,48 @@ Please feel free to inspect the code quality. The main functionality is within:
 ### If you want to create additional functionality:
 * You can only search for trips that are categories in the database. So if you want to fly to Boston, you need to create a Category in the seed file or create a Category via the web app as admin (not implemented yet). Currently, the seed file is the only way to add new location categories to fly to. You would then need to add the airport/cities to the hashes in the AirportAndCityLookuphelper module.  
 * There are helpers in the support folder that allow you to reach real_trips_index page and the real_trip_info pages while writing new tests. Simply call the method in the associated folders and the setup will be complete and those pages will be reachable.
+
+### Things I learned from this project:
+
+1. The Presenter allows objects to be in display format. Think of them as adding convenience methods. They allow view to stay slim and not leave logic in view.  
+2. FindTrip, a service object, calls the qpx_service object and then uses the data returned from the api to create real_trip objects.  
+3. The controller's job is to transform data that it receives from the views and give it to a different class like the FindTrip class. The FindTrip class does not need to know about how the request parameters come through. It just needs to know how to find trips using the data that it's passed and it uses the QPXService to do so. The goal is to decouple and keep objects as dumb as possible. This way, refactoring like I had to midway through the project is easier in the future.
+4. In FindTrip, the find_all method was originally written like this:  
+```
+ if qpx_search["trips"]["tripOption"]
+   qpx_search["trips"]["tripOption"].map do...
+```
+but that was making two calls to the api which was inefficient.  You refactored it to:
+
+```
+def find_all
+  if qpx_data = qpx_search["trips"]["tripOption"]
+    qpx_data.map do |trip_data|
+      RealTrip.new(trip_data)
+    end
+  else
+    []
+  end
+end
+```
+
+You stored the first method call results in a variable and then iterate over it.
+
+5. Activation mailers are harder to build than previously thought. The email needs to have a link that hits the edit action of the AccountActivationsController which should turn the user's activated state to true. That link needs to have the activation token and the user's email (the email is to lookup the user). When a user logs in, that's when you actually check the user's activated state, which only is true if the user clicks the email. Alternatively, a user can just login via oauth and now the user is logged in as current_user and can use the site.  
+
+### Breakdown of files:
+Classes:
+* The RealTrip class takes in the real api data and wraps them in a Ruby object.  
+* Inside this RealTrip Class, we take the airport code that comes back from the api ("JFK"), converts the code to an airport slug ("new-york-city"), and we do a lookup for the category name based on the airport slug. We then use the Category name ("New York"). For instance, we go from "LON" to "london" to "London".
+* I chose to separate out the service object (QPX Service) and the PORO (Find_trip). The Find trip calls the service object and iterates over the array of JSON data converting it into RealTrip objects.
+
+### Refactor possibilities:
+* I was thinking that I do not like how I setup Category in the database. I think in later iterations, I should have a  
+  separate table for airport codes. A Category should have many airport codes so an admin can simply add a Category, give  
+  category a name like "St. Petersberg" and give the appropriate airport codes which there will be several of (local,  
+  international airports, etc.)
+
+* In find_trip.rb, clean the arguments in the initialize method. I think this might actually be easier to read
+  and prevents me from changing the internals of the object during the code.
+
+* Naming of the POROs.
