@@ -149,12 +149,23 @@ def bargains
 end
 ```
 
-The .slug takes the lower-cased and hyphenated names of the cities.
+The .slug takes the lower-cased and hyphenated names of the cities. This method takes the Category names, sluggifies them so we can then use the slugs as destinations which can then be used in the airport_and_city_lookup_helper to convert the destinations into its proper format for use in the API.
 
-So the qpx_data is going to be an array of trips that satisfy the search.
+The bargains method calls the find_all method which is below:
 
-
-
+```rails
+def find_all
+  if qpx_data = qpx_search["trips"]["tripOption"]
+    qpx_data.map do |trip_data|
+      RealTrip.new(trip_data)
+    end
+  else
+    []
+  end
+end
+```
+- qpx_data is going to be an array of trips that satisfy the search.
+- The find_all method in FindTrip is going to do a QPX search with the destination, origin, departure date, return date, and max price in mind with cleaned data. It will return the array of trips in qpx_data and then create RealTrip objects out of them. So find_all returns an array of RealTrip objects.
 
 #### Some other points to note:
 - I overrode the to_param method on a RealTrip (a PORO with no id) so that I can get the trip info.

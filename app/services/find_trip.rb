@@ -2,15 +2,10 @@ class FindTrip
   include AirportAndCityLookupHelper
 
   attr_reader :destination,
-              :cleaned_destination,
               :origin,
-              :cleaned_origin,
               :departure_date,
-              :cleaned_departure_date,
               :return_date,
-              :cleaned_return_date,
               :max_price,
-              :all_trips,
               :qpx_service
 
   def initialize(destination:, origin:, departure_date:, return_date:, max_price: "5000")
