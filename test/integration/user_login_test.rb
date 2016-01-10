@@ -53,7 +53,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     log_in(as: user)
     visit real_trip_path(real_trip, info: { departure_date: real_trip.departure_date, return_date: real_trip.return_date, price: real_trip.price })
 
-    # assert_template :show # Why doesn't this work?
     assert page.has_content?("$689.95")
     assert page.has_content?("Las Vegas title")
     assert page.has_content?("Las Vegas short description")

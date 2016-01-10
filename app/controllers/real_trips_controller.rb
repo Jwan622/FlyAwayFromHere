@@ -7,11 +7,11 @@ class RealTripsController < ApplicationController
     elsif arriving_and_departing_to_same_destination?
       redirect_to new_planner_path, flash: { error: "We love flying too, but you can't fly to and depart from the same city..."}
     elsif bargain_hunting?
-      trips = FindTrip.new(trip_search_params).bargains.flatten
-      @trips = TripsPresenter.new(trips).ordered_by_price
+      trips_to_decorate = FindTrip.new(trip_search_params).bargains.flatten
+      @trips = TripsPresenter.new(trips_to_decorate).ordered_by_price
     else
-      trips = FindTrip.new(trip_search_params).find_all
-      @trips = TripsPresenter.new(trips).ordered_by_price
+      trips_to_decorate = FindTrip.new(trip_search_params).find_all
+      @trips = TripsPresenter.new(trips_to_decorate).ordered_by_price
     end
   end
 
