@@ -149,6 +149,51 @@ def bargains
 end
 ```
 
-The .slug takes the lower-cased and hyphenated names of the cities.
+The .slug takes the lower-cased and hyphenated names of the cities. This method takes the Category names, sluggifies them so we can then use the slugs as destinations which can then be used in the airport_and_city_lookup_helper to convert the destinations into its proper format for use in the API.
 
-So the qpx_data is going to be an array of trips that satisfy the search.
+The bargains method calls the find_all method which is below:
+
+```rails
+def find_all
+  if qpx_data = qpx_search["trips"]["tripOption"]
+    qpx_data.map do |trip_data|
+      RealTrip.new(trip_data)
+    end
+  else
+    []
+  end
+end
+```
+- qpx_data is going to be an array of trips that satisfy the search.
+- The find_all method in FindTrip is going to do a QPX search with the destination, origin, departure date, return date, and max price in mind with cleaned data. It will return the array of trips in qpx_data and then create RealTrip objects out of them. So find_all returns an array of RealTrip objects.
+
+#### Some other points to note:
+- I overrode the to_param method on a RealTrip (a PORO with no id) so that I can get the trip info.
+
+```rails
+def show
+    22:   require 'pry' ; binding.pry
+ => 23:   @trip_info = TripInfo.find(params[:id])
+    24:   @real_trip_info = RealTripInfo.new(real_trip_params)
+25: end
+```
+
+params[:id] is going to be an arrival_airport like "LAS"
+
+TripInfo looks something like this:
+#<TripInfo id: 1, title: "Aruba... the Dutch Paradise of Conch and Beaches.", city: "Aruba", short_description: "At the island’s extreme ends are rugged, windswept...", long_description: "Americans from the east coast fleeing winter make ...", airport: "AUA", created_at: "2016-01-09 17:17:51", updated_at: "2016-01-09 17:17:51">
+
+You see the short_description on the Explore page and you see the title when you click a category, click the details page.
+
+Why do I find the TripInfo by airport name like "LAS" instead of Las Vegas?
+So the TripInfo has an airport column which really is more of a description of the location. It really should be called "location". It's going to be something like "LAS" or "NYC". The thing is that if someone flies into las vegas or wants to go nearby, the trip info that's relevant is always "LAS". So I have the lib/airport_and_city_lookup_helper convert all those nearby cities into the same TripInfo by doing a lookup using the airport from QPX. This way I don't need to keep growing the TripInfo table for every city in the world. I can just convert the nearby airports all into the same TripInfo. So regardless of whether you're flying into EWR or JFK, the TripInfo that's important is still NYC.
+
+
+- I should/can decorate this:
+This is inside the views/real_trips/index.html.erb page
+
+```rails
+<% if !@trips.present? %>
+  <p class="no-trip"> There are currently no available trips to this destination. Please make other plans.</p>
+<% end %>
+```
