@@ -197,3 +197,50 @@ This is inside the views/real_trips/index.html.erb page
   <p class="no-trip"> There are currently no available trips to this destination. Please make other plans.</p>
 <% end %>
 ```
+
+
+- The public/system folder was becoming bloated everytime I ran the test suite. The problem was paperclip. These files were a problem:
+
+
+```rails
+class Photo < ActiveRecord::Base
+  belongs_to :category
+  belongs_to :user
+  belongs_to :trip_info
+
+  has_attached_file :avatar,
+                    :styles => { :medium => "310x300#",
+                                 :thumb => "100x100#",
+                                 :city => "260x250#",
+                                 :large => "500x300#"
+                                },
+                    :default_url => "/images/:style/logo3.png",
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+end
+```
+
+Basically the default path (the place where the files are uploaded) was a new number every time so it was making a new folder number everytime we uploaded a photo in the test suite. So we needed to change the photo model to this:
+
+
+```rails
+class Photo < ActiveRecord::Base
+  belongs_to :category
+  belongs_to :user
+  belongs_to :trip_info
+
+  has_attached_file :avatar,
+                    :styles => { :medium => "310x300#",
+                                 :thumb => "100x100#",
+                                 :city => "260x250#",
+                                 :large => "500x300#"
+                                },
+                    :default_url => "/images/:style/logo3.png",
+                    :path => "public/assets/pdfs/:basename.:extension",
+                    :url => "public/assets/pdfs/:basename.:extension"
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+end
+```
+
+This made sure that the file that was uploaded in the test suite wouldn't create a new numbered folder everytime. This fixed our problem.
