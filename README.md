@@ -73,11 +73,7 @@ end
 You stored the first method call results in a variable and then iterate over it.
 
 5. Activation mailers are harder to build than previously thought. The email needs to have a link that hits the edit action of the AccountActivationsController which should turn the user's activated state to true. That link needs to have the activation token and the user's email (the email is to lookup the user). When a user logs in, that's when you actually check the user's activated state, which only is true if the user clicks the email. Alternatively, a user can just login via oauth and now the user is logged in as current_user and can use the site.  
-6. The decorator pattern is a design pattern that allows behavior to be added to an individual object without affecting the behavior of other objects from the same class.
-
-This is useful because we can add additional behavior to an instantiated model, like @user, before passing it on to the template from the controller. However, in other contexts, the User model, doesn't have the added behavior that's the result of the decoration. This helps to separate concerns, while still adding necessary functionality to an object when appropriate.
-
-I use the decorator in the TripsPresenter class.
+6. I see presenters as a way to move code that's bloating a controller or view into a domain object, whereas I've been using decorators to pull view-related excess fat out of my models (i.e. as_json has always felt wrong as a model method) and to OOPify helpers.
 
 ### Breakdown of files:
 Classes:

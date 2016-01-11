@@ -6,7 +6,6 @@ Rails.application.configure do
 
   #why is caching even defaulted to false in the first place for development? How odd... What's the advantage?
   config.active_support.deprecation = :log
-  Paperclip.options[:command_path] = "/usr/local/bin/"
   config.active_record.migration_error = :page_load
   config.assets.debug = true
   config.action_mailer.raise_delivery_errors = true
