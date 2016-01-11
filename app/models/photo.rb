@@ -9,9 +9,8 @@ class Photo < ActiveRecord::Base
                                  :city => "260x250#",
                                  :large => "500x300#"
                                 },
-                    :url => ":class/:style/:basename.:extension"
-                    :path => "public/images/:class/:style/:basename.:extension",
-                    :default_url => "/images/:style/logo3.png",
+                    :url => "/images/:class/:style/:basename.:extension",
+                    :default_url => "/images/:style/logo3.png"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end

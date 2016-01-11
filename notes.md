@@ -219,3 +219,24 @@ end
 ```
 
 This made sure that the file that was uploaded in the test suite wouldn't create a new numbered folder everytime. This fixed our problem.
+
+Also this problem was fixed... after a while my images weren't showing and I wasn't sure why. But this fixed my problem:
+
+```rails
+has_attached_file :avatar,
+                  :styles => { :medium => "310x300#",
+                               :thumb => "100x100#",
+                               :city => "260x250#",
+                               :large => "500x300#"
+                              },
+                  :url => "/images/:class/:style/:basename.:extension",
+                  :default_url => "/images/:style/logo3.png"
+```
+The first slash is important in the url. I don't know why.
+I only changed the url and apparently it knows that it's inside the public folder.
+
+This is the default path:
+```
+2.1.3 :006 > Paperclip::Attachment.default_options
+ => {:convert_options=>{}, :default_style=>:original, :default_url=>"/:attachment/:style/missing.png", :escape_url=>true, :restricted_characters=>/[&$+,\/:;=?@<>\[\]\{\}\|\\\^~%# ]/, :filename_cleaner=>nil, :hash_data=>":class/:attachment/:id/:style/:updated_at", :hash_digest=>"SHA1", :interpolator=>Paperclip::Interpolations, :only_process=>[], :path=>":rails_root/public:url",
+```
