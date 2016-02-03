@@ -11,16 +11,16 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-  twitter_key: RwkTZWLgKGEW3sHGKxNZjyx2h
-  twitter_secret: ABs49pF6fjGNGiZzKL4ucsVUWDttODsyfLqxYYCLEK9fjWKXv7
-  qpx_api_key: AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+  twitter_key: uyFXb8Qe9vqj9bRrFmiQdQQcy
+  twitter_secret: cQjGSetCcHcaas2P7URvKSCHtnvTyEtSOxuTEVvd6oZEZfXHqf
+  qpx_api_key: AIzaSyD1oAgUY4u7K_vQep-O7ivgasURyZ-04d0
   sendgrid_username: pp34546257@heroku.com
   sendgrid_password: fzjqyodg
 
 development:
-  twitter_key: RwkTZWLgKGEW3sHGKxNZjyx2h
-  twitter_secret: ABs49pF6fjGNGiZzKL4ucsVUWDttODsyfLqxYYCLEK9fjWKXv7
-  qpx_api_key: AIzaSyCmR3vntK1uTkkvDVdbu288o2kxZ_shJt8
+  twitter_key: uyFXb8Qe9vqj9bRrFmiQdQQcy
+  twitter_secret: cQjGSetCcHcaas2P7URvKSCHtnvTyEtSOxuTEVvd6oZEZfXHqf
+  qpx_api_key: AIzaSyD1oAgUY4u7K_vQep-O7ivgasURyZ-04d0
   sendgrid_username: pp34546257@heroku.com
   sendgrid_password: fzjqyodg
 

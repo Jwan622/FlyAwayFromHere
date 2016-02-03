@@ -27,3 +27,6 @@
 
 # Ignore coverage
 coverage
+
+# Ignore secret keys
+/config/application.yml
